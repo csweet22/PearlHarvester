@@ -193,7 +193,7 @@
                     "name": "",
                     "id": "ac331df1-dcad-4a6c-a2dd-7cccb4e0cba0",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "Hold(duration=1)",
+                    "interactions": "Hold(duration=0.5)",
                     "processors": "",
                     "groups": "",
                     "action": "Throw",

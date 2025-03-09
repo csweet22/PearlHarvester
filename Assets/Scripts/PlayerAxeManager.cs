@@ -37,17 +37,11 @@ public class PlayerAxeManager : MonoBehaviour
         recallAction.action.Enable();
 
         swingAction.action.performed += OnSwingPerformed;
+        
         throwAction.action.performed += OnThrowPrepared;
         throwAction.action.canceled += OnThrowReleased;
-        recallAction.action.started += OnRecallPerformed;
-    }
 
-    private void OnThrowReleased(InputAction.CallbackContext obj)
-    {
-        if (_throwQueued){
-            _throwQueued = false;
-            Debug.Log("Axe Thrown.");
-        }
+        recallAction.action.started += OnRecallPerformed;
     }
 
     private void OnSwingPerformed(InputAction.CallbackContext obj)
@@ -57,8 +51,18 @@ public class PlayerAxeManager : MonoBehaviour
 
     private void OnThrowPrepared(InputAction.CallbackContext obj)
     {
-        Debug.Log("Throw prepared");
-        _throwQueued = true;
+        if (HasAxe){
+            _throwQueued = true;
+            Debug.Log("Throw prepared");
+        }
+    }
+
+    private void OnThrowReleased(InputAction.CallbackContext obj)
+    {
+        if (_throwQueued){
+            _throwQueued = false;
+            Debug.Log("Axe Thrown.");
+        }
     }
 
     private void OnRecallPerformed(InputAction.CallbackContext obj)
@@ -72,5 +76,12 @@ public class PlayerAxeManager : MonoBehaviour
         swingAction.action.Disable();
         throwAction.action.Disable();
         recallAction.action.Disable();
+
+        swingAction.action.performed -= OnSwingPerformed;
+        
+        throwAction.action.performed -= OnThrowPrepared;
+        throwAction.action.canceled -= OnThrowReleased;
+
+        recallAction.action.started -= OnRecallPerformed;
     }
 }
