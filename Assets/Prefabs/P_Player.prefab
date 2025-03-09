@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8072886796805042229}
+  m_Father: {fileID: 3355664933280981771}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &4637485954615462628
 CapsuleCollider:
@@ -39,7 +39,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 993731567998001633}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e5ece96f6bc47164c853c54934500108, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -79,12 +79,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2269384720227317236}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8072886796805042229}
+  m_Father: {fileID: 3355664933280981771}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2610463126681424060
 GameObject:
@@ -96,7 +96,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8072886796805042229}
   - component: {fileID: 2221539750967551381}
-  - component: {fileID: 9123644189762372242}
   m_Layer: 0
   m_Name: P_Player
   m_TagString: Untagged
@@ -117,8 +116,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2666339056044166150}
-  - {fileID: 493349733632946221}
+  - {fileID: 3355664933280981771}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2221539750967551381
@@ -133,24 +131,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f348508c2073df446aa5c6043c479fbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveAction: {fileID: 3169021282365999059, guid: d88037f8d5888c84593de8c6aa28d211,
-    type: 3}
-  jumpAction: {fileID: 8944916676204497644, guid: d88037f8d5888c84593de8c6aa28d211,
-    type: 3}
   unlockAction: {fileID: 2980462401493433793, guid: d88037f8d5888c84593de8c6aa28d211,
     type: 3}
   lookAction: {fileID: 6961966623521205028, guid: d88037f8d5888c84593de8c6aa28d211,
     type: 3}
-  speed: 10
-  jumpForce: 7
-  groundCheckDistance: 1.1
---- !u!54 &9123644189762372242
+--- !u!1 &3877830852048700403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3355664933280981771}
+  - component: {fileID: 3060366646396466456}
+  - component: {fileID: 3532310425170743473}
+  m_Layer: 0
+  m_Name: PhysicsBody
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3355664933280981771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877830852048700403}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2666339056044166150}
+  - {fileID: 493349733632946221}
+  m_Father: {fileID: 8072886796805042229}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3060366646396466456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877830852048700403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 210e63fb29554f32b413d8499fa25f68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveAction: {fileID: 3169021282365999059, guid: d88037f8d5888c84593de8c6aa28d211,
+    type: 3}
+  jumpAction: {fileID: 8944916676204497644, guid: d88037f8d5888c84593de8c6aa28d211,
+    type: 3}
+  playerInputSpace: {fileID: 0}
+  maxSpeed: 7
+  maxAcceleration: 73.5
+  maxAirAcceleration: 1
+  jumpHeight: 2
+  maxAirJumps: 0
+  maxGroundAngle: 25
+  maxStairsAngle: 50
+  maxSnapSpeed: 100
+  probeDistance: 1
+  probeMask:
+    serializedVersion: 2
+    m_Bits: 1
+  stairsMask:
+    serializedVersion: 2
+    m_Bits: 0
+  gravity: {x: 0, y: -29.43, z: 0}
+--- !u!54 &3532310425170743473
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2610463126681424060}
+  m_GameObject: {fileID: 3877830852048700403}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
