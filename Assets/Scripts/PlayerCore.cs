@@ -14,6 +14,9 @@ public class PlayerCore : MonoBehaviour
 
     [SerializeField] private float speed = 10f;
 
+    [SerializeField] private float jumpForce = 7f;
+    public float groundCheckDistance = 1.0f;
+
     private Rigidbody _rb;
     private Camera _mainCamera;
 
@@ -71,28 +74,37 @@ public class PlayerCore : MonoBehaviour
         Vector3 currentVelocity = _rb.velocity;
 
         Vector3 deltaVelocity = targetVelocity - currentVelocity;
+        deltaVelocity.y = 0f;
         _rb.AddForce(deltaVelocity, ForceMode.VelocityChange);
     }
 
     private void OnJumpPerformed(InputAction.CallbackContext obj)
     {
+        if (IsGrounded())
+            _rb.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
     }
 
     private void OnMovePerformed(InputAction.CallbackContext obj)
     {
     }
-    
+
     private void OnUnlockPerformed(InputAction.CallbackContext obj)
     {
         if (Cursor.lockState == CursorLockMode.Locked){
             Cursor.lockState = CursorLockMode.None;
             lookAction.action.Disable();
+            Cursor.visible = true;
         }
         else{
             Cursor.lockState = CursorLockMode.Locked;
             lookAction.action.Enable();
+            Cursor.visible = false;
         }
+    }
 
-        Cursor.visible = !Cursor.visible;
+
+    private bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position + Vector3.up, Vector3.down, groundCheckDistance);
     }
 }

@@ -142,6 +142,8 @@ MonoBehaviour:
   lookAction: {fileID: 6961966623521205028, guid: d88037f8d5888c84593de8c6aa28d211,
     type: 3}
   speed: 10
+  jumpForce: 7
+  groundCheckDistance: 1.1
 --- !u!54 &9123644189762372242
 Rigidbody:
   m_ObjectHideFlags: 0
