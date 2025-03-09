@@ -8,6 +8,7 @@ public class PlayerCore : MonoBehaviour
 {
     
     private PlayerMovement _playerMovement;
+    private HealthComponent _healthComponent;
     
     [SerializeField] private InputActionReference unlockAction;
     [SerializeField] private InputActionReference lookAction;
@@ -15,6 +16,7 @@ public class PlayerCore : MonoBehaviour
     private void Start()
     {
         _playerMovement = GetComponentInChildren<PlayerMovement>();
+        _healthComponent = GetComponentInChildren<HealthComponent>();
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
