@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2666339056044166150}
   - component: {fileID: 4637485954615462628}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 493349733632946221}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,6 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec14f3cf846500343a47e9d05e287f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 10
+  startingHealth: 1
 --- !u!1 &3877830852048700403
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +161,7 @@ GameObject:
   - component: {fileID: 3355664933280981771}
   - component: {fileID: 3060366646396466456}
   - component: {fileID: 3532310425170743473}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PhysicsBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +213,7 @@ MonoBehaviour:
   probeDistance: 1
   probeMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 1024
   stairsMask:
     serializedVersion: 2
     m_Bits: 0
