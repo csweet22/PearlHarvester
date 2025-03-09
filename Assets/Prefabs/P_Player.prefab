@@ -137,6 +137,10 @@ MonoBehaviour:
     type: 3}
   jumpAction: {fileID: 8944916676204497644, guid: d88037f8d5888c84593de8c6aa28d211,
     type: 3}
+  unlockAction: {fileID: 2980462401493433793, guid: d88037f8d5888c84593de8c6aa28d211,
+    type: 3}
+  lookAction: {fileID: 6961966623521205028, guid: d88037f8d5888c84593de8c6aa28d211,
+    type: 3}
   speed: 10
 --- !u!54 &9123644189762372242
 Rigidbody:

@@ -8,6 +8,8 @@ public class PlayerCore : MonoBehaviour
 {
     [SerializeField] private InputActionReference moveAction;
     [SerializeField] private InputActionReference jumpAction;
+    [SerializeField] private InputActionReference unlockAction;
+    [SerializeField] private InputActionReference lookAction;
 
 
     [SerializeField] private float speed = 10f;
@@ -19,24 +21,31 @@ public class PlayerCore : MonoBehaviour
     {
         if (moveAction) moveAction.action.performed += OnMovePerformed;
         if (jumpAction) jumpAction.action.performed += OnJumpPerformed;
+        if (unlockAction) unlockAction.action.performed += OnUnlockPerformed;
 
         moveAction.action.Enable();
         jumpAction.action.Enable();
+        unlockAction.action.Enable();
     }
 
     private void OnDisable()
     {
         if (moveAction) moveAction.action.performed -= OnMovePerformed;
         if (jumpAction) jumpAction.action.performed -= OnJumpPerformed;
+        if (unlockAction) unlockAction.action.performed -= OnUnlockPerformed;
 
         moveAction.action.Disable();
         jumpAction.action.Disable();
+        unlockAction.action.Enable();
     }
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _mainCamera = Camera.main;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     private void FixedUpdate()
@@ -47,22 +56,21 @@ public class PlayerCore : MonoBehaviour
     private void ResolveMovement()
     {
         Vector2 moveValue = moveAction.action.ReadValue<Vector2>();
-        
-        Vector3 cameraForward = _mainCamera.transform.forward ;
+
+        Vector3 cameraForward = _mainCamera.transform.forward;
         cameraForward.y = 0f;
         cameraForward.Normalize();
 
         Vector3 cameraRight = _mainCamera.transform.right;
         cameraRight.y = 0f;
         cameraRight.Normalize();
-        
+
         Vector3 moveDirection = cameraForward * moveValue.y + cameraRight * moveValue.x;
-        
+
         Vector3 targetVelocity = moveDirection * speed;
         Vector3 currentVelocity = _rb.velocity;
 
         Vector3 deltaVelocity = targetVelocity - currentVelocity;
-        Debug.Log(deltaVelocity);
         _rb.AddForce(deltaVelocity, ForceMode.VelocityChange);
     }
 
@@ -72,5 +80,19 @@ public class PlayerCore : MonoBehaviour
 
     private void OnMovePerformed(InputAction.CallbackContext obj)
     {
+    }
+    
+    private void OnUnlockPerformed(InputAction.CallbackContext obj)
+    {
+        if (Cursor.lockState == CursorLockMode.Locked){
+            Cursor.lockState = CursorLockMode.None;
+            lookAction.action.Disable();
+        }
+        else{
+            Cursor.lockState = CursorLockMode.Locked;
+            lookAction.action.Enable();
+        }
+
+        Cursor.visible = !Cursor.visible;
     }
 }
