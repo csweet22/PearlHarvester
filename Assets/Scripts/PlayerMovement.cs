@@ -10,13 +10,16 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] public InputActionReference moveAction;
     [SerializeField] public InputActionReference jumpAction;
+    [SerializeField] public InputActionReference sprintAction;
 
     #endregion
 
     [SerializeField] private Transform playerInputSpace = default;
 
+
+    [SerializeField, Range(0f, 100f)] private float walkMaxSpeed = 7f, sprintMaxSpeed = 10f;
+    
     [SerializeField, Range(0f, 100f)] float
-        maxSpeed = 7f,
         maxAcceleration = 10f,
         maxAirAcceleration = 1f;
 
@@ -77,6 +80,8 @@ public class PlayerMovement : MonoBehaviour
         OnValidate();
 
         jumpAction.action.performed += context => { _desiredJump = true; };
+        sprintAction.action.started += context => { PlayerCamera.Instance.SetFOV(110, 0.2f); };
+        sprintAction.action.canceled += context => { PlayerCamera.Instance.SetFOV(90, 0.3f); };
     }
 
 
@@ -230,7 +235,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 xAxis, zAxis;
         acceleration = OnGround ? maxAcceleration : maxAirAcceleration;
 
-        speed = maxSpeed;
+        speed = sprintAction.action.ReadValue<float>() > 0.5f ? sprintMaxSpeed : walkMaxSpeed;
         xAxis = _rightAxis;
         zAxis = _forwardAxis;
 
@@ -335,11 +340,13 @@ public class PlayerMovement : MonoBehaviour
     {
         moveAction.action.Enable();
         jumpAction.action.Enable();
+        sprintAction.action.Enable();
     }
 
     private void OnDisable()
     {
         moveAction.action.Disable();
         jumpAction.action.Disable();
+        sprintAction.action.Disable();
     }
 }

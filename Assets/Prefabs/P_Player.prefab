@@ -201,8 +201,11 @@ MonoBehaviour:
     type: 3}
   jumpAction: {fileID: 8944916676204497644, guid: d88037f8d5888c84593de8c6aa28d211,
     type: 3}
+  sprintAction: {fileID: 2858768796747430484, guid: d88037f8d5888c84593de8c6aa28d211,
+    type: 3}
   playerInputSpace: {fileID: 0}
-  maxSpeed: 7
+  walkMaxSpeed: 7
+  sprintMaxSpeed: 10
   maxAcceleration: 73.5
   maxAirAcceleration: 1
   jumpHeight: 2
