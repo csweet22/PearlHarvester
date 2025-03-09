@@ -2768,11 +2768,6 @@ PrefabInstance:
       propertyPath: playerInputSpace
       value: 
       objectReference: {fileID: 330585546}
-    - target: {fileID: 7962452589291306960, guid: 60dfdcc8cb584ba47bfd714e6617557a,
-        type: 3}
-      propertyPath: startingHealth
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 8072886796805042229, guid: 60dfdcc8cb584ba47bfd714e6617557a,
         type: 3}
       propertyPath: m_LocalPosition.x
