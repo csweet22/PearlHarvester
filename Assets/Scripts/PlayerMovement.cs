@@ -15,9 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Transform playerInputSpace = default;
 
-    [SerializeField] private float maxSpeed = 10f;
-
     [SerializeField, Range(0f, 100f)] float
+        maxSpeed = 7f,
         maxAcceleration = 10f,
         maxAirAcceleration = 1f;
 
