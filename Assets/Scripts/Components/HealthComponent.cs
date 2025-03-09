@@ -10,7 +10,7 @@ public class HealthComponent : MonoBehaviour
 
     [SerializeField] protected int startingHealth = 1;
     private readonly Trackable<int> _currentHealth = new(0);
-    public int Health => _currentHealth.Value;
+    public int CurrentHealth => _currentHealth.Value;
 
     private bool _isInvincible = false;
     public bool IsInvincible => _isInvincible;
