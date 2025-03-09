@@ -15,7 +15,7 @@ public class ProgressBar : MonoBehaviour
         
         _slider.minValue = min.Value;
         _slider.maxValue = max.Value;
-        _slider.value = Progress.Value;
+        Progress.Value = _slider.value;
         
         min.OnValueChanged += (oldValue, newValue) => { _slider.minValue = newValue; };
 

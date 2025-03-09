@@ -22,9 +22,9 @@ public class PlayerCore : MonoBehaviour
         _healthComponent = GetComponentInChildren<HealthComponent>();
 
         _healthboxComponent = GetComponentInChildren<HealthboxComponent>();
-        _healthboxComponent.OnHit += damage =>
+        _healthboxComponent.OnHit += delta =>
         {
-            _healthComponent.ChangeHealth(-damage);
+            _healthComponent.ChangeHealth(delta);
             HUD.Instance.UpdateHealth(_healthComponent.CurrentHealth, _healthComponent.MaxHealth);
         };
 

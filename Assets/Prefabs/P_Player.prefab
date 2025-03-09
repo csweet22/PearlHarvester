@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 2998618832156828749}
   - component: {fileID: 6113740429976528916}
   - component: {fileID: 6020762043979062682}
-  m_Layer: 11
+  m_Layer: 6
   m_Name: Healthbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
