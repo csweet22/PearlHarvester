@@ -15,6 +15,8 @@ public class PlayerAxeManager : MonoBehaviour
     [SerializeField] private InputActionReference throwAction;
     [SerializeField] private InputActionReference recallAction;
 
+    [SerializeField] private Animator animator;
+    
     private void Start()
     {
     }
@@ -47,6 +49,7 @@ public class PlayerAxeManager : MonoBehaviour
     private void OnSwingPerformed(InputAction.CallbackContext obj)
     {
         Debug.Log("Swing performed");
+        animator.Play("Swing");
     }
 
     private void OnThrowPrepared(InputAction.CallbackContext obj)

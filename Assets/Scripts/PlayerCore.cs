@@ -15,6 +15,8 @@ public class PlayerCore : MonoBehaviour
     [SerializeField] private InputActionReference unlockAction;
     [SerializeField] private InputActionReference lookAction;
 
+    [SerializeField] private Transform head;
+
     private void Start()
     {
         _playerMovement = GetComponentInChildren<PlayerMovement>();
@@ -30,6 +32,11 @@ public class PlayerCore : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    private void Update()
+    {
+        head.transform.localRotation = Camera.main.transform.localRotation;
     }
 
     private void OnUnlockPerformed(InputAction.CallbackContext obj)
