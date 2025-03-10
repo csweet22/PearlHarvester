@@ -13,7 +13,10 @@ public class SettingsMenu : MonoBehaviour
     void Start()
     {
         sensitivitySlider.onValueChanged.AddListener(OnSliderValueChanged);
+        
         _pov = virtualCamera.GetCinemachineComponent<CinemachinePOV>();
+        _pov.m_HorizontalAxis.m_MaxSpeed = sensitivitySlider.value;
+        _pov.m_VerticalAxis.m_MaxSpeed = sensitivitySlider.value;
     }
 
     private void OnSliderValueChanged(float value)
