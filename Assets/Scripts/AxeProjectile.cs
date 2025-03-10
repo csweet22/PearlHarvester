@@ -30,6 +30,8 @@ public class AxeProjectile : ProjectileComponent
         lerp.onComplete += () =>
         {
             PlayerCore.Instance.AddAxe();
+
+            recallAction.action.performed -= OnRecallPerformed;
             Destroy(gameObject);
         };
     }
@@ -37,6 +39,8 @@ public class AxeProjectile : ProjectileComponent
     private void OnDisable()
     {
         recallAction.action.Disable();
+
+        recallAction.action.performed -= OnRecallPerformed;
     }
 
     protected override void OnCollisionEnter(Collision collision)
