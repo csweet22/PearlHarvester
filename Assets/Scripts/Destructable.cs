@@ -15,7 +15,6 @@ public class Destructable : MonoBehaviour
 
         _healthbox.OnHit += delta =>
         {
-            Debug.Log(delta);
             _healthComponent.ChangeHealth(delta);
         };
 

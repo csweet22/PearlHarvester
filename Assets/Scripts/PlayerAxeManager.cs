@@ -15,13 +15,26 @@ public class PlayerAxeManager : MonoBehaviour
     [SerializeField] private InputActionReference throwAction;
     [SerializeField] private InputActionReference recallAction;
 
-    [SerializeField] private Animator animator;
-    
+    private Animator _animator;
     private LauncherComponent _launcher;
-    
+    private HealthChangeBoxComponent _healthChangeBox;
+
     private void Start()
     {
         _launcher = GetComponent<LauncherComponent>();
+        _animator = GetComponent<Animator>();
+        _healthChangeBox = GetComponentInChildren<HealthChangeBoxComponent>();
+        _healthChangeBox.enabled = false;
+    }
+
+    public void ActivateDamage()
+    {
+        _healthChangeBox.enabled = true;
+    }
+
+    public void DeactivateDamage()
+    {
+        _healthChangeBox.enabled = false;
     }
 
     public void ChangeAxeCount(int delta)
@@ -42,7 +55,7 @@ public class PlayerAxeManager : MonoBehaviour
         recallAction.action.Enable();
 
         swingAction.action.performed += OnSwingPerformed;
-        
+
         throwAction.action.performed += OnThrowPrepared;
         throwAction.action.canceled += OnThrowReleased;
 
@@ -52,7 +65,7 @@ public class PlayerAxeManager : MonoBehaviour
     private void OnSwingPerformed(InputAction.CallbackContext obj)
     {
         Debug.Log("Swing performed");
-        animator.Play("Swing");
+        _animator.Play("Swing");
     }
 
     private void OnThrowPrepared(InputAction.CallbackContext obj)
@@ -86,7 +99,7 @@ public class PlayerAxeManager : MonoBehaviour
         recallAction.action.Disable();
 
         swingAction.action.performed -= OnSwingPerformed;
-        
+
         throwAction.action.performed -= OnThrowPrepared;
         throwAction.action.canceled -= OnThrowReleased;
 

@@ -292,8 +292,6 @@ GameObject:
   - component: {fileID: 8072886796805042229}
   - component: {fileID: 2221539750967551381}
   - component: {fileID: 7962452589291306960}
-  - component: {fileID: 702737929548999485}
-  - component: {fileID: 2979357858268723131}
   m_Layer: 0
   m_Name: P_Player
   m_TagString: Untagged
@@ -348,44 +346,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   startingHealth: 10
---- !u!114 &702737929548999485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2610463126681424060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98669a570a234bf185fb145ef912c10a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swingAction: {fileID: -6816088667080182642, guid: d88037f8d5888c84593de8c6aa28d211,
-    type: 3}
-  throwAction: {fileID: 9082835609572380482, guid: d88037f8d5888c84593de8c6aa28d211,
-    type: 3}
-  recallAction: {fileID: 6218274967398476051, guid: d88037f8d5888c84593de8c6aa28d211,
-    type: 3}
-  animator: {fileID: 5571551903536061747}
---- !u!114 &2979357858268723131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2610463126681424060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65d7f1f0830770a43bb5c764e78df7c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileData: {fileID: 11400000, guid: 190aabb122971294e99750509f739f79, type: 2}
-  spawnLocation: {fileID: 3144937028352905954}
-  spawnMask:
-    serializedVersion: 2
-    m_Bits: 0
-  spawnMaskRadius: 0.1
-  launcherTeam: 0
 --- !u!1 &3849975248873749071
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,9 +649,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3144937028352905954}
+  - component: {fileID: 7591914252763772713}
   - component: {fileID: 5571551903536061747}
+  - component: {fileID: 2492110425236936096}
   m_Layer: 11
-  m_Name: AxeParent
+  m_Name: AxeCore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -713,6 +675,24 @@ Transform:
   - {fileID: 3641730996987151707}
   m_Father: {fileID: 493349733632946221}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7591914252763772713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8248410691030362612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98669a570a234bf185fb145ef912c10a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swingAction: {fileID: -6816088667080182642, guid: d88037f8d5888c84593de8c6aa28d211,
+    type: 3}
+  throwAction: {fileID: 9082835609572380482, guid: d88037f8d5888c84593de8c6aa28d211,
+    type: 3}
+  recallAction: {fileID: 6218274967398476051, guid: d88037f8d5888c84593de8c6aa28d211,
+    type: 3}
 --- !u!95 &5571551903536061747
 Animator:
   serializedVersion: 5
@@ -734,3 +714,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2492110425236936096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8248410691030362612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d7f1f0830770a43bb5c764e78df7c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileData: {fileID: 11400000, guid: 190aabb122971294e99750509f739f79, type: 2}
+  spawnLocation: {fileID: 493349733632946221}
+  spawnMask:
+    serializedVersion: 2
+    m_Bits: 0
+  spawnMaskRadius: 0.1
+  launcherTeam: 0
