@@ -10,7 +10,7 @@ namespace Content.Scripts.Components
         public UnityEvent endInteractEvent;
         public event Action StartInteractAction;
         public event Action EndInteractAction;
-        
+
         public virtual void OnInteractStart(InteractorComponent interactorComponent = null)
         {
             if (interactorComponent == null){
@@ -18,13 +18,16 @@ namespace Content.Scripts.Components
                 return;
             }
 
+            if (!interactorComponent.canInteract)
+                return;
+
             interactorComponent.OnInteractStart(this);
-            
+
             Debug.Log("InteractableComponent: OnInteractStart");
             StartInteractAction?.Invoke();
             startInteractEvent?.Invoke();
         }
-        
+
         public virtual void OnInteractEnd(InteractorComponent interactorComponent = null)
         {
             if (interactorComponent == null){
@@ -32,8 +35,11 @@ namespace Content.Scripts.Components
                 return;
             }
 
+            if (!interactorComponent.canInteract)
+                return;
+
             interactorComponent.OnInteractEnd(this);
-            
+
             Debug.Log("InteractableComponent: OnInteractEnd");
             EndInteractAction?.Invoke();
             endInteractEvent?.Invoke();
