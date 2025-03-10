@@ -398,6 +398,8 @@ Transform:
   m_Children:
   - {fileID: 3144937028352905954}
   - {fileID: 4347154840202723484}
+  - {fileID: 7310078918841071541}
+  - {fileID: 7142663711724891759}
   m_Father: {fileID: 3355664933280981771}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2610463126681424060
@@ -695,8 +697,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3912082361780497512}
-  - {fileID: 7310078918841071541}
-  - {fileID: 7142663711724891759}
   m_Father: {fileID: 3144937028352905954}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5162276144619621098
@@ -708,8 +708,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7310078918841071541}
-  - component: {fileID: 7317940085588992820}
   - component: {fileID: 724671042886764444}
+  - component: {fileID: 8438405160707324847}
   m_Layer: 9
   m_Name: Damagebox
   m_TagString: Untagged
@@ -725,34 +725,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5162276144619621098}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.552, z: 0.393}
-  m_LocalScale: {x: 1.8448765, y: 1.8448765, z: 1.8448765}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.15799999, z: 1.9077187}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3641730996987151707}
+  m_Father: {fileID: 493349733632946221}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &7317940085588992820
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5162276144619621098}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &724671042886764444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,6 +757,27 @@ MonoBehaviour:
   healthChangeType: 0
   healthDelta: 1
   tickDuration: 1e+10
+--- !u!65 &8438405160707324847
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5162276144619621098}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2453315, y: 1.0942049, z: 2.5546298}
+  m_Center: {x: 0, y: 0.048894268, z: -0.8607705}
 --- !u!1 &6200305993622640187
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,7 +788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7142663711724891759}
   - component: {fileID: 7937123206342114289}
-  - component: {fileID: 8733588066346984781}
+  - component: {fileID: 6832621329393066101}
   m_Layer: 13
   m_Name: Interactor
   m_TagString: Untagged
@@ -804,12 +804,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6200305993622640187}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.523, z: 0.136}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.15799999, z: 1.9077187}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3641730996987151707}
+  m_Father: {fileID: 493349733632946221}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7937123206342114289
 MonoBehaviour:
@@ -830,8 +830,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   canInteract: 0
---- !u!135 &8733588066346984781
-SphereCollider:
+--- !u!65 &6832621329393066101
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -845,12 +845,12 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.7
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.2453315, y: 1.0942049, z: 2.5546298}
+  m_Center: {x: 0, y: 0.048894268, z: -0.8607705}
 --- !u!1 &8248410691030362612
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,6 +904,8 @@ MonoBehaviour:
     type: 3}
   recallAction: {fileID: 6218274967398476051, guid: d88037f8d5888c84593de8c6aa28d211,
     type: 3}
+  healthChangeBox: {fileID: 724671042886764444}
+  interactor: {fileID: 7937123206342114289}
 --- !u!95 &5571551903536061747
 Animator:
   serializedVersion: 5
@@ -942,7 +944,7 @@ MonoBehaviour:
   spawnMask:
     serializedVersion: 2
     m_Bits: 0
-  spawnMaskRadius: 0.1
+  spawnMaskRadius: 0
   launcherTeam: 0
 --- !u!1001 &7241878239503452235
 PrefabInstance:

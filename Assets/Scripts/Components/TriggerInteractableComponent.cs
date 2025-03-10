@@ -36,6 +36,27 @@ namespace Content.Scripts.Components
                 interactableComponent.OnInteractEnd(interactor);
         }
 
+        protected override void OnTriggerStay(Collider other)
+        {
+            base.OnTriggerStay(other);
+            InteractorComponent interactor = null;
+            if (other.gameObject.TryGetComponent<InteractorComponent>(out InteractorComponent _interactor))
+                interactor = _interactor;
+            if (interactor == null)
+                return;
+
+            if (!interactor.canInteract)
+                return;
+            
+            // Stupid solution
+            if (interactStartOnEnter)
+                interactableComponent.OnInteractStart(interactor);
+            if (interactEndOnEnter)
+                interactableComponent.OnInteractEnd(interactor);
+            
+            interactor.DeactivateInteractable();
+        }
+
         protected override void OnTriggerExit(Collider other)
         {
             InteractorComponent interactor = null;

@@ -18,29 +18,27 @@ public class PlayerAxeManager : MonoBehaviour
 
     private Animator _animator;
     private LauncherComponent _launcher;
-    private HealthChangeBoxComponent _healthChangeBox;
-    private InteractorComponent _interactor;
+    [SerializeField] private HealthChangeBoxComponent healthChangeBox;
+    [SerializeField] private InteractorComponent interactor;
 
     private void Start()
     {
         _launcher = GetComponent<LauncherComponent>();
         _animator = GetComponent<Animator>();
-        _healthChangeBox = GetComponentInChildren<HealthChangeBoxComponent>();
-        _interactor = GetComponentInChildren<InteractorComponent>();
-        
+
         DeactivateDamage();
     }
 
     public void ActivateDamage()
     {
-        _healthChangeBox.enabled = true;
-        _interactor.ActivateInteractable();
+        healthChangeBox.enabled = true;
+        interactor.ActivateInteractable();
     }
 
     public void DeactivateDamage()
     {
-        _healthChangeBox.enabled = false;
-        _interactor.DeactivateInteractable();
+        healthChangeBox.enabled = false;
+        interactor.DeactivateInteractable();
     }
 
     public void ChangeAxeCount(int delta)
