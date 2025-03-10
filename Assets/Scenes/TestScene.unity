@@ -5538,6 +5538,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2492110425236936096, guid: 60dfdcc8cb584ba47bfd714e6617557a,
+        type: 3}
+      propertyPath: spawnMaskRadius
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2610463126681424060, guid: 60dfdcc8cb584ba47bfd714e6617557a,
         type: 3}
       propertyPath: m_Name

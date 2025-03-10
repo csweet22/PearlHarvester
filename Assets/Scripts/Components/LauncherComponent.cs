@@ -42,11 +42,9 @@ public class LauncherComponent : MonoBehaviour
             return false;
 
         GameObject newProjectile =
-            Instantiate(projectileData.projectilePrefab, Vector3.up * 1000f, Quaternion.identity);
+            Instantiate(projectileData.projectilePrefab, spawnLocation.position, spawnLocation.rotation);
         ProjectileComponent projectileComponent = newProjectile.GetComponent<ProjectileComponent>();
-        projectileComponent.Init(projectileData, launchParameters.direction * launchParameters.speed, launcherTeam);
-        newProjectile.transform.position = spawnLocation.position;
-        newProjectile.transform.rotation = spawnLocation.rotation;
+        projectileComponent.Init(projectileData, launchParameters.direction * projectileData.baseSpeed, launcherTeam);
         return true;
     }
 }

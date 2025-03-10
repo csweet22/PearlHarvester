@@ -5,6 +5,7 @@ public class ProjectileData : ScriptableObject
 {
     public GameObject projectilePrefab;
 
+    public float baseSpeed = 10f;
     // negative for no lifetime
     public float lifetime;
     public Vector3 gravity;
