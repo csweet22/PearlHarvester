@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Content.Scripts.Components;
 using UnityEngine;
 
 public class AxeProjectile : ProjectileComponent
@@ -8,5 +9,6 @@ public class AxeProjectile : ProjectileComponent
     {
         base.OnCollisionEnter(collision);
         rb.isKinematic = true;
+        GetComponentInChildren<InteractorComponent>().DeactivateInteractable();
     }
 }
