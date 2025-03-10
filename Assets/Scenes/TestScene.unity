@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 384942915}
   - component: {fileID: 384942917}
   - component: {fileID: 384942916}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1524,7 +1524,7 @@ GameObject:
   - component: {fileID: 995092313}
   - component: {fileID: 995092312}
   - component: {fileID: 995092311}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3177,7 +3177,7 @@ GameObject:
   - component: {fileID: 1379984145}
   - component: {fileID: 1379984147}
   - component: {fileID: 1379984146}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Point Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4544,7 +4544,7 @@ GameObject:
   - component: {fileID: 1777437726}
   - component: {fileID: 1777437728}
   - component: {fileID: 1777437727}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5170,7 +5170,7 @@ GameObject:
   - component: {fileID: 1950440875}
   - component: {fileID: 1950440874}
   - component: {fileID: 1950440873}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DoorPhysics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5250,7 +5250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2043830469}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TextureTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5548,6 +5548,11 @@ PrefabInstance:
       propertyPath: playerInputSpace
       value: 
       objectReference: {fileID: 330585546}
+    - target: {fileID: 5571551903536061747, guid: 60dfdcc8cb584ba47bfd714e6617557a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8072886796805042229, guid: 60dfdcc8cb584ba47bfd714e6617557a,
         type: 3}
       propertyPath: m_LocalPosition.x
