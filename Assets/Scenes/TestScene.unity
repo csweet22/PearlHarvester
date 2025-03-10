@@ -2808,11 +2808,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Destructable
       objectReference: {fileID: 0}
-    - target: {fileID: 9170803772998272624, guid: 7bf9bedc3a922ed4b894113e807155ce,
-        type: 3}
-      propertyPath: m_Name
-      value: Collider
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
