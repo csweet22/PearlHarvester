@@ -127,15 +127,6 @@
             "m_Id": "3ad343ac3f8c46728d37b98b7ffef3da"
         },
         {
-            "m_Id": "13d740091be7465c8f9563b865c8911c"
-        },
-        {
-            "m_Id": "1686f2eaea6a46938b69df496f785bbb"
-        },
-        {
-            "m_Id": "c4112e36e06845e5a1b77a94b389f567"
-        },
-        {
             "m_Id": "673763618d3f461daeeab7fae7533093"
         },
         {
@@ -1137,42 +1128,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
-    "m_ObjectId": "13d740091be7465c8f9563b865c8911c",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "Property",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": 1707.0001220703125,
-            "y": -180.00001525878907,
-            "width": 121.0,
-            "height": 33.999969482421878
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "870834563d5145e8bf8da69381420317"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_Property": {
-        "m_Id": "075c44637f2841b29c4a4061d84cbb14"
-    }
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
     "m_ObjectId": "14b7521d621a464bbc596255871e2adf",
     "m_Id": 0,
@@ -1261,42 +1216,6 @@
         "y": 0.0,
         "z": 0.0,
         "w": 0.0
-    }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
-    "m_ObjectId": "1686f2eaea6a46938b69df496f785bbb",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "Property",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": 1724.0,
-            "y": -97.00006103515625,
-            "width": 157.0,
-            "height": 34.00004959106445
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "d9b2e0192edd48aa89ed4734678c4cff"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_Property": {
-        "m_Id": "23180cbe08a2476faeb8c41a53c1cac1"
     }
 }
 
@@ -3114,21 +3033,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "870834563d5145e8bf8da69381420317",
-    "m_Id": 0,
-    "m_DisplayName": "Contrast",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Out",
-    "m_StageCapability": 3,
-    "m_Value": 0.0,
-    "m_DefaultValue": 0.0,
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector4MaterialSlot",
     "m_ObjectId": "8803a91020a24036a95eb8a7559fd9d2",
     "m_Id": 0,
@@ -4014,42 +3918,6 @@
 }
 
 {
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.CustomFunctionNode",
-    "m_ObjectId": "c4112e36e06845e5a1b77a94b389f567",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "Custom Function",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": 2280.0,
-            "y": -834.0,
-            "width": 208.0,
-            "height": 245.0
-        }
-    },
-    "m_Slots": [],
-    "synonyms": [
-        "code",
-        "HLSL"
-    ],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_SourceType": 1,
-    "m_FunctionName": "Enter function name here...",
-    "m_FunctionSource": "",
-    "m_FunctionBody": "finalColor = HLWeightBlend(\tFragWeights,vert1Color,vert2Color,vert3Color,\t_Contrast,_LuminanceBias\t);"
-}
-
-{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.CategoryData",
     "m_ObjectId": "c49c940e87054fbba4d9071446428308",
@@ -4547,21 +4415,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "d9b2e0192edd48aa89ed4734678c4cff",
-    "m_Id": 0,
-    "m_DisplayName": "Luminance Bias",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Out",
-    "m_StageCapability": 3,
-    "m_Value": 0.0,
-    "m_DefaultValue": 0.0,
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "dcda124b49b0463f807d71dac63998f9",
     "m_Id": 1,
@@ -4843,7 +4696,7 @@
     "m_SourceType": 1,
     "m_FunctionName": "CalculateSamples",
     "m_FunctionSource": "",
-    "m_FunctionBody": "vert1Color = tex2D(tex, vert1UVs);\r\nvert2Color = tex2D(tex, vert2UVs);\r\nvert3Color = tex2D(tex, vert3UVs);\r\n\r\nFragWeights = float3(vert1Weight,vert2Weight,vert3Weight);\r"
+    "m_FunctionBody": "// Compute derivatives (dx and dy) for UV coordinates\nfloat2 dx = ddx(UV);\nfloat2 dy = ddy(UV);\n\n// Compute LOD (Level of Detail) based on the derivatives\nfloat lod = max(length(dx), length(dy));\n\n// Sample the texture using the computed LOD for each vertex UV\nvert1Color = tex2Dlod(tex, float4(vert1UVs, 0.0f, lod));\nvert2Color = tex2Dlod(tex, float4(vert2UVs, 0.0f, lod));\nvert3Color = tex2Dlod(tex, float4(vert3UVs, 0.0f, lod));\n\n// Store the weights as a float3\nFragWeights = float3(vert1Weight, vert2Weight, vert3Weight);\r"
 }
 
 {
@@ -5127,7 +4980,7 @@
     "m_ZTestMode": 4,
     "m_ZWriteControl": 0,
     "m_AlphaMode": 0,
-    "m_RenderFace": 2,
+    "m_RenderFace": 0,
     "m_AlphaClip": false,
     "m_CastShadows": true,
     "m_ReceiveShadows": true,
