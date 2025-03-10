@@ -19661,7 +19661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pingPong: 1
-  updateType: 2
+  updateType: 0
   locations:
   - transform: {fileID: 1912805336}
     duration: 2
