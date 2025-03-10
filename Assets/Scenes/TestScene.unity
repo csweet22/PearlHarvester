@@ -12229,6 +12229,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1695698536}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1017733642 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 911525648617422492, guid: 60dfdcc8cb584ba47bfd714e6617557a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5289337068280675290}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1080851136
 GameObject:
   m_ObjectHideFlags: 0
@@ -20473,6 +20479,37 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1768592258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1768592259}
+  m_Layer: 0
+  m_Name: PearlHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1768592259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768592258}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5, y: 0, z: 7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1775848140
 GameObject:
   m_ObjectHideFlags: 0
@@ -24538,6 +24575,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7591914252763772713, guid: 60dfdcc8cb584ba47bfd714e6617557a,
+        type: 3}
+      propertyPath: axeMesh
+      value: 
+      objectReference: {fileID: 1017733642}
     - target: {fileID: 8072886796805042229, guid: 60dfdcc8cb584ba47bfd714e6617557a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24764,3 +24806,4 @@ SceneRoots:
   - {fileID: 1695698536}
   - {fileID: 700777157}
   - {fileID: 1820306239}
+  - {fileID: 1768592259}

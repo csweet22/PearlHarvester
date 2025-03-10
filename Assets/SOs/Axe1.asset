@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 8088171636153124906, guid: df470ab3ed7959549a6ed13ea6e73e9b,
     type: 3}
+  baseSpeed: 15
   lifetime: -1
-  gravity: {x: 0, y: 0, z: 0}
+  gravity: {x: 0, y: -9.8, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
   destroyOnTimeout: 0
   destroyOnPhysicsCollision: 0

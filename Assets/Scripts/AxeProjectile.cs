@@ -11,6 +11,12 @@ public class AxeProjectile : ProjectileComponent
     [SerializeField] private InputActionReference recallAction;
     [SerializeField] private Collider physicsCollider;
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.AddTorque(rb.transform.right * 100f);
+    }
+
     private void OnEnable()
     {
         recallAction.action.Enable();
@@ -25,7 +31,7 @@ public class AxeProjectile : ProjectileComponent
 
         // Lerp towards player
         Tween lerp = DOTween.To(() => gameObject.transform.position, x => gameObject.transform.position = x,
-            PlayerCore.Instance.PlayerPosition, 0.5f);
+            PlayerCore.Instance.PlayerPosition, 0.2f);
         // Once at the player, increment axes & despawn
         lerp.onComplete += () =>
         {

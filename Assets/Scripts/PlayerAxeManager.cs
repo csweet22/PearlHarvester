@@ -21,6 +21,8 @@ public class PlayerAxeManager : MonoBehaviour
     [SerializeField] private HealthChangeBoxComponent healthChangeBox;
     [SerializeField] private InteractorComponent interactor;
 
+    [SerializeField] private GameObject axeMesh;
+
     private void Start()
     {
         _launcher = GetComponent<LauncherComponent>();
@@ -50,6 +52,13 @@ public class PlayerAxeManager : MonoBehaviour
 
         if (_currentAxeCount > _maxAxeCount)
             _currentAxeCount = _maxAxeCount;
+
+        SetActiveAxe(_currentAxeCount != 0);
+    }
+
+    private void SetActiveAxe(bool active)
+    {
+        axeMesh.SetActive(active);
     }
 
     private void OnEnable()
@@ -68,6 +77,9 @@ public class PlayerAxeManager : MonoBehaviour
 
     private void OnSwingPerformed(InputAction.CallbackContext obj)
     {
+        if (!HasAxe)
+            return;
+
         Debug.Log("Swing performed");
         _animator.Play("Swing");
     }
@@ -87,7 +99,7 @@ public class PlayerAxeManager : MonoBehaviour
             Debug.Log("Axe Thrown.");
             LaunchParameters launchParameters = new LaunchParameters(Camera.main.transform.forward, 5f);
             _launcher.Launch(launchParameters);
-            _currentAxeCount -= 1;
+            ChangeAxeCount(-1);
         }
     }
 
