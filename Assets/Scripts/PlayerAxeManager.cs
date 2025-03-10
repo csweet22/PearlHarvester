@@ -89,6 +89,7 @@ public class PlayerAxeManager : MonoBehaviour
             Debug.Log("Axe Thrown.");
             LaunchParameters launchParameters = new LaunchParameters(Camera.main.transform.forward, 5f);
             _launcher.Launch(launchParameters);
+            _currentAxeCount -= 1;
         }
     }
 

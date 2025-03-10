@@ -477,6 +477,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7806bd18988e58e44b76d930877131e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recallAction: {fileID: 6218274967398476051, guid: d88037f8d5888c84593de8c6aa28d211,
+    type: 3}
+  physicsCollider: {fileID: 692008474903377115}
 --- !u!54 &8361335194632336401
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -5,12 +5,14 @@ using Scripts.Utilities;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerCore : MonoBehaviour
+public class PlayerCore : Singleton<PlayerCore>
 {
     private PlayerMovement _playerMovement;
     private HealthComponent _healthComponent;
     private HealthboxComponent _healthboxComponent;
+    private PlayerAxeManager _playerAxeManager;
 
+    public Vector3 PlayerPosition => _playerMovement.transform.position;
 
     [SerializeField] private InputActionReference unlockAction;
     [SerializeField] private InputActionReference lookAction;
@@ -28,6 +30,8 @@ public class PlayerCore : MonoBehaviour
             HUD.Instance.UpdateHealth(_healthComponent.CurrentHealth, _healthComponent.MaxHealth);
         };
 
+        _playerAxeManager = GetComponentInChildren<PlayerAxeManager>();
+        
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -44,6 +48,11 @@ public class PlayerCore : MonoBehaviour
             lookAction.action.Enable();
             Cursor.visible = false;
         }
+    }
+
+    public void AddAxe()
+    {
+        _playerAxeManager.ChangeAxeCount(1);
     }
 
 
