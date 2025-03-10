@@ -1,27 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Scripts.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SettingsMenu : MonoBehaviour
+public class SettingsMenu : Singleton<SettingsMenu>
 {
     [SerializeField] private Slider sensitivitySlider;
-    [SerializeField] private CinemachineVirtualCamera virtualCamera;
-    private CinemachinePOV _pov;
-
-    void Start()
-    {
-        sensitivitySlider.onValueChanged.AddListener(OnSliderValueChanged);
-        
-        _pov = virtualCamera.GetCinemachineComponent<CinemachinePOV>();
-        _pov.m_HorizontalAxis.m_MaxSpeed = sensitivitySlider.value;
-        _pov.m_VerticalAxis.m_MaxSpeed = sensitivitySlider.value;
-    }
-
-    private void OnSliderValueChanged(float value)
-    {
-        _pov.m_HorizontalAxis.m_MaxSpeed = value;
-        _pov.m_VerticalAxis.m_MaxSpeed = value;
-    }
+    
+    public float Sensitivity => sensitivitySlider.value;
 }
