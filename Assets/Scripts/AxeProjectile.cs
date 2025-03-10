@@ -15,10 +15,15 @@ public class AxeProjectile : ProjectileComponent
     private Collider _connectedCollider = null;
     private bool _isConnected = false;
 
+    Vector3 localConnectPosition = Vector3.zero;
+    Vector3 localConnectRotation = Vector3.zero;
+
+    [SerializeField] private float rotationSpeed = 200f;
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.AddTorque(rb.transform.right * 100f);
+        rb.AddTorque(rb.transform.right * rotationSpeed);
         healthChangeBox.OnHit += targetHealthbox =>
         {
             healthChangeBox.enabled = false;
@@ -34,6 +39,8 @@ public class AxeProjectile : ProjectileComponent
 
     private void OnRecallPerformed(InputAction.CallbackContext obj)
     {
+        _isConnected = false;
+        
         // Turn of physics collider
         physicsCollider.enabled = false;
 
@@ -72,6 +79,11 @@ public class AxeProjectile : ProjectileComponent
         if (!_connectedCollider && _isConnected){
             Disconnect();
         }
+
+        if (_isConnected){
+            transform.localPosition = localConnectPosition;
+            transform.localEulerAngles = localConnectRotation;
+        }
     }
 
     private void Connect(Collision collision)
@@ -85,6 +97,9 @@ public class AxeProjectile : ProjectileComponent
         else{
             transform.parent = collision.transform;
         }
+        
+        localConnectPosition = transform.localPosition;
+        localConnectRotation = transform.localEulerAngles;
 
         rb.isKinematic = true;
         healthChangeBox.enabled = false;
@@ -94,6 +109,7 @@ public class AxeProjectile : ProjectileComponent
     {
         _isConnected = false;
         _connectedCollider = null;
+        transform.parent = null;
         rb.isKinematic = false;
         healthChangeBox.enabled = true;
         rb.velocity = Vector3.zero;
