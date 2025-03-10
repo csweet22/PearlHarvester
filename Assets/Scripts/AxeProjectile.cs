@@ -10,11 +10,19 @@ public class AxeProjectile : ProjectileComponent
 {
     [SerializeField] private InputActionReference recallAction;
     [SerializeField] private Collider physicsCollider;
+    [SerializeField] private HealthChangeBoxComponent healthChangeBox;
+
+    private Collider _connectedCollider = null;
+    private bool _isConnected = false;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.AddTorque(rb.transform.right * 100f);
+        healthChangeBox.OnHit += targetHealthbox =>
+        {
+            healthChangeBox.enabled = false;
+        };
     }
 
     private void OnEnable()
@@ -52,7 +60,42 @@ public class AxeProjectile : ProjectileComponent
     protected override void OnCollisionEnter(Collision collision)
     {
         base.OnCollisionEnter(collision);
-        rb.isKinematic = true;
+        if (!_connectedCollider && !_isConnected){
+            Connect(collision);
+        }
+
         GetComponentInChildren<InteractorComponent>().DeactivateInteractable();
+    }
+
+    private void Update()
+    {
+        if (!_connectedCollider && _isConnected){
+            Disconnect();
+        }
+    }
+
+    private void Connect(Collision collision)
+    {
+        _isConnected = true;
+        _connectedCollider = collision.collider;
+
+        Rigidbody connectedRb = _connectedCollider.gameObject.GetComponent<Rigidbody>();
+        if (connectedRb)
+            transform.parent = connectedRb.transform;
+        else{
+            transform.parent = collision.transform;
+        }
+
+        rb.isKinematic = true;
+        healthChangeBox.enabled = false;
+    }
+
+    private void Disconnect()
+    {
+        _isConnected = false;
+        _connectedCollider = null;
+        rb.isKinematic = false;
+        healthChangeBox.enabled = true;
+        rb.velocity = Vector3.zero;
     }
 }
