@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_FleshWall
+  m_Name: M_SmoothFleshWall
   m_Shader: {fileID: -6465566751694194690, guid: 96b1f27c958658340954f3a84e1f7cfe,
     type: 3}
   m_Parent: {fileID: 0}
@@ -38,7 +38,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: a18b641e3c3398e42829578d246b7f93, type: 3}
+        m_Texture: {fileID: 2800000, guid: d1d25fd1d39289a4aa55ddbd99a1791f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -55,13 +55,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Contrast: 1
+    - _Contrast: 0.9
     - _Enable_Mirroring: 0
-    - _Luminance_Bias: -0.66
-    - _Max_Rotation_Deg: 1
+    - _Luminance_Bias: 0.1
+    - _Max_Rotation_Deg: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
     - _Pattern_Scale: {r: 0.5, g: 0.5, b: 0, a: 0}
-    - _UV_Scale: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _UV_Scale: {r: 0.25, g: 0.25, b: 0, a: 0}
   m_BuildTextureStacks: []
