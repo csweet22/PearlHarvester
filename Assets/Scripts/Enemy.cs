@@ -15,6 +15,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int updateFrequency = 10;
     private int _tick = 0;
 
+    [SerializeField] private GameObject mesh;
+
+    [SerializeField] private float rotateSpeed = 5f;
+    
     private void Start()
     {
         _rigidbody = GetComponentInChildren<Rigidbody>();
@@ -24,9 +28,14 @@ public class Enemy : MonoBehaviour
     {
         Vector3 currentVelocity = _rigidbody.velocity;
         _targetVelocity.y = _rigidbody.velocity.y;
-        Vector3 deltaVelocity = _targetVelocity - currentVelocity;
+        Vector3 actualVelocity = Vector3.Slerp(currentVelocity, _targetVelocity, Time.deltaTime * rotateSpeed);
+        Vector3 deltaVelocity = actualVelocity - currentVelocity;
         _rigidbody.AddForce(deltaVelocity, ForceMode.VelocityChange);
-        
+
+        if (_targetVelocity != Vector3.zero){
+            Quaternion targetRotation = Quaternion.LookRotation(_targetVelocity.normalized);
+            mesh.transform.rotation = Quaternion.Slerp(mesh.transform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
+        }
     }
 
     public void StartPursuit()
