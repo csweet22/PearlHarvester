@@ -18,10 +18,22 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject mesh;
 
     [SerializeField] private float rotateSpeed = 5f;
-    
+
+    private HealthComponent _healthComponent;
+    private HealthboxComponent _healthboxComponent;
+
     private void Start()
     {
+        _healthComponent = GetComponentInChildren<HealthComponent>();
+        _healthComponent.OnHealthEmpty += Die;
+        _healthboxComponent = GetComponentInChildren<HealthboxComponent>();
+        _healthboxComponent.OnHit += delta => { _healthComponent.ChangeHealth(delta); };
         _rigidbody = GetComponentInChildren<Rigidbody>();
+    }
+
+    private void Die()
+    {
+        Destroy(this.gameObject);
     }
 
     private void FixedUpdate()
@@ -34,7 +46,8 @@ public class Enemy : MonoBehaviour
 
         if (_targetVelocity != Vector3.zero){
             Quaternion targetRotation = Quaternion.LookRotation(_targetVelocity.normalized);
-            mesh.transform.rotation = Quaternion.Slerp(mesh.transform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
+            mesh.transform.rotation =
+                Quaternion.Slerp(mesh.transform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
         }
     }
 
