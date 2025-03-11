@@ -21,15 +21,25 @@ public class PauseMenu : ACMenu
     public override void Open()
     {
         base.Open();
+        Pause();
+    }
+
+    public override void Close()
+    {
+        base.Close();
+        Unpause();
+    }
+
+    private void Pause()
+    {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         GameManager.Instance.paused = true;
         Time.timeScale = 0f;
     }
 
-    public override void Close()
+    private void Unpause()
     {
-        base.Close();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
@@ -46,6 +56,7 @@ public class PauseMenu : ACMenu
 
     private void MainMenu()
     {
+        MainCanvas.Instance.LoadMainMenu();
         SceneManager.LoadScene(mainMenuSceneName);
     }
 

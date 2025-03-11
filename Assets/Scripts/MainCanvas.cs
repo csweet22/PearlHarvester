@@ -46,6 +46,7 @@ public class MainCanvas : PersistentSingleton<MainCanvas>
             return;
         }
 
+        // Someone is null here
         rt.sizeDelta = ((RectTransform) _canvas.transform).sizeDelta;
 
         menu.transform.SetParent(rootMenu);
@@ -100,6 +101,19 @@ public class MainCanvas : PersistentSingleton<MainCanvas>
                 ACMenu newMenu = _menuStack.Peek();
                 newMenu.enabled = true;
             };
+        }
+    }
+
+    public void LoadMainMenu()
+    {
+        CloseAllMenus();
+        OpenMenu(mainMenu, Vector3.zero, 0.0f);
+    }
+    
+    public void CloseAllMenus()
+    {
+        while (_menuStack.Count > 0){
+            CloseMenu(0.0f);
         }
     }
 }
