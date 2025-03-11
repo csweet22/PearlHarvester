@@ -138,6 +138,7 @@ MonoBehaviour:
   onExit:
     m_PersistentCalls:
       m_Calls: []
+  tier: 1
 --- !u!135 &5155321086290603201
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -217,6 +218,7 @@ MonoBehaviour:
   healthChangeType: 0
   healthDelta: 1
   tickDuration: 1e+17
+  tier: 1
 --- !u!135 &3584115497896327423
 SphereCollider:
   m_ObjectHideFlags: 0

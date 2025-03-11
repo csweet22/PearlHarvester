@@ -19,6 +19,8 @@ public class HealthChangeBoxComponent : TriggerComponent
 
     [SerializeField] private float tickDuration = 1.0f;
 
+    [SerializeField] private int tier = 1;
+
     private float _tickTime = 0.0f;
 
     public int HealthDelta => healthDelta;
@@ -62,7 +64,9 @@ public class HealthChangeBoxComponent : TriggerComponent
 
         if (healthboxComponent != null){
             if (_tickTime == 0.0f){
-                healthboxComponent.ChangeHealth(actualHealthDelta);
+                if (tier >= healthboxComponent.Tier){
+                    healthboxComponent.ChangeHealth(actualHealthDelta);
+                }
                 OnHit?.Invoke(healthboxComponent);
             }
 

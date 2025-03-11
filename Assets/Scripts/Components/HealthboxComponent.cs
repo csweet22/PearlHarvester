@@ -8,6 +8,9 @@ public class HealthboxComponent : TriggerComponent
 {
     public event Action<int> OnHit;
 
+    [SerializeField] private int tier = 1;
+    public int Tier => tier;
+    
     protected override void Awake()
     {
         base.Awake();
