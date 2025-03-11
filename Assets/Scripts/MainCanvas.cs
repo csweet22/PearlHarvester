@@ -18,10 +18,13 @@ public class MainCanvas : PersistentSingleton<MainCanvas>
     private float Width => _canvas.pixelRect.width;
     private float Height => _canvas.pixelRect.height;
 
+    [SerializeField] private bool onStartOpenMainMenu = true;
+
     private void Start()
     {
         _canvas = GetComponent<Canvas>();
-        OpenMenu(mainMenu, Vector3.zero, 0.0f);
+        if (onStartOpenMainMenu)
+            OpenMenu(mainMenu, Vector3.zero, 0.0f);
     }
 
     public void OpenMenu(GameObject menuObject, Vector3 slideFrom = new Vector3(), float duration = 0.2f)
