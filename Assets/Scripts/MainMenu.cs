@@ -12,6 +12,8 @@ public class MainMenu : ACMenu
     
     [SerializeField] private GameObject settingsMenu;
 
+    [SerializeField] private string startGameSceneName;
+    
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -21,7 +23,8 @@ public class MainMenu : ACMenu
 
     private void OnStartGameButtonClicked()
     {
-        
+        SceneManager.LoadScene(startGameSceneName);
+        MainCanvas.Instance.CloseMenu(0.0f);
     }
 
     private void OnSettingsClicked()
