@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     [SerializeField, Range(0f, 100f)] private float walkMaxSpeed = 7f, sprintMaxSpeed = 10f;
-    
+
     [SerializeField, Range(0f, 100f)] float
         maxAcceleration = 10f,
         maxAirAcceleration = 1f;
@@ -80,8 +80,8 @@ public class PlayerMovement : MonoBehaviour
         OnValidate();
 
         jumpAction.action.performed += context => { _desiredJump = true; };
-        sprintAction.action.started += context => { PlayerCamera.Instance.SetFOV(110, 0.2f); };
-        sprintAction.action.canceled += context => { PlayerCamera.Instance.SetFOV(90, 0.3f); };
+        sprintAction.action.started += context => { PlayerCamera.Instance.LoadSprintFOV(); };
+        sprintAction.action.canceled += context => { PlayerCamera.Instance.LoadDefaultFOV(); };
     }
 
 
