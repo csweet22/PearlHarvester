@@ -12,6 +12,7 @@ public class AxeProjectile : ProjectileComponent
     [SerializeField] private Collider physicsCollider;
     [SerializeField] private HealthChangeBoxComponent healthChangeBox;
 
+    private InteractorComponent _interactor;
     private Collider _connectedCollider = null;
     private bool _isConnected = false;
 
@@ -27,6 +28,12 @@ public class AxeProjectile : ProjectileComponent
         healthChangeBox.OnHit += targetHealthbox =>
         {
             healthChangeBox.enabled = false;
+        };
+
+        _interactor = GetComponentInChildren<InteractorComponent>();
+        _interactor.StartInteractAction += () =>
+        {
+            _interactor.canInteract = false;
         };
     }
 
@@ -113,5 +120,6 @@ public class AxeProjectile : ProjectileComponent
         rb.isKinematic = false;
         healthChangeBox.enabled = true;
         rb.velocity = Vector3.zero;
+        _interactor.canInteract = true;
     }
 }
