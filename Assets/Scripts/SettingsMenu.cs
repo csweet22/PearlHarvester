@@ -9,12 +9,17 @@ using UnityEngine.UI;
 public class SettingsMenu : ACMenu
 {
     [SerializeField] private Slider sensitivitySlider;
+    [SerializeField] private Slider fovSlider;
     [SerializeField] private Button backButton;
     
     private void OnEnable()
     {
         sensitivitySlider.value = Settings.Instance.sensitivity;
         sensitivitySlider.onValueChanged.AddListener(OnSensitivityChanged);
+        
+        fovSlider.value = Settings.Instance.fov;
+        fovSlider.onValueChanged.AddListener(OnFOVChanged);
+        
         backButton.onClick.AddListener(OnBackClicked);
     }
 
@@ -28,9 +33,18 @@ public class SettingsMenu : ACMenu
         Settings.Instance.sensitivity = newValue;
     }
 
+    private void OnFOVChanged(float newValue)
+    {
+        Settings.Instance.fov = newValue;
+        if (PlayerCamera.Instance != null){
+            PlayerCamera.Instance.LoadDefaultFOV();
+        }
+    }
+
     private void OnDisable()
     {
         sensitivitySlider.onValueChanged.RemoveAllListeners();
+        fovSlider.onValueChanged.RemoveAllListeners();
         backButton.onClick.RemoveAllListeners();
     }
 }

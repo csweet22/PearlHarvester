@@ -10,24 +10,22 @@ public class PlayerCamera : Singleton<PlayerCamera>
 {
     private CinemachineVirtualCamera _virtualCamera;
 
-    
-    [SerializeField] private float defaultFov = 75f;
-    [SerializeField] private float sprintFov = 80f;
+    [SerializeField] private float sprintFovIncrease = 7f;
     
     private void Start()
     {
         _virtualCamera = GetComponent<CinemachineVirtualCamera>();
-        LoadDefaultFOV(0.0f);
+        LoadDefaultFOV();
     }
 
-    public void LoadDefaultFOV(float duration = 0.2f)
+    public void LoadDefaultFOV(float duration = 0.0f)
     {
-        SetFOV(defaultFov, duration);
+        SetFOV(Settings.Instance.fov, duration);
     }
 
     public void LoadSprintFOV(float duration = 0.3f)
     {
-        SetFOV(sprintFov, duration);
+        SetFOV(Settings.Instance.fov + sprintFovIncrease, duration);
     }
 
     public void SetFOV(float fov = 90f, float duration = 1.0f)
