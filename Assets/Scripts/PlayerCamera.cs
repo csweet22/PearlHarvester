@@ -18,7 +18,7 @@ public class PlayerCamera : Singleton<PlayerCamera>
         LoadDefaultFOV();
     }
 
-    public void LoadDefaultFOV(float duration = 0.0f)
+    public void LoadDefaultFOV(float duration = 0.2f)
     {
         SetFOV(Settings.Instance.fov, duration);
     }
@@ -30,6 +30,6 @@ public class PlayerCamera : Singleton<PlayerCamera>
 
     public void SetFOV(float fov = 90f, float duration = 1.0f)
     {
-        DOTween.To(()=> _virtualCamera.m_Lens.FieldOfView, x=> _virtualCamera.m_Lens.FieldOfView = x, fov, duration);
+        DOTween.To(()=> _virtualCamera.m_Lens.FieldOfView, x=> _virtualCamera.m_Lens.FieldOfView = x, fov, duration).SetUpdate(true);
     }
 }

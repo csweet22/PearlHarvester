@@ -37,7 +37,7 @@ public class SettingsMenu : ACMenu
     {
         Settings.Instance.fov = newValue;
         if (PlayerCamera.Instance != null){
-            PlayerCamera.Instance.LoadDefaultFOV();
+            PlayerCamera.Instance.LoadDefaultFOV(0.0f);
         }
     }
 

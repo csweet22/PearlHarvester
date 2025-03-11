@@ -223,6 +223,17 @@
                 {
                     "name": "",
                     "id": "f168a189-37df-4c93-b110-99e21cdeb270",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b9f70448-8cac-42fd-9949-53407325873d",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
