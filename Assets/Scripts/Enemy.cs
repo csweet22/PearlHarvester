@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
         Vector3 deltaVelocity = actualVelocity - currentVelocity;
         _rigidbody.AddForce(deltaVelocity, ForceMode.VelocityChange);
 
-        if (_targetVelocity != Vector3.zero){
+        if (_targetVelocity.Change(y: 0f) != Vector3.zero){
             Quaternion targetRotation = Quaternion.LookRotation(_targetVelocity.normalized);
             mesh.transform.rotation =
                 Quaternion.Slerp(mesh.transform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
