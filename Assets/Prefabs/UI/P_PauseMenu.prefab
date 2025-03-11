@@ -254,7 +254,7 @@ MonoBehaviour:
   mainMenuButton: {fileID: 6065787292089096334}
   settingsMenu: {fileID: 6357139838703531394, guid: 67b100e25477e44499742be6a4ea7e40,
     type: 3}
-  mainMenuSceneName: Game
+  mainMenuSceneName: MainScene
 --- !u!1001 &2518499292385974045
 PrefabInstance:
   m_ObjectHideFlags: 0

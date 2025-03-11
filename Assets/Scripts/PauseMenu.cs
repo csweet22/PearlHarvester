@@ -16,7 +16,7 @@ public class PauseMenu : ACMenu
 
     [SerializeField] private GameObject settingsMenu;
 
-    [SerializeField] private string mainMenuSceneName = "Game";
+    [SerializeField] private string mainMenuSceneName = "MainScene";
 
     public override void Open()
     {
