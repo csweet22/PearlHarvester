@@ -19,6 +19,10 @@ public class Pearl : MonoBehaviour
     {
         Tween lerp = DOTween.To(() => gameObject.transform.position, x => gameObject.transform.position = x,
             PlayerCore.Instance.PlayerPosition, 0.2f);
-        lerp.onComplete += () => { Destroy(gameObject); };
+        lerp.onComplete += () =>
+        {
+            GameManager.Instance.AddPearl();
+            Destroy(gameObject);
+        };
     }
 }

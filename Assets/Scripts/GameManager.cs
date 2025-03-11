@@ -14,4 +14,9 @@ public class GameManager : Singleton<GameManager>
     {
         _risingBlood = FindObjectOfType<RisingBlood>();
     }
+
+    public void AddPearl(int amount = 1)
+    {
+        PearlCount += amount;
+    }
 }
