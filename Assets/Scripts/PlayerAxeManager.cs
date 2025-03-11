@@ -77,6 +77,9 @@ public class PlayerAxeManager : MonoBehaviour
 
     private void OnSwingPerformed(InputAction.CallbackContext obj)
     {
+        if (GameManager.Instance.paused)
+            return;
+        
         if (!HasAxe)
             return;
 
@@ -86,6 +89,8 @@ public class PlayerAxeManager : MonoBehaviour
 
     private void OnThrowPrepared(InputAction.CallbackContext obj)
     {
+        if (GameManager.Instance.paused)
+            return;
         if (HasAxe){
             _throwQueued = true;
             Debug.Log("Throw prepared");
@@ -94,6 +99,8 @@ public class PlayerAxeManager : MonoBehaviour
 
     private void OnThrowReleased(InputAction.CallbackContext obj)
     {
+        if (GameManager.Instance.paused)
+            return;
         if (_throwQueued){
             _throwQueued = false;
             Debug.Log("Axe Thrown.");
@@ -105,6 +112,8 @@ public class PlayerAxeManager : MonoBehaviour
 
     private void OnRecallPerformed(InputAction.CallbackContext obj)
     {
+        if (GameManager.Instance.paused)
+            return;
         Debug.Log("Recall performed");
     }
 

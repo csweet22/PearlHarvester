@@ -13,9 +13,11 @@ public class PlayerCore : Singleton<PlayerCore>
     private PlayerAxeManager _playerAxeManager;
 
     public Vector3 PlayerPosition => _playerMovement.transform.position;
-
-    [SerializeField] private InputActionReference unlockAction;
+    
     [SerializeField] private InputActionReference lookAction;
+
+    [SerializeField] private InputActionReference pauseAction;
+    [SerializeField] private GameObject pauseMenu;
 
     private void Start()
     {
@@ -31,23 +33,9 @@ public class PlayerCore : Singleton<PlayerCore>
         };
 
         _playerAxeManager = GetComponentInChildren<PlayerAxeManager>();
-        
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-    }
-
-    private void OnUnlockPerformed(InputAction.CallbackContext obj)
-    {
-        if (Cursor.lockState == CursorLockMode.Locked){
-            Cursor.lockState = CursorLockMode.None;
-            lookAction.action.Disable();
-            Cursor.visible = true;
-        }
-        else{
-            Cursor.lockState = CursorLockMode.Locked;
-            lookAction.action.Enable();
-            Cursor.visible = false;
-        }
     }
 
     public void AddAxe()
@@ -58,13 +46,21 @@ public class PlayerCore : Singleton<PlayerCore>
 
     private void OnEnable()
     {
-        if (unlockAction) unlockAction.action.performed += OnUnlockPerformed;
-        unlockAction.action.Enable();
+        pauseAction.action.Enable();
+
+        pauseAction.action.performed += context =>
+        {
+            if (!GameManager.Instance.paused){
+                MainCanvas.Instance.OpenMenu(pauseMenu, Vector3.zero, 0.0f);
+            }
+            else{
+                MainCanvas.Instance.CloseMenu();
+            }
+        };
     }
 
     private void OnDisable()
     {
-        if (unlockAction) unlockAction.action.performed -= OnUnlockPerformed;
-        unlockAction.action.Enable();
+        pauseAction.action.Disable();
     }
 }

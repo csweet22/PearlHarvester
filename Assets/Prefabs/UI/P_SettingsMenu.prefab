@@ -51,8 +51,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febe226e69322c34cabf953d74267c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivitySlider: {fileID: 7568311731351084791}
-  fovSlider: {fileID: 629506995805278479}
+  sensitivitySlider: {fileID: 629506995805278479}
+  fovSlider: {fileID: 7568311731351084791}
   backButton: {fileID: 3042441738644023246}
 --- !u!1001 &2232704817556497952
 PrefabInstance:

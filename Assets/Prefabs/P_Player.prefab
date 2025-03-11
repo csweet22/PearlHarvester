@@ -226,6 +226,7 @@ MonoBehaviour:
   onExit:
     m_PersistentCalls:
       m_Calls: []
+  tier: 1
 --- !u!136 &6020762043979062682
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -452,6 +453,10 @@ MonoBehaviour:
   unlockAction: {fileID: 2980462401493433793, guid: d88037f8d5888c84593de8c6aa28d211,
     type: 3}
   lookAction: {fileID: 6961966623521205028, guid: d88037f8d5888c84593de8c6aa28d211,
+    type: 3}
+  pauseAction: {fileID: 9015855670488124761, guid: d88037f8d5888c84593de8c6aa28d211,
+    type: 3}
+  pauseMenu: {fileID: 6357139838703531394, guid: a2369422d7795924fa38e5fd18461960,
     type: 3}
 --- !u!114 &7962452589291306960
 MonoBehaviour:
@@ -757,6 +762,7 @@ MonoBehaviour:
   healthChangeType: 0
   healthDelta: 1
   tickDuration: 1e+10
+  tier: 1
 --- !u!65 &8438405160707324847
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -906,6 +912,7 @@ MonoBehaviour:
     type: 3}
   healthChangeBox: {fileID: 724671042886764444}
   interactor: {fileID: 7937123206342114289}
+  axeMesh: {fileID: 0}
 --- !u!95 &5571551903536061747
 Animator:
   serializedVersion: 5

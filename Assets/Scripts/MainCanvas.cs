@@ -39,6 +39,8 @@ public class MainCanvas : PersistentSingleton<MainCanvas>
             return;
         }
 
+        menu.enabled = false;
+
         RectTransform rt = instance.GetComponent<RectTransform>();
         if (!rt){
             return;
@@ -51,22 +53,22 @@ public class MainCanvas : PersistentSingleton<MainCanvas>
         Vector3 offset = new Vector3(slideFrom.x * Width, slideFrom.y * Height, slideFrom.z);
         menu.Open();
 
-        // Disable current head
-        if (_menuStack.Count > 0){
-            ACMenu currentHead = _menuStack.Peek();
-            currentHead.enabled = false;
-            menu.transform.localPosition = currentHead.transform.localPosition + offset;
-        }
-        else{
+
+        if (_menuStack.Count == 0){
             menu.transform.localPosition = Vector3.zero;
             _offsets.Push(Vector3.zero);
+            menu.enabled = true;
         }
+        else{
+            ACMenu currentHead = _menuStack.Peek();
+            currentHead.enabled = false;
 
-        if (_menuStack.Count > 0){
+            menu.transform.localPosition = currentHead.transform.localPosition + offset;
             _offsets.Push(offset);
+
             Vector3 targetPosition = rootMenu.localPosition - offset;
             DOTween.To(() => rootMenu.localPosition, x => rootMenu.localPosition = x, targetPosition, duration)
-                .SetEase(Ease.InOutCubic);
+                .SetEase(Ease.InOutCubic).SetUpdate(true).onComplete += () => { menu.enabled = true; };
         }
 
         _menuStack.Push(menu);
@@ -81,20 +83,23 @@ public class MainCanvas : PersistentSingleton<MainCanvas>
         ACMenu currentMenu = _menuStack.Pop();
         Vector3 offset = _offsets.Pop();
 
-        if (_menuStack.Count != 0){
-            Vector3 targetPosition = rootMenu.localPosition + offset;
-            DOTween.To(() => rootMenu.localPosition, x => rootMenu.localPosition = x, targetPosition, duration)
-                .SetEase(Ease.InOutCubic).onComplete = () => { currentMenu.Close(); };
+        if (_menuStack.Count == 0){
+            currentMenu.enabled = false;
+            currentMenu.Close();
+            Destroy(currentMenu.gameObject);
         }
         else{
-            currentMenu.Close();
-        }
-
-        Destroy(currentMenu.gameObject);
-
-        if (_menuStack.Count > 0){
-            ACMenu newMenu = _menuStack.Peek();
-            newMenu.enabled = true;
+            Vector3 targetPosition = rootMenu.localPosition + offset;
+            DOTween.To(() => rootMenu.localPosition, x => rootMenu.localPosition = x, targetPosition, duration)
+                .SetEase(Ease.InOutCubic).SetUpdate(true).onComplete = () =>
+            {
+                currentMenu.enabled = false;
+                currentMenu.Close();
+                Destroy(currentMenu.gameObject);
+                
+                ACMenu newMenu = _menuStack.Peek();
+                newMenu.enabled = true;
+            };
         }
     }
 }

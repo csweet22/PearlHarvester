@@ -17,6 +17,9 @@ public class PlayerMouseControl : MonoBehaviour
 
     private void Update()
     {
+        if (GameManager.Instance.paused)
+            return;
+
         float sensitivity = Settings.Instance.sensitivity;
         Vector2 mouseDelta = Mouse.current.delta.ReadValue();
 

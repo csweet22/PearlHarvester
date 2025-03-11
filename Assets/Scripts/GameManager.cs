@@ -1,6 +1,7 @@
 ﻿using System;
 using Scripts.Utilities;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -10,6 +11,8 @@ public class GameManager : Singleton<GameManager>
 
     private RisingBlood _risingBlood;
 
+    public bool paused = false;
+    
     private void Start()
     {
         _risingBlood = FindObjectOfType<RisingBlood>();
