@@ -17,7 +17,7 @@ public class MainCanvas : PersistentSingleton<MainCanvas>
     private Canvas _canvas;
     private float Width => _canvas.pixelRect.width;
     private float Height => _canvas.pixelRect.height;
-    
+
     private void Start()
     {
         _canvas = GetComponent<Canvas>();
@@ -35,6 +35,13 @@ public class MainCanvas : PersistentSingleton<MainCanvas>
         if (!menu){
             return;
         }
+
+        RectTransform rt = instance.GetComponent<RectTransform>();
+        if (!rt){
+            return;
+        }
+
+        rt.sizeDelta = ((RectTransform) _canvas.transform).sizeDelta;
 
         menu.transform.SetParent(rootMenu);
 
@@ -80,6 +87,7 @@ public class MainCanvas : PersistentSingleton<MainCanvas>
             currentMenu.Close();
         }
 
+        Destroy(currentMenu.gameObject);
 
         if (_menuStack.Count > 0){
             ACMenu newMenu = _menuStack.Peek();

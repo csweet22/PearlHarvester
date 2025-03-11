@@ -17,7 +17,7 @@ public class PlayerMouseControl : MonoBehaviour
 
     private void Update()
     {
-        float sensitivity = SettingsMenu.Instance.Sensitivity;
+        float sensitivity = Settings.Instance.sensitivity;
         Vector2 mouseDelta = Mouse.current.delta.ReadValue();
 
         float mouseX = mouseDelta.x * sensitivity;
