@@ -75,12 +75,14 @@ public class MainCanvas : PersistentSingleton<MainCanvas>
         ACMenu currentMenu = menuStack.Pop();
         Vector3 offset = offsets.Pop();
 
-        // Store the current position of the rootMenu before animating it
-        Vector3 targetPosition = rootMenu.localPosition + offset;
-
-        // Animate the rootMenu back to its previous position
-        DOTween.To(() => rootMenu.localPosition, x => rootMenu.localPosition = x, targetPosition, 1.0f)
-            .SetEase(Ease.InOutCubic).onComplete = () => { currentMenu.Close(); };
+        if (menuStack.Count != 0){
+            Vector3 targetPosition = rootMenu.localPosition + offset;
+            DOTween.To(() => rootMenu.localPosition, x => rootMenu.localPosition = x, targetPosition, 1.0f)
+                .SetEase(Ease.InOutCubic).onComplete = () => { currentMenu.Close(); };
+        }
+        else{
+            currentMenu.Close();
+        }
 
 
         if (menuStack.Count > 0){
