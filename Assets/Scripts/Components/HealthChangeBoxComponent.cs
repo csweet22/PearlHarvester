@@ -19,7 +19,7 @@ public class HealthChangeBoxComponent : TriggerComponent
 
     [SerializeField] private float tickDuration = 1.0f;
 
-    [SerializeField] private int tier = 1;
+    [SerializeField] public int tier = 1;
 
     private float _tickTime = 0.0f;
 

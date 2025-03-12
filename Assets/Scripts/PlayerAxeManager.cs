@@ -22,7 +22,7 @@ public class PlayerAxeManager : MonoBehaviour
     [SerializeField] private InteractorComponent interactor;
 
     [SerializeField] private GameObject axeMesh;
-
+    
     private void Start()
     {
         _launcher = GetComponent<LauncherComponent>();
@@ -59,6 +59,16 @@ public class PlayerAxeManager : MonoBehaviour
     private void SetActiveAxe(bool active)
     {
         axeMesh.SetActive(active);
+    }
+
+    public void SetAxeTier(int newTier)
+    {
+        healthChangeBox.tier = newTier;
+    }
+
+    public void SetAxeProjectile(ProjectileData newData)
+    {
+        _launcher.projectileData = newData;
     }
 
     private void OnEnable()

@@ -17,7 +17,7 @@ public class LaunchParameters
 
 public class LauncherComponent : MonoBehaviour
 {
-    [SerializeField] protected ProjectileData projectileData;
+    [SerializeField] public ProjectileData projectileData;
     [SerializeField] protected Transform spawnLocation;
     [SerializeField] protected LayerMask spawnMask;
     [SerializeField] protected float spawnMaskRadius = 0.1f;
