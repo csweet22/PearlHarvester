@@ -18,6 +18,13 @@ public class Destructable : MonoBehaviour
             _healthComponent.ChangeHealth(delta);
         };
 
-        _healthComponent.OnHealthEmpty += () => { Destroy(this.gameObject); };
+        _healthComponent.OnHealthEmpty += () =>
+        {
+            AxeProjectile[] projectiles = GetComponentsInChildren<AxeProjectile>();
+            foreach (AxeProjectile projectile in projectiles){
+                projectile.transform.parent = null;
+            }
+            Destroy(this.gameObject);
+        };
     }
 }

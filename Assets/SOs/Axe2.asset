@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afaf5369eab911d4a981a456229fb69d, type: 3}
   m_Name: Axe2
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8088171636153124906, guid: df470ab3ed7959549a6ed13ea6e73e9b,
+  projectilePrefab: {fileID: 6888551323513176230, guid: 108b9054e1ff3c648b438637da1315ef,
     type: 3}
-  baseSpeed: 30
+  baseSpeed: 45
   lifetime: -1
   gravity: {x: 0, y: -9.8, z: 0}
   acceleration: {x: 0, y: 0, z: 0}
