@@ -8,8 +8,8 @@ namespace Content.Scripts.Components
     {
         public UnityEvent startInteractEvent;
         public UnityEvent endInteractEvent;
-        public event Action StartInteractAction;
-        public event Action EndInteractAction;
+        public event Action<InteractableComponent> StartInteractAction;
+        public event Action<InteractableComponent> EndInteractAction;
 
         public bool canInteract;
 
@@ -28,7 +28,7 @@ namespace Content.Scripts.Components
             if (!canInteract)
                 return;
             Debug.Log("InteractorComponent: OnInteractStart");
-            StartInteractAction?.Invoke();
+            StartInteractAction?.Invoke(interactableComponent);
             startInteractEvent?.Invoke();
         }
 
@@ -37,7 +37,7 @@ namespace Content.Scripts.Components
             if (!canInteract)
                 return;
             Debug.Log("InteractorComponent: OnInteractEnd");
-            EndInteractAction?.Invoke();
+            EndInteractAction?.Invoke(interactableComponent);
             endInteractEvent?.Invoke();
         }
     }

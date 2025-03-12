@@ -64,5 +64,8 @@ public class TimerComponent : MonoBehaviour
         if (isLooping){
             StartTimer(0.0f);
         }
+        else{
+            PauseTimer();
+        }
     }
 }
