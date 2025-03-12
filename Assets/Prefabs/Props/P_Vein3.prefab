@@ -29,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4088616393669680889}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.008971442, y: 0.047885425, z: 0.18392962, w: 0.98173136}
+  m_LocalPosition: {x: -0.3551324, y: -0.4228924, z: -0.39201}
+  m_LocalScale: {x: 0.45576206, y: 1.1642321, z: 0.34388533}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8909906697075188618}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 5.585, z: 21.223}
 --- !u!114 &301103626797975693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,45 +748,9 @@ MonoBehaviour:
   m_Mesh: {fileID: 0}
   m_VersionIndex: 933
   m_IsSelectable: 1
-  m_SelectedFaces: 0d0000000e0000000f000000110000000c00000010000000
-  m_SelectedEdges:
-  - a: 33
-    b: 34
-  - a: 34
-    b: 35
-  - a: 35
-    b: 33
-  - a: 39
-    b: 40
-  - a: 40
-    b: 41
-  - a: 41
-    b: 39
-  - a: 45
-    b: 46
-  - a: 46
-    b: 47
-  - a: 47
-    b: 45
-  - a: 57
-    b: 58
-  - a: 58
-    b: 59
-  - a: 59
-    b: 57
-  - a: 27
-    b: 28
-  - a: 28
-    b: 29
-  - a: 29
-    b: 27
-  - a: 51
-    b: 52
-  - a: 52
-    b: 53
-  - a: 53
-    b: 51
-  m_SelectedVertices: 2100000022000000230000002700000028000000290000002d0000002e0000002f000000390000003a0000003b0000001b0000001c0000001d000000330000003400000035000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!114 &273327059762975645
 MonoBehaviour:
   m_ObjectHideFlags: 0
