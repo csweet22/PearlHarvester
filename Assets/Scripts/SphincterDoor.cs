@@ -5,27 +5,38 @@ using UnityEngine;
 
 public class SphincterDoor : MonoBehaviour
 {
-    Animator animator;
-    Collider collider;
+    private Animator _animator;
+    private Collider _col;
 
     private bool _isOpen = false;
     
     private void Start()
     {
-        animator = GetComponentInChildren<Animator>();
-        collider = GetComponentInChildren<Collider>();
+        _animator = GetComponentInChildren<Animator>();
+        _col = GetComponentInChildren<Collider>();
     }
 
+    public void Open()
+    {
+        _animator.SetTrigger("Open");
+        _col.enabled = false;
+        
+    }
+
+    public void Close()
+    {
+        
+        _animator.SetTrigger("Close");
+        _col.enabled = true;
+    }
+    
     public void ToggleDoor()
     {
         if (_isOpen){
-            animator.SetTrigger("Close");
-            collider.enabled = true;
+            Close();
         }
         else{
-            animator.SetTrigger("Open");
-            collider.enabled = false;
-            
+            Open();
         }
         _isOpen = !_isOpen;
     }

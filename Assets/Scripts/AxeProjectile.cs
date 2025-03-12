@@ -21,6 +21,8 @@ public class AxeProjectile : ProjectileComponent
 
     [SerializeField] private float rotationSpeed = 200f;
     
+    private List<InteractableComponent> _connectedInteractables = new List<InteractableComponent>();
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -31,8 +33,9 @@ public class AxeProjectile : ProjectileComponent
         };
 
         _interactor = GetComponentInChildren<InteractorComponent>();
-        _interactor.StartInteractAction += () =>
+        _interactor.StartInteractAction += (interactable) =>
         {
+            _connectedInteractables.Add(interactable);
             _interactor.canInteract = false;
         };
     }
@@ -46,6 +49,12 @@ public class AxeProjectile : ProjectileComponent
 
     private void OnRecallPerformed(InputAction.CallbackContext obj)
     {
+        foreach (var interactable in _connectedInteractables){
+            Debug.Log(interactable.name);
+            interactable.OnInteractEnd(_interactor);
+        }
+        _connectedInteractables.Clear();
+        
         _isConnected = false;
         
         // Turn of physics collider
@@ -75,7 +84,7 @@ public class AxeProjectile : ProjectileComponent
     {
         base.OnCollisionEnter(collision);
         if (!_connectedCollider && !_isConnected){
-            Connect(collision);
+            Connect(collision.collider, collision.transform);
         }
 
         GetComponentInChildren<InteractorComponent>().DeactivateInteractable();
@@ -93,16 +102,16 @@ public class AxeProjectile : ProjectileComponent
         }
     }
 
-    private void Connect(Collision collision)
+    public void Connect(Collider col, Transform trans)
     {
         _isConnected = true;
-        _connectedCollider = collision.collider;
+        _connectedCollider = col;
 
         Rigidbody connectedRb = _connectedCollider.gameObject.GetComponent<Rigidbody>();
         if (connectedRb)
             transform.parent = connectedRb.transform;
         else{
-            transform.parent = collision.transform;
+            transform.parent = trans;
         }
         
         localConnectPosition = transform.localPosition;

@@ -8,8 +8,8 @@ namespace Content.Scripts.Components
     {
         public UnityEvent startInteractEvent;
         public UnityEvent endInteractEvent;
-        public event Action StartInteractAction;
-        public event Action EndInteractAction;
+        public event Action<InteractorComponent> StartInteractAction;
+        public event Action<InteractorComponent> EndInteractAction;
 
         public virtual void OnInteractStart(InteractorComponent interactorComponent = null)
         {
@@ -24,7 +24,7 @@ namespace Content.Scripts.Components
             interactorComponent.OnInteractStart(this);
 
             Debug.Log("InteractableComponent: OnInteractStart");
-            StartInteractAction?.Invoke();
+            StartInteractAction?.Invoke(interactorComponent);
             startInteractEvent?.Invoke();
         }
 
@@ -35,13 +35,13 @@ namespace Content.Scripts.Components
                 return;
             }
 
-            if (!interactorComponent.canInteract)
+            if (!interactorComponent.canInteract && !interactorComponent.CompareTag("AxeProjectile"))
                 return;
 
             interactorComponent.OnInteractEnd(this);
 
             Debug.Log("InteractableComponent: OnInteractEnd");
-            EndInteractAction?.Invoke();
+            EndInteractAction?.Invoke(interactorComponent);
             endInteractEvent?.Invoke();
         }
     }
