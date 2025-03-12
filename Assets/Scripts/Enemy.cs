@@ -69,7 +69,6 @@ public class Enemy : MonoBehaviour
     {
         Vector3 direction = (PlayerCore.Instance.PlayerPosition - transform.position).normalized;
         _targetVelocity = (direction * speed);
-        Debug.Log(_targetVelocity);
     }
 
     public void EndPursuit()
