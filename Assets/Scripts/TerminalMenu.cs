@@ -95,10 +95,6 @@ public class TerminalMenu : ACMenu
     private void UpdateUpgradeButtonInteractable()
     {
         upgradeButton.interactable = CanUpgrade();
-
-        var colors = upgradeButton.colors;
-        colors.normalColor = CanUpgrade() ? Color.green : Color.red;
-        upgradeButton.colors = colors;
     }
 
     private void Upgrade()

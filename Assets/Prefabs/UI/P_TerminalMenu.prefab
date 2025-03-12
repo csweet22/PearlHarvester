@@ -808,6 +808,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6376005836215914792}
     m_Modifications:
+    - target: {fileID: 633720461725790419, guid: fc21c3b42b09992409edce479aadc39c,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 633720461725790419, guid: fc21c3b42b09992409edce479aadc39c,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 633720461725790419, guid: fc21c3b42b09992409edce479aadc39c,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.035300493
+      objectReference: {fileID: 0}
+    - target: {fileID: 633720461725790419, guid: fc21c3b42b09992409edce479aadc39c,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 633720461725790419, guid: fc21c3b42b09992409edce479aadc39c,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 633720461725790419, guid: fc21c3b42b09992409edce479aadc39c,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 959841031787386662, guid: fc21c3b42b09992409edce479aadc39c,
         type: 3}
       propertyPath: m_text
