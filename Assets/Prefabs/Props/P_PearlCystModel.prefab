@@ -568,45 +568,9 @@ MonoBehaviour:
   m_Mesh: {fileID: 0}
   m_VersionIndex: 589
   m_IsSelectable: 1
-  m_SelectedFaces: 0f0000000e0000000d0000000c0000001100000010000000
-  m_SelectedEdges:
-  - a: 45
-    b: 46
-  - a: 46
-    b: 47
-  - a: 47
-    b: 45
-  - a: 39
-    b: 40
-  - a: 40
-    b: 41
-  - a: 41
-    b: 39
-  - a: 33
-    b: 34
-  - a: 34
-    b: 35
-  - a: 35
-    b: 33
-  - a: 27
-    b: 28
-  - a: 28
-    b: 29
-  - a: 29
-    b: 27
-  - a: 57
-    b: 58
-  - a: 58
-    b: 59
-  - a: 59
-    b: 57
-  - a: 51
-    b: 52
-  - a: 52
-    b: 53
-  - a: 53
-    b: 51
-  m_SelectedVertices: 2d0000002e0000002f0000002700000028000000290000002100000022000000230000001b0000001c0000001d000000390000003a0000003b000000330000003400000035000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!114 &961668977045760410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,7 +684,7 @@ GameObject:
   m_Component:
   - component: {fileID: 892821687765526557}
   m_Layer: 0
-  m_Name: P_PearlHolder
+  m_Name: P_PearlCystModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -774,7 +738,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 27ef884655bcaa24c80f0ec12ea6774c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.22681673
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 27ef884655bcaa24c80f0ec12ea6774c,
         type: 3}
