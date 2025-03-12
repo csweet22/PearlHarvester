@@ -34860,13 +34860,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1404272174662607452, guid: b0c70432390e29e44af3480e29e9fe7d,
         type: 3}
-      propertyPath: interactStartOnEnter
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1404272174662607452, guid: b0c70432390e29e44af3480e29e9fe7d,
-        type: 3}
       propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1404272174662607452, guid: b0c70432390e29e44af3480e29e9fe7d,
         type: 3}
@@ -34896,6 +34891,31 @@ PrefabInstance:
     - target: {fileID: 1404272174662607452, guid: b0c70432390e29e44af3480e29e9fe7d,
         type: 3}
       propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499450164330707513, guid: b0c70432390e29e44af3480e29e9fe7d,
+        type: 3}
+      propertyPath: startInteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499450164330707513, guid: b0c70432390e29e44af3480e29e9fe7d,
+        type: 3}
+      propertyPath: startInteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 336654155}
+    - target: {fileID: 3499450164330707513, guid: b0c70432390e29e44af3480e29e9fe7d,
+        type: 3}
+      propertyPath: startInteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499450164330707513, guid: b0c70432390e29e44af3480e29e9fe7d,
+        type: 3}
+      propertyPath: startInteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SphincterDoor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499450164330707513, guid: b0c70432390e29e44af3480e29e9fe7d,
+        type: 3}
+      propertyPath: startInteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5338083792349296392, guid: b0c70432390e29e44af3480e29e9fe7d,
