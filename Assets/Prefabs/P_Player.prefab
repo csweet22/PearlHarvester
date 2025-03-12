@@ -296,7 +296,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.9811321, g: 0.30081883, b: 0.30081883, a: 1}
   m_Intensity: 4
-  m_Range: 10
+  m_Range: 3
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -629,8 +629,8 @@ MonoBehaviour:
   crouchAction: {fileID: -2487831533728614595, guid: d88037f8d5888c84593de8c6aa28d211,
     type: 3}
   playerInputSpace: {fileID: 0}
-  walkMaxSpeed: 7
-  sprintMaxSpeed: 10
+  walkMaxSpeed: 4
+  sprintMaxSpeed: 6
   maxAcceleration: 73.5
   maxAirAcceleration: 1
   jumpHeight: 2
