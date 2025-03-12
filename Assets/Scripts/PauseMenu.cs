@@ -21,30 +21,13 @@ public class PauseMenu : ACMenu
     public override void Open()
     {
         base.Open();
-        Pause();
+        GameManager.Instance.Pause();
     }
 
     public override void Close()
     {
         base.Close();
-        Unpause();
-    }
-
-    private void Pause()
-    {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        GameManager.Instance.paused = true;
-        Time.timeScale = 0f;
-    }
-
-    private void Unpause()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
-        Time.timeScale = 1.0f;
-        GameManager.Instance.paused = false;
+        GameManager.Instance.Unpause();
     }
 
     private void OnEnable()
