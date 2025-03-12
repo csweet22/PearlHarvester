@@ -27207,6 +27207,11 @@ PrefabInstance:
       propertyPath: playerInputSpace
       value: 
       objectReference: {fileID: 330585546}
+    - target: {fileID: 3144937028352905954, guid: 60dfdcc8cb584ba47bfd714e6617557a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5571551903536061747, guid: 60dfdcc8cb584ba47bfd714e6617557a,
         type: 3}
       propertyPath: m_Enabled
