@@ -8,6 +8,8 @@ public class Pearl : MonoBehaviour
 {
     private TriggerComponent _triggerComponent;
 
+    public PearlArea pearlArea;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,7 @@ public class Pearl : MonoBehaviour
 
     private void EatPearl(Collider obj)
     {
+        pearlArea?.RemovePearl(this);
         _triggerComponent.enabled = false;
         DOTween.To(() => gameObject.transform.position, x => gameObject.transform.position = x,
             PlayerCore.Instance.PlayerPosition, 0.2f).onComplete += () =>
