@@ -16,16 +16,27 @@ public class SphincterDoor : MonoBehaviour
         collider = GetComponentInChildren<Collider>();
     }
 
+    public void Open()
+    {
+        animator.SetTrigger("Open");
+        collider.enabled = false;
+        
+    }
+
+    public void Close()
+    {
+        
+        animator.SetTrigger("Close");
+        collider.enabled = true;
+    }
+    
     public void ToggleDoor()
     {
         if (_isOpen){
-            animator.SetTrigger("Close");
-            collider.enabled = true;
+            Close();
         }
         else{
-            animator.SetTrigger("Open");
-            collider.enabled = false;
-            
+            Open();
         }
         _isOpen = !_isOpen;
     }

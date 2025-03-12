@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Content.Scripts.Components;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WhileAxed : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class WhileAxed : MonoBehaviour
     private TimerComponent _timer;
 
     [SerializeField] private Collider physicsCollider;
+
+    public UnityEvent onAxeHit;
+    public UnityEvent onAxeRemoved;  
     
     private void Start()
     {
@@ -46,13 +50,13 @@ public class WhileAxed : MonoBehaviour
     public void TurnOn()
     {
         _isBeingUsed = true;
-        Debug.Log("Button On");
+        onAxeHit?.Invoke();
     }
 
 
     public void TurnOff()
     {
         _isBeingUsed = false;
-        Debug.Log("Button Off");
+        onAxeRemoved?.Invoke();
     }
 }
