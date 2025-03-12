@@ -34624,9 +34624,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3060366646396466456, guid: 60dfdcc8cb584ba47bfd714e6617557a,
         type: 3}
+      propertyPath: jumpHeight
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060366646396466456, guid: 60dfdcc8cb584ba47bfd714e6617557a,
+        type: 3}
+      propertyPath: maxGroundAngle
+      value: 84.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060366646396466456, guid: 60dfdcc8cb584ba47bfd714e6617557a,
+        type: 3}
       propertyPath: playerInputSpace
       value: 
       objectReference: {fileID: 330585546}
+    - target: {fileID: 3355664933280981771, guid: 60dfdcc8cb584ba47bfd714e6617557a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355664933280981771, guid: 60dfdcc8cb584ba47bfd714e6617557a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3355664933280981771, guid: 60dfdcc8cb584ba47bfd714e6617557a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.907719
+      objectReference: {fileID: 0}
     - target: {fileID: 8072886796805042229, guid: 60dfdcc8cb584ba47bfd714e6617557a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34798,17 +34823,17 @@ PrefabInstance:
     - target: {fileID: 8919216797300439895, guid: d27e7c04a9f63fc4b90b6b6f4c1d3d68,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 8919216797300439895, guid: d27e7c04a9f63fc4b90b6b6f4c1d3d68,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 8919216797300439895, guid: d27e7c04a9f63fc4b90b6b6f4c1d3d68,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.907719
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 8919216797300439895, guid: d27e7c04a9f63fc4b90b6b6f4c1d3d68,
         type: 3}
@@ -34858,6 +34883,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1404272174662607452, guid: b0c70432390e29e44af3480e29e9fe7d,
+        type: 3}
+      propertyPath: interactStartOnExit
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1404272174662607452, guid: b0c70432390e29e44af3480e29e9fe7d,
         type: 3}
       propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.size

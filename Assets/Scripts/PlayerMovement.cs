@@ -158,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
     {
         UpdateState();
         AdjustVelocity();
-
+        
         if (_desiredJump){
             _desiredJump = false;
             Jump(gravity);
@@ -172,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
         else{
             _velocity += gravity * Time.deltaTime;
         }
-
+        
         _body.velocity = _velocity;
         ClearState();
     }
@@ -310,12 +310,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump(Vector3 gravity)
     {
-        Vector3 jumpDirection;
+        Vector3 jumpDirection = Vector3.up;
         if (OnGround){
-            jumpDirection = _contactNormal;
+            // jumpDirection = _contactNormal;
         }
         else if (OnSteep){
-            jumpDirection = _steepNormal;
+            // jumpDirection = _steepNormal;
             _jumpPhase = 0;
         }
         else if (maxAirJumps > 0 && _jumpPhase <= maxAirJumps){
@@ -323,7 +323,7 @@ public class PlayerMovement : MonoBehaviour
                 _jumpPhase = 1;
             }
 
-            jumpDirection = _contactNormal;
+            // jumpDirection = _contactNormal;
         }
         else{
             return;
@@ -337,7 +337,8 @@ public class PlayerMovement : MonoBehaviour
         if (alignedSpeed > 0f){
             jumpSpeed = Mathf.Max(jumpSpeed - alignedSpeed, 0f);
         }
-
+        
+        jumpDirection = Vector3.up;
         _velocity += jumpDirection * jumpSpeed;
     }
 
