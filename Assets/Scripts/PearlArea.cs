@@ -13,17 +13,18 @@ public class PearlArea : MonoBehaviour
     
     private int totalCount = 0;
     
+    private bool _triggered = false;
+    
     private void Start()
     {
         totalCount = pearlObjects.Count;
         foreach (Pearl p in pearlObjects){
-            p.pearlArea = this;
+            p.SetPearlArea(this);;
         }
     }
 
     public void RemovePearl(Pearl p)
     {
-        Debug.Log("REEAA");
         if (pearlObjects.Contains(p)){
             pearlObjects.Remove(p);
             CheckThreshold();
@@ -32,6 +33,10 @@ public class PearlArea : MonoBehaviour
 
     private void CheckThreshold()
     {
+        if (_triggered)
+            return;
+        
+        _triggered = true;
         if ((pearlObjects.Count / (float) totalCount) <= percentRequired){
             Debug.Log($"Pearl Area {gameObject.name} Reached");
             OnThresholdReached?.Invoke();

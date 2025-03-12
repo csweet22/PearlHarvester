@@ -8,13 +8,19 @@ public class Pearl : MonoBehaviour
 {
     private TriggerComponent _triggerComponent;
 
-    public PearlArea pearlArea;
+    private PearlArea pearlArea;
     
     // Start is called before the first frame update
     void Start()
     {
         _triggerComponent = gameObject.GetComponentInChildren<TriggerComponent>();
         _triggerComponent.TriggerEnter += EatPearl;
+    }
+
+    public void SetPearlArea(PearlArea newPearlArea)
+    {
+        Debug.Log(newPearlArea.gameObject.name);
+        this.pearlArea = newPearlArea;
     }
 
     private void EatPearl(Collider obj)
