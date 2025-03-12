@@ -34,6 +34,7 @@ Transform:
   - {fileID: 4405971632902204050}
   - {fileID: 774503424229801650}
   - {fileID: 2942847928262309580}
+  - {fileID: 6932050483365286121}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!54 &9220774707702962600
@@ -207,19 +208,7 @@ MonoBehaviour:
   startInteractEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1025984725038930575}
-        m_TargetAssemblyTypeName: SpawnerComponent, Assembly-CSharp
-        m_MethodName: Spawn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1989815455461531142}
+      - m_Target: {fileID: 7014702987542943175}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -230,6 +219,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5401437698010215075}
+        m_TargetAssemblyTypeName: UnityEngine.Rigidbody, UnityEngine
+        m_MethodName: set_isKinematic
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1613587970270959355}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   endInteractEvent:
     m_PersistentCalls:
@@ -315,3 +328,109 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &4283729956938936070
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 861731647105366872}
+    m_Modifications:
+    - target: {fileID: 439263149332697901, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815019949102381877, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248854578540804605, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328659239680609155, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+        type: 3}
+      propertyPath: m_Name
+      value: P_Pearl
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575618969092980719, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575618969092980719, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575618969092980719, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575618969092980719, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575618969092980719, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575618969092980719, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575618969092980719, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575618969092980719, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575618969092980719, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6575618969092980719, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180541629342817701, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad, type: 3}
+--- !u!135 &1613587970270959355 stripped
+SphereCollider:
+  m_CorrespondingSourceObject: {fileID: 3248854578540804605, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 4283729956938936070}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &5401437698010215075 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 8180541629342817701, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 4283729956938936070}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6932050483365286121 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6575618969092980719, guid: 9e623bb8dfeac7f4b911fbbf9faac3ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 4283729956938936070}
+  m_PrefabAsset: {fileID: 0}
