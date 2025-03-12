@@ -63,8 +63,8 @@ Transform:
   m_GameObject: {fileID: 2976096686624287906}
   serializedVersion: 2
   m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: -0.48388672, y: 0.5675778, z: -3.7231328}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.45988274, y: 0.5675778, z: -3.4731328}
+  m_LocalScale: {x: 0.6874781, y: 0.8855018, z: 0.6874781}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5069178884212463600}
@@ -1171,61 +1171,9 @@ MonoBehaviour:
   m_Mesh: {fileID: 0}
   m_VersionIndex: 1444
   m_IsSelectable: 1
-  m_SelectedFaces: 0c0000000d0000000e0000000f00000011000000120000001000000013000000
-  m_SelectedEdges:
-  - a: 27
-    b: 28
-  - a: 28
-    b: 29
-  - a: 29
-    b: 27
-  - a: 33
-    b: 34
-  - a: 34
-    b: 35
-  - a: 35
-    b: 33
-  - a: 39
-    b: 40
-  - a: 40
-    b: 41
-  - a: 41
-    b: 39
-  - a: 45
-    b: 46
-  - a: 46
-    b: 47
-  - a: 47
-    b: 45
-  - a: 57
-    b: 58
-  - a: 58
-    b: 59
-  - a: 59
-    b: 57
-  - a: 60
-    b: 61
-  - a: 62
-    b: 60
-  - a: 61
-    b: 63
-  - a: 63
-    b: 62
-  - a: 51
-    b: 52
-  - a: 52
-    b: 53
-  - a: 53
-    b: 51
-  - a: 64
-    b: 65
-  - a: 66
-    b: 64
-  - a: 65
-    b: 67
-  - a: 67
-    b: 66
-  m_SelectedVertices: 1b0000001c0000001d0000002100000022000000230000002700000028000000290000002d0000002e0000002f000000390000003a0000003b0000003c0000003d0000003e0000003f00000033000000340000003500000040000000410000004200000043000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!114 &4766491179551526347
 MonoBehaviour:
   m_ObjectHideFlags: 0
