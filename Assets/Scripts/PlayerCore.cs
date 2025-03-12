@@ -25,6 +25,12 @@ public class PlayerCore : Singleton<PlayerCore>
 
         _healthComponent = GetComponentInChildren<HealthComponent>();
 
+        _healthComponent.OnHealthEmpty += () =>
+        {
+            _playerMovement.transform.position = GameManager.Instance.safeAreaSpawn.position;
+            _healthComponent.SetHealth(_healthComponent.MaxHealth);
+        };
+        
         _healthboxComponent = GetComponentInChildren<HealthboxComponent>();
         _healthboxComponent.OnHit += delta =>
         {

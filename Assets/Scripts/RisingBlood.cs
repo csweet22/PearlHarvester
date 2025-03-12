@@ -17,6 +17,16 @@ public class RisingBlood : MonoBehaviour
 
     public bool IsRising = false;
 
+    public void SetHighestHeight(float newHighestHeight)
+    {
+        _highestHeight = newHighestHeight;
+    }
+
+    public void SetLowestHeight(float newLowestHeight)
+    {
+        _lowestHeight = newLowestHeight;
+    }
+
     private void Start()
     {
         _targetBloodLevel = CurrentBloodLevel;
@@ -44,13 +54,13 @@ public class RisingBlood : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         GoToLowest();
     }
-    
+
     IEnumerator DelayHigh()
     {
         yield return new WaitForSeconds(0.5f);
         GoToHighest();
     }
-    
+
     public void SetBloodLevel(float level)
     {
         _targetBloodLevel = level;

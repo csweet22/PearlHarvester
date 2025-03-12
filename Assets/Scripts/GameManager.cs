@@ -26,11 +26,19 @@ public class GameManager : Singleton<GameManager>
 
     public int upgradesUnlocked = 0;
 
+    [SerializeField] public Transform safeAreaSpawn;
+    
     private void Start()
     {
         _risingBlood = FindObjectOfType<RisingBlood>();
+        _risingBlood?.GoToHighest();
         Pearl[] allActivePearls = FindObjectsOfType<Pearl>();
         totalPearlCount = allActivePearls.Length;
+    }
+
+    public void SetSafeAreaSpawn(Transform spawnPoint)
+    {
+        safeAreaSpawn = spawnPoint;
     }
 
     public void AddPearl(int amount = 1)
