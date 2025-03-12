@@ -23,7 +23,7 @@ public class PearlArea : MonoBehaviour
 
     public void RemovePearl(Pearl p)
     {
-        Debug.Log(p.name);
+        Debug.Log("REEAA");
         if (pearlObjects.Contains(p)){
             pearlObjects.Remove(p);
             CheckThreshold();
