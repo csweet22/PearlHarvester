@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2666339056044166150}
   - component: {fileID: 4637485954615462628}
   m_Layer: 11
-  m_Name: Collider
+  m_Name: ColliderBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,9 +85,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!1 &1283639387264902484
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +242,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -915,7 +915,7 @@ MonoBehaviour:
     type: 3}
   healthChangeBox: {fileID: 724671042886764444}
   interactor: {fileID: 7937123206342114289}
-  axeMesh: {fileID: 0}
+  axeMesh: {fileID: 911525648617422492}
 --- !u!95 &5571551903536061747
 Animator:
   serializedVersion: 5
@@ -924,7 +924,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8248410691030362612}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 128fe25c3e16b8c4ebca72ac26668473, type: 2}
   m_CullingMode: 0
