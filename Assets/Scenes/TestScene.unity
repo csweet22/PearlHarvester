@@ -19660,6 +19660,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1550515561}
+    - target: {fileID: 1491881070544347215, guid: 9f709fd64ae3e2b4d86eb1e99712972f,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 712
+      objectReference: {fileID: 0}
     - target: {fileID: 4329547729918452840, guid: 9f709fd64ae3e2b4d86eb1e99712972f,
         type: 3}
       propertyPath: m_Mesh
@@ -23665,7 +23670,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1834882901}
+  m_Mesh: {fileID: 1206414624}
 --- !u!33 &1586114025
 MeshFilter:
   m_ObjectHideFlags: 10

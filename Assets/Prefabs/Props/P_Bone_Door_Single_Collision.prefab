@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5598936996161711080}
   m_Layer: 0
-  m_Name: P_Bone_Door_Single
+  m_Name: P_Bone_Door_Single_Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
