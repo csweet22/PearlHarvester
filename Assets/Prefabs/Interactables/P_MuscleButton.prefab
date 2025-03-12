@@ -141,7 +141,7 @@ PrefabInstance:
         type: 3}
       propertyPath: physicsCollider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7555548201828866460}
     - target: {fileID: 8232290044195643949, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
         type: 3}
       propertyPath: m_LocalScale.x
