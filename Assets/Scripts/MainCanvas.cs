@@ -36,6 +36,7 @@ public class MainCanvas : PersistentSingleton<MainCanvas>
         ACMenu menu = instance.GetComponent<ACMenu>();
 
         if (!menu){
+            Debug.LogError("Instance didn't have an ACMenu.");
             return;
         }
 
@@ -43,6 +44,7 @@ public class MainCanvas : PersistentSingleton<MainCanvas>
 
         RectTransform rt = instance.GetComponent<RectTransform>();
         if (!rt){
+            Debug.LogError("Instance didn't have an RectTransform.");
             return;
         }
 

@@ -47,20 +47,22 @@ public class PlayerCore : Singleton<PlayerCore>
     private void OnEnable()
     {
         pauseAction.action.Enable();
+        pauseAction.action.performed += OnActionOnperformed;
+    }
 
-        pauseAction.action.performed += context =>
-        {
-            if (!GameManager.Instance.paused){
-                MainCanvas.Instance.OpenMenu(pauseMenu, Vector3.zero, 0.0f);
-            }
-            else{
-                MainCanvas.Instance.CloseMenu();
-            }
-        };
+    private void OnActionOnperformed(InputAction.CallbackContext context)
+    {
+        if (!GameManager.Instance.paused){
+            MainCanvas.Instance.OpenMenu(pauseMenu, Vector3.zero, 0.0f);
+        }
+        else{
+            MainCanvas.Instance.CloseMenu();
+        }
     }
 
     private void OnDisable()
     {
         pauseAction.action.Disable();
+        pauseAction.action.performed -= OnActionOnperformed;
     }
 }
