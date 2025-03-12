@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Scripts.Utilities;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class GameManager : Singleton<GameManager>
@@ -9,7 +10,7 @@ public class GameManager : Singleton<GameManager>
     public Trackable<int> PearlCount = new(0);
 
     public int totalPearlCount = 0;
-    
+
     public float CurrentBloodLevel => _risingBlood.CurrentBloodLevel;
 
     private RisingBlood _risingBlood;
@@ -18,8 +19,12 @@ public class GameManager : Singleton<GameManager>
 
     public bool inTerminal = false;
 
-    public List<int> requiredPearls = new List<int>()
-        {3, 6};
+    [SerializeField] public List<int> requiredPearls = new List<int>()
+        {1, 2};
+
+    [SerializeField] public List<UnityEvent> upgrades = new List<UnityEvent>();
+
+    public int upgradesUnlocked = 0;
 
     private void Start()
     {
@@ -50,5 +55,13 @@ public class GameManager : Singleton<GameManager>
 
         Time.timeScale = 1.0f;
         paused = false;
+    }
+
+    public void Upgrade()
+    {
+        if (upgradesUnlocked < upgrades.Count){
+            upgrades[upgradesUnlocked]?.Invoke();
+        }
+        upgradesUnlocked++;
     }
 }

@@ -8902,9 +8902,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e28f39a9d97f4ca9b9613ddc96ad3df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalPearlCount: 0
   paused: 0
   inTerminal: 0
-  requiredPearls: 0300000006000000
+  requiredPearls: 0100000002000000
+  upgradesUnlocked: 0
 --- !u!1 &619489741
 GameObject:
   m_ObjectHideFlags: 0
@@ -9505,6 +9507,7 @@ MonoBehaviour:
     type: 3}
   pauseAction: {fileID: 9015855670488124761, guid: d88037f8d5888c84593de8c6aa28d211,
     type: 3}
+  openDelay: 0.5
 --- !u!1 &700777153
 GameObject:
   m_ObjectHideFlags: 0

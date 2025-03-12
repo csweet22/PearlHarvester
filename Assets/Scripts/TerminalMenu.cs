@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Cinemachine;
 using Scripts.Utilities;
 using TMPro;
@@ -18,12 +19,23 @@ public class TerminalMenu : ACMenu
     [SerializeField] private TextMeshProUGUI quotaText;
     [SerializeField] private TextMeshProUGUI upgradeText;
 
+    private bool CanUpgrade()
+    {
+        if (GameManager.Instance.upgradesUnlocked >= GameManager.Instance.requiredPearls.Count)
+            return false;
+
+        return GameManager.Instance.PearlCount.Value >=
+               GameManager.Instance.requiredPearls[GameManager.Instance.upgradesUnlocked];
+    }
+
     public override void Open()
     {
         base.Open();
         GameManager.Instance.Pause();
+        GameManager.Instance.inTerminal = true;
         UpdateQuotaText();
         UpdateUpgradeText();
+        UpdateUpgradeButtonInteractable();
         GameManager.Instance.PearlCount.OnValueChanged += OnPearlValueChanged;
     }
 
@@ -31,11 +43,13 @@ public class TerminalMenu : ACMenu
     {
         UpdateQuotaText();
         UpdateUpgradeText();
+        UpdateUpgradeButtonInteractable();
     }
 
     private void UpdateQuotaText()
     {
-        quotaText.text = $"<b>QUOTA</b>: {GameManager.Instance.PearlCount.Value} / {GameManager.Instance.totalPearlCount} TOTAL PEARLS";
+        quotaText.text =
+            $"<b>QUOTA</b>: {GameManager.Instance.PearlCount.Value} / {GameManager.Instance.totalPearlCount} TOTAL PEARLS";
     }
 
     private void UpdateUpgradeText()
@@ -48,7 +62,8 @@ public class TerminalMenu : ACMenu
                 ;
             }
             else{
-                upgradeText.text += $"{requiredCount - GameManager.Instance.PearlCount.Value} PEARLS: UPGRADE {i + 1}\n";
+                upgradeText.text +=
+                    $"{requiredCount - GameManager.Instance.PearlCount.Value} PEARLS: UPGRADE {i + 1}\n";
             }
         }
     }
@@ -56,6 +71,7 @@ public class TerminalMenu : ACMenu
     public override void Close()
     {
         base.Close();
+        GameManager.Instance.inTerminal = false;
         GameManager.Instance.PearlCount.OnValueChanged -= OnPearlValueChanged;
         GameManager.Instance.Unpause();
     }
@@ -76,8 +92,22 @@ public class TerminalMenu : ACMenu
         MainCanvas.Instance.CloseMenu(0.0f);
     }
 
+    private void UpdateUpgradeButtonInteractable()
+    {
+        upgradeButton.interactable = CanUpgrade();
+
+        var colors = upgradeButton.colors;
+        colors.normalColor = CanUpgrade() ? Color.green : Color.red;
+        upgradeButton.colors = colors;
+    }
+
     private void Upgrade()
     {
+        if (CanUpgrade()){
+            GameManager.Instance.Upgrade();
+        }
+
+        UpdateUpgradeButtonInteractable();
     }
 
     private void OnDisable()

@@ -12,14 +12,14 @@ public class Pearl : MonoBehaviour
     void Start()
     {
         _triggerComponent = gameObject.GetComponentInChildren<TriggerComponent>();
-        _triggerComponent.TriggerEnter += OnTriggerEnter;
+        _triggerComponent.TriggerEnter += EatPearl;
     }
 
-    private void OnTriggerEnter(Collider obj)
+    private void EatPearl(Collider obj)
     {
-        Tween lerp = DOTween.To(() => gameObject.transform.position, x => gameObject.transform.position = x,
-            PlayerCore.Instance.PlayerPosition, 0.2f);
-        lerp.onComplete += () =>
+        _triggerComponent.enabled = false;
+        DOTween.To(() => gameObject.transform.position, x => gameObject.transform.position = x,
+            PlayerCore.Instance.PlayerPosition, 0.2f).onComplete += () =>
         {
             GameManager.Instance.AddPearl();
             Destroy(gameObject);

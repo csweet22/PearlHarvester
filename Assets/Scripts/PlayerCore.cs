@@ -13,7 +13,7 @@ public class PlayerCore : Singleton<PlayerCore>
     private PlayerAxeManager _playerAxeManager;
 
     public Vector3 PlayerPosition => _playerMovement.transform.position;
-    
+
     [SerializeField] private InputActionReference lookAction;
 
     [SerializeField] private InputActionReference pauseAction;
@@ -47,11 +47,15 @@ public class PlayerCore : Singleton<PlayerCore>
     private void OnEnable()
     {
         pauseAction.action.Enable();
-        pauseAction.action.performed += OnActionOnperformed;
+        pauseAction.action.performed += OnPausePerformed;
     }
 
-    private void OnActionOnperformed(InputAction.CallbackContext context)
+    private void OnPausePerformed(InputAction.CallbackContext context)
     {
+        if (GameManager.Instance.inTerminal){
+            return;
+        }
+
         if (!GameManager.Instance.paused){
             MainCanvas.Instance.OpenMenu(pauseMenu, Vector3.zero, 0.0f);
         }
@@ -63,6 +67,6 @@ public class PlayerCore : Singleton<PlayerCore>
     private void OnDisable()
     {
         pauseAction.action.Disable();
-        pauseAction.action.performed -= OnActionOnperformed;
+        pauseAction.action.performed -= OnPausePerformed;
     }
 }
