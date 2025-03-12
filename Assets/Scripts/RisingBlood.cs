@@ -12,6 +12,11 @@ public class RisingBlood : MonoBehaviour
     private float _targetBloodLevel = 0f;
     private float _risingSpeed = 1f;
 
+    [SerializeField] public float _lowestHeight = -100f;
+    [SerializeField] public float _highestHeight = 0f;
+
+    public bool IsRising = false;
+
     private void Start()
     {
         _targetBloodLevel = CurrentBloodLevel;
@@ -22,12 +27,34 @@ public class RisingBlood : MonoBehaviour
         _risingSpeed = newSpeed;
     }
 
+    public void GoToLowest()
+    {
+        IsRising = false;
+        SetBloodLevel(_lowestHeight);
+    }
+
+    public void GoToHighest()
+    {
+        IsRising = true;
+        SetBloodLevel(_highestHeight);
+    }
+
     public void SetBloodLevel(float level)
     {
         _targetBloodLevel = level;
         float distance = Mathf.Abs(bloodObject.localPosition.y - _targetBloodLevel);
         float duration = distance / _risingSpeed;
         Vector3 targetLocalPosition = bloodObject.localPosition.Change(y: _targetBloodLevel);
-        DOTween.To(() => bloodObject.localPosition, x => bloodObject.localPosition = x, targetLocalPosition, duration);
+        DOTween.To(() => bloodObject.localPosition, x => bloodObject.localPosition = x, targetLocalPosition, duration)
+                .onComplete +=
+            () =>
+            {
+                if (IsRising){
+                    GoToLowest();
+                }
+                else{
+                    GoToHighest();
+                }
+            };
     }
 }
