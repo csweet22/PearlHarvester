@@ -602,6 +602,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2666339056044166150}
+  - {fileID: 6820475321905707042}
   - {fileID: 493349733632946221}
   - {fileID: 2998618832156828749}
   - {fileID: 6476307770328713670}
@@ -625,6 +626,8 @@ MonoBehaviour:
     type: 3}
   sprintAction: {fileID: 2858768796747430484, guid: d88037f8d5888c84593de8c6aa28d211,
     type: 3}
+  crouchAction: {fileID: -2487831533728614595, guid: d88037f8d5888c84593de8c6aa28d211,
+    type: 3}
   playerInputSpace: {fileID: 0}
   walkMaxSpeed: 7
   sprintMaxSpeed: 10
@@ -642,6 +645,8 @@ MonoBehaviour:
   stairsMask:
     serializedVersion: 2
     m_Bits: 0
+  headCollider: {fileID: 5557902735581391592}
+  head: {fileID: 493349733632946221}
   gravity: {x: 0, y: -29.43, z: 0}
 --- !u!54 &3532310425170743473
 Rigidbody:
@@ -951,6 +956,61 @@ MonoBehaviour:
     m_Bits: 0
   spawnMaskRadius: 0
   launcherTeam: 0
+--- !u!1 &8345417008561901181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6820475321905707042}
+  - component: {fileID: 5557902735581391592}
+  m_Layer: 11
+  m_Name: ColliderHead
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6820475321905707042
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8345417008561901181}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3355664933280981771}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &5557902735581391592
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8345417008561901181}
+  m_Material: {fileID: 13400000, guid: e5ece96f6bc47164c853c54934500108, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1001 &7241878239503452235
 PrefabInstance:
   m_ObjectHideFlags: 0

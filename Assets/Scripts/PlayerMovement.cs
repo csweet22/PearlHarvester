@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -11,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public InputActionReference moveAction;
     [SerializeField] public InputActionReference jumpAction;
     [SerializeField] public InputActionReference sprintAction;
+    [SerializeField] public InputActionReference crouchAction;
 
     #endregion
 
@@ -34,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, Min(0f)] private float probeDistance = 1f;
 
     [SerializeField] private LayerMask probeMask = -1, stairsMask = -1;
+
+    [SerializeField] private CapsuleCollider headCollider;
+    [SerializeField] private Transform head;
 
     private Rigidbody _body, _connectedBody, _previousConnectedBody;
 
@@ -66,6 +71,12 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 _lastMoveInput;
 
+    private bool _crouching = false;
+    private bool _tryingToUncrouch = false;
+
+    private Tween _crouchTween;
+
+    private Vector3 _defaultHeadLocalPosition;
 
     private void OnValidate()
     {
@@ -79,14 +90,53 @@ public class PlayerMovement : MonoBehaviour
         _body.useGravity = false;
         OnValidate();
 
+        _defaultHeadLocalPosition = head.localPosition;
+
         jumpAction.action.performed += context => { _desiredJump = true; };
         sprintAction.action.started += context => { PlayerCamera.Instance.LoadSprintFOV(); };
         sprintAction.action.canceled += context => { PlayerCamera.Instance.LoadDefaultFOV(); };
-    }
+        crouchAction.action.started += context =>
+        {
+            if (_crouching)
+                return;
+            // turn off head collider
+            headCollider.enabled = false;
 
+            if (_crouchTween != null)
+                _crouchTween.Kill();
+            Vector3 targetPos = _defaultHeadLocalPosition;
+            targetPos.y /= 2f;
+            _crouchTween = DOTween.To(() => head.localPosition, x => head.localPosition = x, targetPos, 0.2f);
+
+            _crouching = true;
+        };
+
+        crouchAction.action.canceled += context =>
+        {
+            if (!_crouching)
+                return;
+            _tryingToUncrouch = true;
+        };
+    }
 
     private void Update()
     {
+        if (_tryingToUncrouch){
+            if (!Physics.SphereCast(PlayerCore.Instance.PlayerPosition, 1.0f, Vector3.up,
+                    out RaycastHit hit, 2f, LayerMask.GetMask("Geometry"))
+               ){
+                headCollider.enabled = true;
+
+
+                if (_crouchTween != null)
+                    _crouchTween.Kill();
+                _crouchTween = DOTween.To(() => head.localPosition, x => head.localPosition = x, _defaultHeadLocalPosition, 0.2f);
+
+                _crouching = false;
+                _tryingToUncrouch = false;
+            }
+        }
+
         _playerInput = moveAction.action.ReadValue<Vector2>();
         _playerInput = _playerInput.normalized * _playerInput.magnitude;
 
@@ -341,6 +391,7 @@ public class PlayerMovement : MonoBehaviour
         moveAction.action.Enable();
         jumpAction.action.Enable();
         sprintAction.action.Enable();
+        crouchAction.action.Enable();
     }
 
     private void OnDisable()
@@ -348,5 +399,6 @@ public class PlayerMovement : MonoBehaviour
         moveAction.action.Disable();
         jumpAction.action.Disable();
         sprintAction.action.Disable();
+        crouchAction.action.Disable();
     }
 }
