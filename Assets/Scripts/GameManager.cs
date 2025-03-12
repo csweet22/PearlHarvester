@@ -8,6 +8,8 @@ public class GameManager : Singleton<GameManager>
 {
     public Trackable<int> PearlCount = new(0);
 
+    public int totalPearlCount = 0;
+    
     public float CurrentBloodLevel => _risingBlood.CurrentBloodLevel;
 
     private RisingBlood _risingBlood;
@@ -22,6 +24,9 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         _risingBlood = FindObjectOfType<RisingBlood>();
+        Pearl[] allActivePearls = FindObjectsOfType<Pearl>();
+        GameObject[] spawners = GameObject.FindGameObjectsWithTag("PearlHolder");
+        totalPearlCount = spawners.Length + allActivePearls.Length;
     }
 
     public void AddPearl(int amount = 1)

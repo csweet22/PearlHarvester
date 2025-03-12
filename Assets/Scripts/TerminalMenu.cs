@@ -23,6 +23,7 @@ public class TerminalMenu : ACMenu
         base.Open();
         GameManager.Instance.Pause();
         UpdateQuotaText();
+        UpdateUpgradeText();
         GameManager.Instance.PearlCount.OnValueChanged += OnPearlValueChanged;
     }
 
@@ -34,8 +35,7 @@ public class TerminalMenu : ACMenu
 
     private void UpdateQuotaText()
     {
-        Pearl[] allPearls = FindObjectsOfType<Pearl>();
-        quotaText.text = $"<b>QUOTA</b>: {GameManager.Instance.PearlCount} / {allPearls.Length} TOTAL PEARLS";
+        quotaText.text = $"<b>QUOTA</b>: {GameManager.Instance.PearlCount.Value} / {GameManager.Instance.totalPearlCount} TOTAL PEARLS";
     }
 
     private void UpdateUpgradeText()
@@ -48,7 +48,7 @@ public class TerminalMenu : ACMenu
                 ;
             }
             else{
-                upgradeText.text += $"{requiredCount - GameManager.Instance.PearlCount.Value} PEARLS: UPGRADE {i + 1}";
+                upgradeText.text += $"{requiredCount - GameManager.Instance.PearlCount.Value} PEARLS: UPGRADE {i + 1}\n";
             }
         }
     }

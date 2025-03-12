@@ -385,11 +385,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb30bb56bc104b83ac7978720b2ee97f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resumeButton: {fileID: 0}
-  settingsButton: {fileID: 0}
-  mainMenuButton: {fileID: 0}
-  settingsMenu: {fileID: 0}
-  mainMenuSceneName: MainScene
+  upgradeButton: {fileID: 6879589453767832660}
+  backButton: {fileID: 3042441738644023246}
+  quotaText: {fileID: 2055959862897108505}
+  upgradeText: {fileID: 8791357498766338591}
 --- !u!1 &7114757955248094291
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,6 +782,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc21c3b42b09992409edce479aadc39c, type: 3}
+--- !u!114 &3042441738644023246 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 633720461725790419, guid: fc21c3b42b09992409edce479aadc39c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2518499292385974045}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5007769325758253155 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7461526047026454398, guid: fc21c3b42b09992409edce479aadc39c,
@@ -918,3 +929,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 6319213624570479751}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6879589453767832660 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 633720461725790419, guid: fc21c3b42b09992409edce479aadc39c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6319213624570479751}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

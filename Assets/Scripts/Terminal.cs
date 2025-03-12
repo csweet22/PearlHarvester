@@ -7,9 +7,11 @@ using UnityEngine.InputSystem;
 public class Terminal : MonoBehaviour
 {
     [SerializeField] private GameObject terminalMenu;
-    
+
     [SerializeField] private InputActionReference pauseAction;
-    
+
+    [SerializeField] private float openDelay = 0.5f;
+
     private void OnEnable()
     {
         pauseAction.action.Enable();
@@ -23,6 +25,12 @@ public class Terminal : MonoBehaviour
         MainCanvas.Instance.CloseMenu();
     }
 
+    IEnumerator DelayedOpen()
+    {
+        yield return new WaitForSeconds(openDelay);
+        MainCanvas.Instance.OpenMenu(terminalMenu, Vector3.up);
+    }
+
     private void OnDisable()
     {
         pauseAction.action.Disable();
@@ -30,6 +38,6 @@ public class Terminal : MonoBehaviour
 
     public void OpenTerminal()
     {
-        MainCanvas.Instance.OpenMenu(terminalMenu, Vector3.up);
+        StartCoroutine(DelayedOpen());
     }
 }
