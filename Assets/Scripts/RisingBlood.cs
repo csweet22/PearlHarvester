@@ -39,6 +39,18 @@ public class RisingBlood : MonoBehaviour
         SetBloodLevel(_highestHeight);
     }
 
+    IEnumerator DelayLow()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GoToLowest();
+    }
+    
+    IEnumerator DelayHigh()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GoToHighest();
+    }
+    
     public void SetBloodLevel(float level)
     {
         _targetBloodLevel = level;
@@ -47,14 +59,6 @@ public class RisingBlood : MonoBehaviour
         Vector3 targetLocalPosition = bloodObject.localPosition.Change(y: _targetBloodLevel);
         DOTween.To(() => bloodObject.localPosition, x => bloodObject.localPosition = x, targetLocalPosition, duration)
                 .onComplete +=
-            () =>
-            {
-                if (IsRising){
-                    GoToLowest();
-                }
-                else{
-                    GoToHighest();
-                }
-            };
+            () => { StartCoroutine(IsRising ? DelayLow() : DelayHigh()); };
     }
 }
