@@ -12,6 +12,8 @@ public class Terminal : MonoBehaviour
 
     [SerializeField] private float openDelay = 0.5f;
 
+    private bool _opening = false;
+
     private void OnEnable()
     {
         pauseAction.action.Enable();
@@ -29,6 +31,7 @@ public class Terminal : MonoBehaviour
     {
         yield return new WaitForSeconds(openDelay);
         MainCanvas.Instance.OpenMenu(terminalMenu, Vector3.up);
+        _opening = false;
     }
 
     private void OnDisable()
@@ -38,6 +41,10 @@ public class Terminal : MonoBehaviour
 
     public void OpenTerminal()
     {
+        if (_opening)
+            return;
+
+        _opening = true;
         StartCoroutine(DelayedOpen());
     }
 }

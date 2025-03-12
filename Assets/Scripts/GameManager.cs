@@ -30,8 +30,7 @@ public class GameManager : Singleton<GameManager>
     {
         _risingBlood = FindObjectOfType<RisingBlood>();
         Pearl[] allActivePearls = FindObjectsOfType<Pearl>();
-        GameObject[] spawners = GameObject.FindGameObjectsWithTag("PearlHolder");
-        totalPearlCount = spawners.Length + allActivePearls.Length;
+        totalPearlCount = allActivePearls.Length;
     }
 
     public void AddPearl(int amount = 1)
