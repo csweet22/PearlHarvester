@@ -71,5 +71,5 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 0}
     - _Pattern_Scale: {r: 1, g: 1, b: 0, a: 0}
-    - _UV_Scale: {r: 1, g: 1, b: 0, a: 0}
+    - _UV_Scale: {r: 0.2, g: 0.2, b: 0, a: 0}
   m_BuildTextureStacks: []
