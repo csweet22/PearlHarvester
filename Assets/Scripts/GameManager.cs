@@ -27,11 +27,14 @@ public class GameManager : Singleton<GameManager>
     public int upgradesUnlocked = 0;
 
     [SerializeField] public Transform safeAreaSpawn;
-    
+
+    [SerializeField] private bool riseBloodOnStart = true;
+
     private void Start()
     {
         _risingBlood = FindObjectOfType<RisingBlood>();
-        _risingBlood?.GoToHighest();
+        if (riseBloodOnStart)
+            _risingBlood?.GoToHighest();
         Pearl[] allActivePearls = FindObjectsOfType<Pearl>();
         totalPearlCount = allActivePearls.Length;
     }
@@ -69,6 +72,7 @@ public class GameManager : Singleton<GameManager>
         if (upgradesUnlocked < upgrades.Count){
             upgrades[upgradesUnlocked]?.Invoke();
         }
+
         upgradesUnlocked++;
     }
 }
