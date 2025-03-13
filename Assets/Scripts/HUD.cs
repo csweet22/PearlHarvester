@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Scripts.Utilities;
 using TMPro;
 using UnityEngine;
@@ -15,6 +16,10 @@ public class HUD : Singleton<HUD>
     [SerializeField] private TextMeshProUGUI quota;
     [SerializeField] private TextMeshProUGUI total;
 
+    [SerializeField] private Image tint;
+
+    private Tween _tintTween;
+
     private void Start()
     {
         UpdateQuotaAndTotal();
@@ -27,6 +32,25 @@ public class HUD : Singleton<HUD>
             total.text = $"TOTAL: {GameManager.Instance.PearlCount.Value} / {GameManager.Instance.totalPearlCount}";
         if (quota)
             quota.text = $"QUOTA: {GameManager.Instance.PearlCount.Value} / {GameManager.Instance.quota}";
+    }
+
+    public Color GetTint()
+    {
+        return tint.color;
+    }
+    
+    public void SetTint(Color tintColor)
+    {
+        if (_tintTween != null)
+            _tintTween.Kill();
+        tint.color = tintColor;
+    }
+
+    public void TweenTint(Color tintColor, float duration = 0.2f)
+    {
+        if (_tintTween != null)
+            _tintTween.Kill();
+        _tintTween = DOTween.To(() => tint.color, x => tint.color = x, tintColor, duration);
     }
 
     public void UpdateHealth(int currentHealth, int maxHealth)

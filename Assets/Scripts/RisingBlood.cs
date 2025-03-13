@@ -20,6 +20,19 @@ public class RisingBlood : MonoBehaviour
 
     public bool IsRising = false;
 
+    public bool IsSubmerged => PlayerCore.Instance.PlayerPosition.y + 2f < bloodObject.position.y;
+
+    private void FixedUpdate()
+    {
+        if (IsSubmerged){
+            HUD.Instance.SetTint(new Color(0.5f, 0f, 0f, 0.5f));
+        }
+        else{
+            HUD.Instance.SetTint(new Color(0.5f, 0f, 0f, 0.0f));
+        }
+    }
+
+
     public void SetHighestHeight(float newHighestHeight)
     {
         _highestHeight = newHighestHeight;

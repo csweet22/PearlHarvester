@@ -5,6 +5,7 @@ using Content.Scripts.Components;
 using Scripts.Utilities;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerCore : Singleton<PlayerCore>
 {
@@ -22,6 +23,8 @@ public class PlayerCore : Singleton<PlayerCore>
 
     [SerializeField] private Transform head;
 
+    [SerializeField] private Color hitDamage =new Color(0.5f, 0f, 0f, .5f);
+    
     private void Start()
     {
         _playerMovement = GetComponentInChildren<PlayerMovement>();
@@ -39,6 +42,9 @@ public class PlayerCore : Singleton<PlayerCore>
         {
             _healthComponent.ChangeHealth(delta);
             PlayerCamera.Instance.Shake();
+            Color preDamageTint = HUD.Instance.GetTint();
+            HUD.Instance.SetTint(hitDamage);
+            HUD.Instance.TweenTint(preDamageTint, 0.2f);
         };
         
         _healthComponent.OnGainHealth += delta =>
