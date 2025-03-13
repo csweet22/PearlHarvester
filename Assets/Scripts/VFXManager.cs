@@ -6,13 +6,15 @@ using UnityEngine.VFX;
 
 public class VFXManager : Singleton<VFXManager>
 {
-    public void SpawnVFX(VisualEffectAsset vfxAsset, float duration = 1.0f, Vector3 position = default(Vector3))
+    public void SpawnVFX(VisualEffectAsset vfxAsset, float duration = 1.0f, Vector3 position = default(Vector3),
+        Quaternion rotation = default(Quaternion))
     {
         GameObject obj = new GameObject
         {
             transform =
             {
-                position = position
+                position = position,
+                rotation = rotation
             }
         };
         obj.transform.SetParent(transform);

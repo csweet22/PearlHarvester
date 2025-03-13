@@ -6,6 +6,9 @@ TagManager:
   tags:
   - PearlHolder
   - AxeProjectile
+  - metal
+  - bone
+  - film
   layers:
   - Default
   - TransparentFX

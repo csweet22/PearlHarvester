@@ -5,15 +5,19 @@ using UnityEngine;
 
 public class AudioManager : Singleton<AudioManager>
 {
-    public void SpawnVFX(AudioClip clip, float duration = 1.0f)
+    public void SpawnSound(AudioClip clip, float duration = 0.0f)
     {
         GameObject obj = new GameObject();
-        obj.transform.SetParent(transform);
         AudioSource source = obj.AddComponent<AudioSource>();
         source.clip = clip;
         source.Play();
+        
+        float actualDuration = duration;
+        if (duration == 0.0f)
+            actualDuration = source.clip.length;
+        
         StartCoroutine(
-            DelayedDestroy(obj, duration));
+            DelayedDestroy(obj, actualDuration));
     }
 
     IEnumerator DelayedDestroy(GameObject obj, float duration)
