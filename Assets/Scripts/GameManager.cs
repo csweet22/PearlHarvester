@@ -30,6 +30,13 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] private bool riseBloodOnStart = true;
 
+    [SerializeField] public int quota = 10;
+
+    public UnityEvent OnQuotaReached;
+    public event Action onQuotaReached;
+
+    public bool quotaReached = false;
+
     private void Start()
     {
         _risingBlood = FindObjectOfType<RisingBlood>();
@@ -37,6 +44,7 @@ public class GameManager : Singleton<GameManager>
             _risingBlood?.GoToHighest();
         Pearl[] allActivePearls = FindObjectsOfType<Pearl>();
         totalPearlCount = allActivePearls.Length;
+        HUD.Instance.UpdateQuotaAndTotal();
     }
 
     public void SetSafeAreaSpawn(Transform spawnPoint)
@@ -47,6 +55,12 @@ public class GameManager : Singleton<GameManager>
     public void AddPearl(int amount = 1)
     {
         PearlCount.Value += amount;
+        if (!quotaReached){
+            if (PearlCount.Value >= quota){
+                OnQuotaReached?.Invoke();
+                onQuotaReached?.Invoke();
+            }
+        }
     }
 
 

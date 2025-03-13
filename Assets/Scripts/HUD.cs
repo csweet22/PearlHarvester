@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Scripts.Utilities;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class HUD : Singleton<HUD>
@@ -11,15 +12,21 @@ public class HUD : Singleton<HUD>
     [SerializeField] private ProgressBar healthBar;
     [SerializeField] private RawImage reticle;
 
-    [SerializeField] private TextMeshProUGUI pearlCount;
+    [SerializeField] private TextMeshProUGUI quota;
+    [SerializeField] private TextMeshProUGUI total;
 
     private void Start()
     {
-        GameManager.Instance.PearlCount.OnValueChanged += (i, i1) =>
-        {
-            if (pearlCount)
-                pearlCount.text = GameManager.Instance.PearlCount.Value.ToString();
-        };
+        UpdateQuotaAndTotal();
+        GameManager.Instance.PearlCount.OnValueChanged += (i, i1) => { UpdateQuotaAndTotal(); };
+    }
+
+    public void UpdateQuotaAndTotal()
+    {
+        if (total)
+            total.text = $"TOTAL: {GameManager.Instance.PearlCount.Value} / {GameManager.Instance.totalPearlCount}";
+        if (quota)
+            quota.text = $"QUOTA: {GameManager.Instance.PearlCount.Value} / {GameManager.Instance.quota}";
     }
 
     public void UpdateHealth(int currentHealth, int maxHealth)

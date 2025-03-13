@@ -10,16 +10,16 @@ public class PearlArea : MonoBehaviour
     [SerializeField] private float percentRequired = 0.75f;
 
     public UnityEvent OnThresholdReached;
-    
+
     private int totalCount = 0;
-    
+
     private bool _triggered = false;
-    
+
     private void Start()
     {
         totalCount = pearlObjects.Count;
         foreach (Pearl p in pearlObjects){
-            p.SetPearlArea(this);;
+            p.SetPearlArea(this);
         }
     }
 
@@ -33,17 +33,17 @@ public class PearlArea : MonoBehaviour
 
     private void CheckThreshold()
     {
-        if (_triggered)
+        if (GameManager.Instance.quotaReached)
             return;
         
-        _triggered = true;
-        if ((pearlObjects.Count / (float) totalCount) <= percentRequired){
+        if (_triggered)
+            return;
+
+        if (((float) pearlObjects.Count / (float) totalCount) <= (1.0f - percentRequired)){
+            _triggered = true;
             Debug.Log($"Pearl Area {gameObject.name} Reached");
             OnThresholdReached?.Invoke();
             // Change highest blood level.
         }
     }
-    
-    
-    
 }

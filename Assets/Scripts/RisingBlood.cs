@@ -33,6 +33,33 @@ public class RisingBlood : MonoBehaviour
     private void Start()
     {
         _targetBloodLevel = CurrentBloodLevel;
+        GameManager.Instance.onQuotaReached += OnQuotaReached;
+    }
+
+    private void OnQuotaReached()
+    {
+        if (_tween != null)
+            _tween.Kill();
+        if (_risingCoroutine != null)
+            StopCoroutine(_risingCoroutine);
+
+        _targetBloodLevel = _highestHeight;
+        float distance = Mathf.Abs(bloodObject.localPosition.y - _targetBloodLevel);
+        float duration = distance / _risingSpeed;
+        Vector3 targetLocalPosition = bloodObject.localPosition.Change(y: _targetBloodLevel);
+        _tween = DOTween.To(() => bloodObject.localPosition, x => bloodObject.localPosition = x, targetLocalPosition,
+            duration);
+        _tween.onComplete +=
+            () =>
+            {
+                _targetBloodLevel = _lowestHeight;
+                float distance = Mathf.Abs(bloodObject.localPosition.y - _targetBloodLevel);
+                float duration = distance / _risingSpeed;
+                Vector3 targetLocalPosition = bloodObject.localPosition.Change(y: _targetBloodLevel);
+                _tween = DOTween.To(() => bloodObject.localPosition, x => bloodObject.localPosition = x,
+                    targetLocalPosition,
+                    duration);
+            };
     }
 
     public void SetBloodSpeed(float newSpeed)

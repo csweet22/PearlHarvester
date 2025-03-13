@@ -49,7 +49,7 @@ public class TerminalMenu : ACMenu
     private void UpdateQuotaText()
     {
         quotaText.text =
-            $"<b>QUOTA</b>: {GameManager.Instance.PearlCount.Value} / {GameManager.Instance.totalPearlCount} TOTAL PEARLS";
+            $"<b>QUOTA</b>: {GameManager.Instance.PearlCount.Value} / {GameManager.Instance.quota} PEARLS";
     }
 
     private void UpdateUpgradeText()
