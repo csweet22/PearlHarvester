@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,18 +14,17 @@ public class Destructable : MonoBehaviour
         _healthbox = GetComponentInChildren<HealthboxComponent>();
         _healthComponent = GetComponentInChildren<HealthComponent>();
 
-        _healthbox.OnHit += delta =>
-        {
-            _healthComponent.ChangeHealth(delta);
-        };
+        _healthbox.OnHit += delta => { _healthComponent.ChangeHealth(delta); };
 
-        _healthComponent.OnHealthEmpty += () =>
-        {
-            AxeProjectile[] projectiles = GetComponentsInChildren<AxeProjectile>();
-            foreach (AxeProjectile projectile in projectiles){
-                projectile.transform.parent = null;
-            }
-            Destroy(this.gameObject);
-        };
+        _healthComponent.OnHealthEmpty += () => { Destroy(this.gameObject); };
+    }
+
+    private void OnDestroy()
+    {
+        AxeProjectile[] projectiles = GetComponentsInChildren<AxeProjectile>();
+        foreach (AxeProjectile projectile in projectiles){
+            Debug.Log($"parent to null: {projectile.name}");
+            projectile.transform.parent = null;
+        }
     }
 }

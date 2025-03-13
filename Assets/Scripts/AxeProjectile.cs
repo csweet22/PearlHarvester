@@ -35,10 +35,7 @@ public class AxeProjectile : ProjectileComponent
             _connectedInteractables.Add(interactable);
             _interactor.DeactivateInteractable();
         };
-        _interactor.EndInteractAction += (interactable) =>
-        {
-            _interactor.ActivateInteractable();
-        };
+        _interactor.EndInteractAction += (interactable) => { _interactor.ActivateInteractable(); };
     }
 
     private void OnEnable()
@@ -139,5 +136,10 @@ public class AxeProjectile : ProjectileComponent
         healthChangeBox.enabled = true;
         rb.velocity = Vector3.zero;
         _interactor.ActivateInteractable();
+    }
+
+    private void OnDestroy()
+    {
+        Debug.Log($"Parent is {transform.parent}");
     }
 }
