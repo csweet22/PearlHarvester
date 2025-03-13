@@ -1,13 +1,17 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
-
+    [SerializeField] private float faceDuration = 1.0f;
+    [SerializeField] private float waitBeforeBullDuration = 0.5f;
+    [SerializeField] private float waitAfterStoppedDuration = 0.5f;
+    
     private Rigidbody _rigidbody;
 
     private Vector3 _targetVelocity = Vector3.zero;
@@ -17,10 +21,14 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private GameObject mesh;
 
-    [SerializeField] private float rotateSpeed = 5f;
+    // [SerializeField] 
+    private float rotateSpeed = 5f;
 
     private HealthComponent _healthComponent;
     private HealthboxComponent _healthboxComponent;
+
+    private Coroutine _stateCoroutine;
+    private Tween _rotateTween;
 
     private void Start()
     {
@@ -30,6 +38,8 @@ public class Enemy : MonoBehaviour
         _healthboxComponent.OnHit += delta => { _healthComponent.ChangeHealth(delta); };
         _rigidbody = GetComponentInChildren<Rigidbody>();
     }
+
+    private bool _seesPlayer = false;
 
     private void Die()
     {
@@ -43,36 +53,53 @@ public class Enemy : MonoBehaviour
         Vector3 actualVelocity = Vector3.Slerp(currentVelocity, _targetVelocity, Time.deltaTime * rotateSpeed);
         Vector3 deltaVelocity = actualVelocity - currentVelocity;
         _rigidbody.AddForce(deltaVelocity, ForceMode.VelocityChange);
-
-        if (_targetVelocity.Change(y: 0f) != Vector3.zero){
-            Quaternion targetRotation = Quaternion.LookRotation(_targetVelocity.normalized);
-            mesh.transform.rotation =
-                Quaternion.Slerp(mesh.transform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
-        }
     }
 
-    public void StartPursuit()
+    public void PlayerSpotted()
     {
-        UpdateTargetVelocity();
+        if (_seesPlayer)
+            return;
+        _seesPlayer = true;
+        _stateCoroutine = StartCoroutine(FaceTowardsPlayer());
     }
 
-    public void UpdatePursuit()
+    IEnumerator FaceTowardsPlayer()
     {
-        _tick++;
-        if (_tick > updateFrequency){
-            _tick = 0;
-            UpdateTargetVelocity();
-        }
-    }
+        Vector3 direction = (PlayerCore.Instance.PlayerPosition - transform.position).Change(y: 0).normalized;
+        Quaternion targetRotation = Quaternion.LookRotation(direction);
 
-    private void UpdateTargetVelocity()
-    {
-        Vector3 direction = (PlayerCore.Instance.PlayerPosition - transform.position).normalized;
+        _rotateTween = mesh.transform.DORotate(targetRotation.eulerAngles, faceDuration, RotateMode.Fast);
+
+        yield return new WaitForSeconds(faceDuration + waitBeforeBullDuration);
+
         _targetVelocity = (direction * speed);
     }
 
-    public void EndPursuit()
+    private void OnDestroy()
+    {
+        if (_stateCoroutine != null)
+            StopCoroutine(_stateCoroutine);
+        if (_rotateTween != null)
+            _rotateTween.Kill();
+    }
+
+    public void PlayerLost()
+    {
+        Debug.Log("Player lost");
+        _seesPlayer = false;
+    }
+
+    public void Bumped()
     {
         _targetVelocity = Vector3.zero;
+        StartCoroutine(BumpWait());
+    }
+
+    IEnumerator BumpWait()
+    {
+        yield return new WaitForSeconds(waitAfterStoppedDuration);
+        if (_seesPlayer){
+            _stateCoroutine = StartCoroutine(FaceTowardsPlayer());
+        }
     }
 }
