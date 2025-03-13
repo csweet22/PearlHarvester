@@ -12,9 +12,12 @@ public class PlayerCamera : Singleton<PlayerCamera>
 
     [SerializeField] private float sprintFovIncrease = 7f;
     
+    private ShakerComponent _shakerComponent;
+    
     private void Start()
     {
         _virtualCamera = GetComponent<CinemachineVirtualCamera>();
+        _shakerComponent = GetComponent<ShakerComponent>();
         LoadDefaultFOV();
     }
 
@@ -31,5 +34,10 @@ public class PlayerCamera : Singleton<PlayerCamera>
     public void SetFOV(float fov = 90f, float duration = 1.0f)
     {
         DOTween.To(()=> _virtualCamera.m_Lens.FieldOfView, x=> _virtualCamera.m_Lens.FieldOfView = x, fov, duration).SetUpdate(true);
+    }
+
+    public void Shake(float duration = 0.2f)
+    {
+        _shakerComponent.Shake();
     }
 }

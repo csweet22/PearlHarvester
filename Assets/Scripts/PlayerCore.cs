@@ -38,6 +38,7 @@ public class PlayerCore : Singleton<PlayerCore>
         _healthboxComponent.OnHit += delta =>
         {
             _healthComponent.ChangeHealth(delta);
+            PlayerCamera.Instance.Shake();
         };
         
         _healthComponent.OnGainHealth += delta =>
