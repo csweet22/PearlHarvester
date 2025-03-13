@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float faceDuration = 1.0f;
     [SerializeField] private float waitBeforeBullDuration = 0.5f;
     [SerializeField] private float waitAfterStoppedDuration = 0.5f;
-    
+
     private Rigidbody _rigidbody;
 
     private Vector3 _targetVelocity = Vector3.zero;
@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
 
     private HealthComponent _healthComponent;
     private HealthboxComponent _healthboxComponent;
+    private HealthChangeBoxComponent _healthChangeBoxComponent;
 
     private Coroutine _stateCoroutine;
     private Tween _rotateTween;
@@ -37,9 +38,11 @@ public class Enemy : MonoBehaviour
         _healthboxComponent = GetComponentInChildren<HealthboxComponent>();
         _healthboxComponent.OnHit += delta => { _healthComponent.ChangeHealth(delta); };
         _rigidbody = GetComponentInChildren<Rigidbody>();
+        _healthChangeBoxComponent = GetComponentInChildren<HealthChangeBoxComponent>();
     }
 
     private bool _seesPlayer = false;
+    private bool _bumped = false;
 
     private void Die()
     {
@@ -60,11 +63,13 @@ public class Enemy : MonoBehaviour
         if (_seesPlayer)
             return;
         _seesPlayer = true;
+        ClearState();
         _stateCoroutine = StartCoroutine(FaceTowardsPlayer());
     }
 
     IEnumerator FaceTowardsPlayer()
     {
+        _bumped = false;
         Vector3 direction = (PlayerCore.Instance.PlayerPosition - transform.position).Change(y: 0).normalized;
         Quaternion targetRotation = Quaternion.LookRotation(direction);
 
@@ -73,9 +78,10 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(faceDuration + waitBeforeBullDuration);
 
         _targetVelocity = (direction * speed);
+        _healthChangeBoxComponent.willAffect = true;
     }
 
-    private void OnDestroy()
+    private void ClearState()
     {
         if (_stateCoroutine != null)
             StopCoroutine(_stateCoroutine);
@@ -83,14 +89,22 @@ public class Enemy : MonoBehaviour
             _rotateTween.Kill();
     }
 
+    private void OnDestroy()
+    {
+        ClearState();
+    }
+
     public void PlayerLost()
     {
-        Debug.Log("Player lost");
         _seesPlayer = false;
     }
 
     public void Bumped()
     {
+        if (_bumped)
+            return;
+        _bumped = true;
+        _healthChangeBoxComponent.willAffect = false;
         _targetVelocity = Vector3.zero;
         StartCoroutine(BumpWait());
     }

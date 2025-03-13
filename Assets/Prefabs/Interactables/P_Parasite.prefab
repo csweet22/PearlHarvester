@@ -171,7 +171,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 6295099518575867560}
   - component: {fileID: 3832747089461852241}
   m_Layer: 12
-  m_Name: Mesh
+  m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -329,6 +329,7 @@ Transform:
   - {fileID: 2307200457421477369}
   - {fileID: 5705357174408821541}
   - {fileID: 1941581709463964408}
+  - {fileID: 4914436918316180507}
   m_Father: {fileID: 6522031596749544616}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6295099518575867560
@@ -381,6 +382,87 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5450731244490099477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4914436918316180507}
+  - component: {fileID: 1266345639366832201}
+  - component: {fileID: 4404245091230879854}
+  m_Layer: 8
+  m_Name: Damagebox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4914436918316180507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5450731244490099477}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.182, z: 0.823}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5887419352831174740}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1266345639366832201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5450731244490099477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8302e59413bcd44b98cc0498d58e510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: 0
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onStay:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  healthChangeType: 0
+  healthDelta: 1
+  tickDuration: 2
+  tier: 1
+  willAffect: 0
+--- !u!135 &4404245091230879854
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5450731244490099477}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5915305643396947701
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +511,9 @@ MonoBehaviour:
   target: 0
   onEnter:
     m_PersistentCalls:
+      m_Calls: []
+  onStay:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8402895701917980211}
         m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
@@ -442,9 +527,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onStay:
-    m_PersistentCalls:
-      m_Calls: []
   onExit:
     m_PersistentCalls:
       m_Calls: []
@@ -517,6 +599,9 @@ MonoBehaviour:
   target: 0
   onEnter:
     m_PersistentCalls:
+      m_Calls: []
+  onStay:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8402895701917980211}
         m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
@@ -530,9 +615,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onStay:
-    m_PersistentCalls:
-      m_Calls: []
   onExit:
     m_PersistentCalls:
       m_Calls: []

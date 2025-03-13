@@ -140,6 +140,6 @@ public class AxeProjectile : ProjectileComponent
 
     private void OnDestroy()
     {
-        Debug.Log($"Parent is {transform.parent}");
+        // Debug.Log($"Parent is {transform.parent}");
     }
 }

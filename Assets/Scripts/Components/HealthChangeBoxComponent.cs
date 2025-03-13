@@ -25,6 +25,8 @@ public class HealthChangeBoxComponent : TriggerComponent
 
     public int HealthDelta => healthDelta;
 
+    public bool willAffect = true;
+    
     protected override void Awake()
     {
         base.Awake();
@@ -57,6 +59,8 @@ public class HealthChangeBoxComponent : TriggerComponent
 
     protected override void OnTriggerStay(Collider other)
     {
+        if (!willAffect)
+            return;
         base.OnTriggerStay(other);
         HealthboxComponent healthboxComponent = other.GetComponent<HealthboxComponent>();
 
