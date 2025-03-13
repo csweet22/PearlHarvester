@@ -20,23 +20,24 @@ public class AxeProjectile : ProjectileComponent
     Vector3 localConnectRotation = Vector3.zero;
 
     [SerializeField] private float rotationSpeed = 200f;
-    
+
     private List<InteractableComponent> _connectedInteractables = new List<InteractableComponent>();
-    
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.AddTorque(rb.transform.right * rotationSpeed);
-        healthChangeBox.OnHit += targetHealthbox =>
-        {
-            healthChangeBox.enabled = false;
-        };
+        healthChangeBox.OnHit += targetHealthbox => { healthChangeBox.enabled = false; };
 
         _interactor = GetComponentInChildren<InteractorComponent>();
         _interactor.StartInteractAction += (interactable) =>
         {
             _connectedInteractables.Add(interactable);
-            _interactor.canInteract = false;
+            _interactor.DeactivateInteractable();
+        };
+        _interactor.EndInteractAction += (interactable) =>
+        {
+            _interactor.ActivateInteractable();
         };
     }
 
@@ -50,13 +51,13 @@ public class AxeProjectile : ProjectileComponent
     private void OnRecallPerformed(InputAction.CallbackContext obj)
     {
         foreach (var interactable in _connectedInteractables){
-            Debug.Log(interactable.name);
             interactable.OnInteractEnd(_interactor);
         }
+
         _connectedInteractables.Clear();
-        
+
         _isConnected = false;
-        
+
         // Turn of physics collider
         physicsCollider.enabled = false;
 
@@ -108,12 +109,20 @@ public class AxeProjectile : ProjectileComponent
         _connectedCollider = col;
 
         Rigidbody connectedRb = _connectedCollider.gameObject.GetComponent<Rigidbody>();
-        if (connectedRb)
+        if (connectedRb){
             transform.parent = connectedRb.transform;
+        }
         else{
             transform.parent = trans;
         }
-        
+
+
+        InteractableComponent interactable =
+            transform.parent.GetComponentInChildren<InteractableComponent>();
+        if (interactable){
+            interactable.OnInteractStart(_interactor);
+        }
+
         localConnectPosition = transform.localPosition;
         localConnectRotation = transform.localEulerAngles;
 
@@ -129,6 +138,6 @@ public class AxeProjectile : ProjectileComponent
         rb.isKinematic = false;
         healthChangeBox.enabled = true;
         rb.velocity = Vector3.zero;
-        _interactor.canInteract = true;
+        _interactor.ActivateInteractable();
     }
 }

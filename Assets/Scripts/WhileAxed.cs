@@ -16,8 +16,8 @@ public class WhileAxed : MonoBehaviour
     [SerializeField] private Collider physicsCollider;
 
     public UnityEvent onAxeHit;
-    public UnityEvent onAxeRemoved;  
-    
+    public UnityEvent onAxeRemoved;
+
     private void Start()
     {
         _interactable = GetComponentInChildren<InteractableComponent>();
@@ -25,30 +25,25 @@ public class WhileAxed : MonoBehaviour
         _interactable.EndInteractAction += component => { TurnOff(); };
 
         _timer = GetComponentInChildren<TimerComponent>();
-        _timer.OnTimeoutAction += OnTimeOut;
-    }
-
-    private void OnTimeOut()
-    {
-        TurnOff();
     }
 
     private void OnInteractStarted(InteractorComponent obj)
     {
+        if (_isBeingUsed)
+            return;
+        
         if (obj.tag == "AxeProjectile"){
             obj.GetComponentInParent<AxeProjectile>().Connect(physicsCollider, transform);
             TurnOn();
         }
         else{
-            if (_isBeingUsed) // Move this to TurnOn if you want to be able to keep hitting it to keep it on
-                return;
             TurnOn();
-            _timer.StartTimer(0.0f);
         }
     }
 
     public void TurnOn()
     {
+        Debug.Log($"{gameObject.name}: Turned on.");
         _isBeingUsed = true;
         onAxeHit?.Invoke();
     }
@@ -56,6 +51,7 @@ public class WhileAxed : MonoBehaviour
 
     public void TurnOff()
     {
+        Debug.Log($"{gameObject.name}: Turned off.");
         _isBeingUsed = false;
         onAxeRemoved?.Invoke();
     }

@@ -158,7 +158,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.00001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1758613033298208650
 GameObject:
@@ -187,7 +187,7 @@ Transform:
   m_GameObject: {fileID: 1758613033298208650}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.252, z: 0.07}
+  m_LocalPosition: {x: 0, y: 0.505, z: 0.1}
   m_LocalScale: {x: 1.9458, y: 1.9458, z: 1.9458}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -366,7 +366,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5199934341432450739}
   - component: {fileID: 3844864435040700017}
-  - component: {fileID: 6128268412340404277}
   m_Layer: 13
   m_Name: Interactor
   m_TagString: AxeProjectile
@@ -383,7 +382,7 @@ Transform:
   m_GameObject: {fileID: 7689122472887837753}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0.12}
+  m_LocalPosition: {x: 0, y: 0.558, z: 0.078}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -408,27 +407,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   canInteract: 1
---- !u!135 &6128268412340404277
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7689122472887837753}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.8
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8088171636153124906
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,9 +440,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 631130845316047656}
-  - {fileID: 7718768614104828843}
   - {fileID: 7250172432460419334}
   - {fileID: 5199934341432450739}
+  - {fileID: 7718768614104828843}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3960413725943541861
@@ -530,5 +508,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.3, y: 1.01, z: 0.86}
-  m_Center: {x: 0, y: 0.5, z: 0.06}
+  m_Size: {x: 0.14465499, y: 0.5012579, z: 0.7046589}
+  m_Center: {x: 0, y: 0.56019473, z: 0.1027188}

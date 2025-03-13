@@ -93,7 +93,7 @@ public class PlayerAxeManager : MonoBehaviour
         if (!HasAxe)
             return;
 
-        Debug.Log("Swing performed");
+        // Debug.Log("Swing performed");
         _animator.Play("Swing");
     }
 
@@ -103,7 +103,7 @@ public class PlayerAxeManager : MonoBehaviour
             return;
         if (HasAxe){
             _throwQueued = true;
-            Debug.Log("Throw prepared");
+            // Debug.Log("Throw prepared");
         }
     }
 
@@ -113,7 +113,7 @@ public class PlayerAxeManager : MonoBehaviour
             return;
         if (_throwQueued){
             _throwQueued = false;
-            Debug.Log("Axe Thrown.");
+            // Debug.Log("Axe Thrown.");
             LaunchParameters launchParameters = new LaunchParameters(Camera.main.transform.forward, 5f);
             _launcher.Launch(launchParameters);
             ChangeAxeCount(-1);
@@ -124,7 +124,7 @@ public class PlayerAxeManager : MonoBehaviour
     {
         if (GameManager.Instance.paused)
             return;
-        Debug.Log("Recall performed");
+        // Debug.Log("Recall performed");
     }
 
 
