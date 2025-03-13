@@ -838,7 +838,7 @@ MonoBehaviour:
   endInteractEvent:
     m_PersistentCalls:
       m_Calls: []
-  canInteract: 0
+  startInteractable: 0
 --- !u!65 &6832621329393066101
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -11,32 +11,37 @@ namespace Content.Scripts.Components
         public event Action<InteractableComponent> StartInteractAction;
         public event Action<InteractableComponent> EndInteractAction;
 
-        public bool canInteract;
+        private bool _canInteract = true;
+        public bool CanInteract => _canInteract;
+        [SerializeField] private bool startInteractable = true;
+
+        private void Start()
+        {
+            _canInteract = startInteractable;
+        }
 
         public void ActivateInteractable()
         {
-            canInteract = true;
+            _canInteract = true;
         }
 
         public void DeactivateInteractable()
         {
-            canInteract = false;
+            _canInteract = false;
         }
 
         public virtual void OnInteractStart(InteractableComponent interactableComponent)
         {
-            if (!canInteract)
+            if (!_canInteract)
                 return;
-            Debug.Log("InteractorComponent: OnInteractStart");
             StartInteractAction?.Invoke(interactableComponent);
             startInteractEvent?.Invoke();
         }
 
         public virtual void OnInteractEnd(InteractableComponent interactableComponent)
         {
-            if (!canInteract)
+            if (!_canInteract)
                 return;
-            Debug.Log("InteractorComponent: OnInteractEnd");
             EndInteractAction?.Invoke(interactableComponent);
             endInteractEvent?.Invoke();
         }

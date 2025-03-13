@@ -45,7 +45,7 @@ namespace Content.Scripts.Components
             if (interactor == null)
                 return;
 
-            if (!interactor.canInteract)
+            if (!interactor.CanInteract)
                 return;
             
             // Stupid solution

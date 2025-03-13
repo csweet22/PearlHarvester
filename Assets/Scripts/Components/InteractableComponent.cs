@@ -18,12 +18,11 @@ namespace Content.Scripts.Components
                 return;
             }
 
-            if (!interactorComponent.canInteract)
+            if (!interactorComponent.CanInteract)
                 return;
 
             interactorComponent.OnInteractStart(this);
 
-            Debug.Log("InteractableComponent: OnInteractStart");
             StartInteractAction?.Invoke(interactorComponent);
             startInteractEvent?.Invoke();
         }
@@ -35,12 +34,11 @@ namespace Content.Scripts.Components
                 return;
             }
 
-            if (!interactorComponent.canInteract && !interactorComponent.CompareTag("AxeProjectile"))
+            if (!interactorComponent.CanInteract && !interactorComponent.CompareTag("AxeProjectile"))
                 return;
 
             interactorComponent.OnInteractEnd(this);
 
-            Debug.Log("InteractableComponent: OnInteractEnd");
             EndInteractAction?.Invoke(interactorComponent);
             endInteractEvent?.Invoke();
         }

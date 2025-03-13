@@ -14,11 +14,13 @@ namespace Content.Scripts.Components
             Sequence movementSequence = DOTween.Sequence();
             movementSequence.SetUpdate(updateType);
 
-            movementSequence.Append(target.DOMove(nextLocation.transform.position, nextLocation.duration)
+            Vector3 targetPos = nextLocation.transform.position;
+            movementSequence.Append(target.DOMove(targetPos, nextLocation.duration)
                 .SetEase(nextLocation.ease)
                 .SetDelay(nextLocation.delay));
 
-            movementSequence.Join(target.DORotate(nextLocation.transform.rotation.eulerAngles, nextLocation.duration)
+            Vector3 targetRot = nextLocation.transform.rotation.eulerAngles;
+            movementSequence.Join(target.DORotate(targetRot, nextLocation.duration)
                 .SetEase(nextLocation.ease)
                 .SetDelay(nextLocation.delay));
 
