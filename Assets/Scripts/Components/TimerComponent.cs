@@ -38,7 +38,7 @@ public class TimerComponent : MonoBehaviour
 
     public void StopTimer()
     {
-        _isPaused = false;
+        _isPaused = true;
         _currentTime = 0.0f;
     }
 

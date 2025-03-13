@@ -25,6 +25,7 @@ public class WhileAxed : MonoBehaviour
         _interactable.EndInteractAction += component => { TurnOff(); };
 
         _timer = GetComponentInChildren<TimerComponent>();
+        _timer.OnTimeoutAction += () => { TurnOff(); };
     }
 
     private void OnInteractStarted(InteractorComponent obj)
@@ -38,12 +39,14 @@ public class WhileAxed : MonoBehaviour
         }
         else{
             TurnOn();
+            _timer.StartTimer(0.0f);
         }
     }
 
     public void TurnOn()
     {
         Debug.Log($"{gameObject.name}: Turned on.");
+        _timer.StopTimer();
         _isBeingUsed = true;
         onAxeHit?.Invoke();
     }

@@ -13,7 +13,13 @@ namespace Content.Scripts.Components
 
         private bool _canInteract = true;
         public bool CanInteract => _canInteract;
-        
+        [SerializeField] private bool startInteractable = true;
+
+        private void Start()
+        {
+            _canInteract = startInteractable;
+        }
+
         public void ActivateInteractable()
         {
             _canInteract = true;
