@@ -243,6 +243,76 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4517380839582086225, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
+        type: 3}
+      propertyPath: endInteractEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517380839582086225, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
+        type: 3}
+      propertyPath: startInteractEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517380839582086225, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
+        type: 3}
+      propertyPath: endInteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517380839582086225, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
+        type: 3}
+      propertyPath: endInteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7462223411547095268}
+    - target: {fileID: 4517380839582086225, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
+        type: 3}
+      propertyPath: startInteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517380839582086225, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
+        type: 3}
+      propertyPath: startInteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7462223411547095268}
+    - target: {fileID: 4517380839582086225, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
+        type: 3}
+      propertyPath: endInteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517380839582086225, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
+        type: 3}
+      propertyPath: endInteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Shake
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517380839582086225, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
+        type: 3}
+      propertyPath: startInteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517380839582086225, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
+        type: 3}
+      propertyPath: startInteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Shake
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517380839582086225, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
+        type: 3}
+      propertyPath: endInteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ShakerComponent, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517380839582086225, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
+        type: 3}
+      propertyPath: startInteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ShakerComponent, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517380839582086225, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
+        type: 3}
+      propertyPath: endInteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517380839582086225, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
+        type: 3}
+      propertyPath: startInteractEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4898858941682008187, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
         type: 3}
       propertyPath: m_Name

@@ -8,7 +8,7 @@ public class ShakerComponent : MonoBehaviour
     private float _currentTime = 0f;
 
     private Vector3 _originalPosition;
-    public float duration;
+    public float duration = 1f;
     public Vector3 shakeIntensity = Vector3.one;
     public float frequency = 1f;
 
