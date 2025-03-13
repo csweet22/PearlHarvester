@@ -15,6 +15,9 @@ public class RisingBlood : MonoBehaviour
     [SerializeField] public float _lowestHeight = -100f;
     [SerializeField] public float _highestHeight = 0f;
 
+    private Coroutine _risingCoroutine;
+    private Tween _tween;
+
     public bool IsRising = false;
 
     public void SetHighestHeight(float newHighestHeight)
@@ -35,6 +38,7 @@ public class RisingBlood : MonoBehaviour
     public void SetBloodSpeed(float newSpeed)
     {
         _risingSpeed = newSpeed;
+        SetBloodLevel(_targetBloodLevel);
     }
 
     public void GoToLowest()
@@ -67,8 +71,16 @@ public class RisingBlood : MonoBehaviour
         float distance = Mathf.Abs(bloodObject.localPosition.y - _targetBloodLevel);
         float duration = distance / _risingSpeed;
         Vector3 targetLocalPosition = bloodObject.localPosition.Change(y: _targetBloodLevel);
-        DOTween.To(() => bloodObject.localPosition, x => bloodObject.localPosition = x, targetLocalPosition, duration)
-                .onComplete +=
-            () => { StartCoroutine(IsRising ? DelayLow() : DelayHigh()); };
+        if (_tween != null)
+            _tween.Kill();
+        _tween = DOTween.To(() => bloodObject.localPosition, x => bloodObject.localPosition = x, targetLocalPosition,
+            duration);
+        _tween.onComplete +=
+            () =>
+            {
+                if (_risingCoroutine != null)
+                    StopCoroutine(_risingCoroutine);
+                _risingCoroutine = StartCoroutine(IsRising ? DelayLow() : DelayHigh());
+            };
     }
 }
