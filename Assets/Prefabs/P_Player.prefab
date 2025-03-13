@@ -456,6 +456,7 @@ MonoBehaviour:
     type: 3}
   pauseMenu: {fileID: 6357139838703531394, guid: a2369422d7795924fa38e5fd18461960,
     type: 3}
+  head: {fileID: 493349733632946221}
 --- !u!114 &7962452589291306960
 MonoBehaviour:
   m_ObjectHideFlags: 0

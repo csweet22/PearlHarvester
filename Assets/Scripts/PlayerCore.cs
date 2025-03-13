@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Content.Scripts.Components;
 using Scripts.Utilities;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -19,6 +20,8 @@ public class PlayerCore : Singleton<PlayerCore>
     [SerializeField] private InputActionReference pauseAction;
     [SerializeField] private GameObject pauseMenu;
 
+    [SerializeField] private Transform head;
+
     private void Start()
     {
         _playerMovement = GetComponentInChildren<PlayerMovement>();
@@ -30,7 +33,7 @@ public class PlayerCore : Singleton<PlayerCore>
             _playerMovement.transform.position = GameManager.Instance.safeAreaSpawn.position;
             _healthComponent.SetHealth(_healthComponent.MaxHealth);
         };
-        
+
         _healthboxComponent = GetComponentInChildren<HealthboxComponent>();
         _healthboxComponent.OnHit += delta =>
         {
@@ -42,6 +45,30 @@ public class PlayerCore : Singleton<PlayerCore>
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    private void FixedUpdate()
+    {
+        // Check if facing interactable
+        if (Physics.Raycast(head.position, head.forward, out RaycastHit hit, 100f,
+                LayerMask.GetMask("Geometry", "Interaction"))){
+            if (hit.rigidbody){
+                InteractableComponent interactableComponent =
+                    hit.rigidbody.GetComponentInChildren<InteractableComponent>();
+                if (interactableComponent){
+                    HUD.Instance.SetReticleInteractable();
+                }
+                else{
+                    HUD.Instance.SetReticleDefault();
+                }
+            }
+            else{
+                HUD.Instance.SetReticleDefault();
+            }
+        }
+        else{
+            HUD.Instance.SetReticleDefault();
+        }
     }
 
     public void AddAxe()
