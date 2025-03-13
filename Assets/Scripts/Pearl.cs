@@ -19,7 +19,6 @@ public class Pearl : MonoBehaviour
 
     public void SetPearlArea(PearlArea newPearlArea)
     {
-        Debug.Log(newPearlArea.gameObject.name);
         this.pearlArea = newPearlArea;
     }
 
