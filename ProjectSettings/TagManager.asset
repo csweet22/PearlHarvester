@@ -9,6 +9,7 @@ TagManager:
   - metal
   - bone
   - film
+  - Door
   layers:
   - Default
   - TransparentFX

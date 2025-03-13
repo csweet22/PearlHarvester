@@ -55,7 +55,7 @@ public class PlayerCore : Singleton<PlayerCore>
             if (hit.rigidbody){
                 InteractableComponent interactableComponent =
                     hit.rigidbody.GetComponentInChildren<InteractableComponent>();
-                if (interactableComponent){
+                if (interactableComponent || hit.rigidbody.CompareTag("Door")){
                     HUD.Instance.SetReticleInteractable();
                 }
                 else{
