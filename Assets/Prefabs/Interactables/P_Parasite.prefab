@@ -438,7 +438,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   healthChangeType: 0
-  healthDelta: 1
+  healthDelta: 5
   tickDuration: 2
   tier: 1
   willAffect: 0

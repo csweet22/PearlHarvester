@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &762870728573195803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7390560263071227886}
+  - component: {fileID: 4891870379364185017}
+  m_Layer: 11
+  m_Name: Regen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7390560263071227886
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762870728573195803}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3355664933280981771}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4891870379364185017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762870728573195803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ab4bebd68c88c49a6a2fd5bf31cde2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 2
+  isLooping: 1
+  autoStart: 1
+  OnTimeoutEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7962452589291306960}
+        m_TargetAssemblyTypeName: HealthComponent, Assembly-CSharp
+        m_MethodName: ChangeHealth
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &911525648617422492
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,8 +660,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec14f3cf846500343a47e9d05e287f48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  startingHealth: 10
+  maxHealth: 100
+  startingHealth: 100
 --- !u!114 &7319784976593582522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -736,6 +798,7 @@ Transform:
   - {fileID: 493349733632946221}
   - {fileID: 2998618832156828749}
   - {fileID: 6476307770328713670}
+  - {fileID: 7390560263071227886}
   m_Father: {fileID: 8072886796805042229}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3060366646396466456

@@ -38,6 +38,15 @@ public class PlayerCore : Singleton<PlayerCore>
         _healthboxComponent.OnHit += delta =>
         {
             _healthComponent.ChangeHealth(delta);
+        };
+        
+        _healthComponent.OnGainHealth += delta =>
+        {
+            HUD.Instance.UpdateHealth(_healthComponent.CurrentHealth, _healthComponent.MaxHealth);
+        };
+        
+        _healthComponent.OnLoseHealth += delta =>
+        {
             HUD.Instance.UpdateHealth(_healthComponent.CurrentHealth, _healthComponent.MaxHealth);
         };
 

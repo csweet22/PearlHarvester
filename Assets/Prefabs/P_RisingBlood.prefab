@@ -221,9 +221,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   healthChangeType: 0
-  healthDelta: 1
-  tickDuration: 1
+  healthDelta: 5
+  tickDuration: 2
   tier: 1
+  willAffect: 1
 --- !u!65 &6102501121444948872
 BoxCollider:
   m_ObjectHideFlags: 0
