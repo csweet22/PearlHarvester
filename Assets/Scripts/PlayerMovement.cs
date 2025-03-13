@@ -77,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
     private Tween _crouchTween;
 
     private Vector3 _defaultHeadLocalPosition;
+    private bool _ceilingAbove;
 
     private void OnValidate()
     {
@@ -121,16 +122,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        _ceilingAbove = Physics.SphereCast(PlayerCore.Instance.PlayerPosition, 1.0f, Vector3.up,
+            out RaycastHit hit2, 2f, LayerMask.GetMask("Geometry"));
         if (_tryingToUncrouch){
-            if (!Physics.SphereCast(PlayerCore.Instance.PlayerPosition, 1.0f, Vector3.up,
-                    out RaycastHit hit, 2f, LayerMask.GetMask("Geometry"))
-               ){
+            if (!_ceilingAbove){
                 headCollider.enabled = true;
 
 
                 if (_crouchTween != null)
                     _crouchTween.Kill();
-                _crouchTween = DOTween.To(() => head.localPosition, x => head.localPosition = x, _defaultHeadLocalPosition, 0.2f);
+                _crouchTween = DOTween.To(() => head.localPosition, x => head.localPosition = x,
+                    _defaultHeadLocalPosition, 0.2f);
 
                 _crouching = false;
                 _tryingToUncrouch = false;
@@ -158,7 +160,7 @@ public class PlayerMovement : MonoBehaviour
     {
         UpdateState();
         AdjustVelocity();
-        
+
         if (_desiredJump){
             _desiredJump = false;
             Jump(gravity);
@@ -172,7 +174,7 @@ public class PlayerMovement : MonoBehaviour
         else{
             _velocity += gravity * Time.deltaTime;
         }
-        
+
         _body.velocity = _velocity;
         ClearState();
     }
@@ -329,6 +331,9 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        if (_crouching && _ceilingAbove)
+            return;
+
         _stepsSinceLastJump = 0;
         _jumpPhase += 1;
         float jumpSpeed = Mathf.Sqrt(2f * gravity.magnitude * jumpHeight);
@@ -337,7 +342,7 @@ public class PlayerMovement : MonoBehaviour
         if (alignedSpeed > 0f){
             jumpSpeed = Mathf.Max(jumpSpeed - alignedSpeed, 0f);
         }
-        
+
         jumpDirection = Vector3.up;
         _velocity += jumpDirection * jumpSpeed;
     }
