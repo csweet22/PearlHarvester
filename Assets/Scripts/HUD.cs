@@ -21,7 +21,7 @@ public class HUD : Singleton<HUD>
         GameManager.Instance.PearlCount.OnValueChanged += (i, i1) => { UpdateQuotaAndTotal(); };
     }
 
-    private void UpdateQuotaAndTotal()
+    public void UpdateQuotaAndTotal()
     {
         if (total)
             total.text = $"TOTAL: {GameManager.Instance.PearlCount.Value} / {GameManager.Instance.totalPearlCount}";
