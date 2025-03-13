@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5365874667291533906}
-  - component: {fileID: 169164060817738285}
+  - component: {fileID: 9091874638305827224}
   - component: {fileID: 3248854578540804605}
   m_Layer: 16
   m_Name: CollectTrigger
@@ -33,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6575618969092980719}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &169164060817738285
+--- !u!114 &9091874638305827224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,19 +42,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 439263149332697901}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82a82b27569c90842aeeb5443503d415, type: 3}
+  m_Script: {fileID: 11500000, guid: b3e674bf7dc544a08fb56b089f06bb33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: 0
-  onEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  onStay:
-    m_PersistentCalls:
-      m_Calls: []
-  onExit:
-    m_PersistentCalls:
-      m_Calls: []
+  isActive: 1
 --- !u!135 &3248854578540804605
 SphereCollider:
   m_ObjectHideFlags: 0

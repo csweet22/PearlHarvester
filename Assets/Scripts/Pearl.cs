@@ -6,15 +6,15 @@ using UnityEngine;
 
 public class Pearl : MonoBehaviour
 {
-    private TriggerComponent _triggerComponent;
-
     private PearlArea pearlArea;
+    
+    private OnetimeTrigger _onetimeTrigger;
     
     // Start is called before the first frame update
     void Start()
     {
-        _triggerComponent = gameObject.GetComponentInChildren<TriggerComponent>();
-        _triggerComponent.TriggerEnter += EatPearl;
+        _onetimeTrigger = GetComponentInChildren<OnetimeTrigger>();
+        _onetimeTrigger.OnTriggered += EatPearl;
     }
 
     public void SetPearlArea(PearlArea newPearlArea)
@@ -23,10 +23,9 @@ public class Pearl : MonoBehaviour
         this.pearlArea = newPearlArea;
     }
 
-    private void EatPearl(Collider obj)
+    private void EatPearl()
     {
         pearlArea?.RemovePearl(this);
-        _triggerComponent.enabled = false;
         DOTween.To(() => gameObject.transform.position, x => gameObject.transform.position = x,
             PlayerCore.Instance.PlayerPosition, 0.2f).onComplete += () =>
         {
