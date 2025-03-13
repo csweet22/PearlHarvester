@@ -425,7 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ab4bebd68c88c49a6a2fd5bf31cde2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1e+15
+  duration: 0.01
   isLooping: 0
   autoStart: 0
   OnTimeoutEvent:
