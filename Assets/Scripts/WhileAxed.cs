@@ -30,14 +30,13 @@ public class WhileAxed : MonoBehaviour
 
     private void OnInteractStarted(InteractorComponent obj)
     {
-        if (_isBeingUsed)
-            return;
-        
         if (obj.tag == "AxeProjectile"){
             obj.GetComponentInParent<AxeProjectile>().Connect(physicsCollider, transform);
             TurnOn();
         }
         else{
+            if (_isBeingUsed)
+                return;
             TurnOn();
             _timer.StartTimer(0.0f);
         }
