@@ -3,6 +3,7 @@ using Content.Scripts.Components;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
+using UnityEngine.VFX;
 
 public class PlayerAxeManager : MonoBehaviour
 {
@@ -22,7 +23,13 @@ public class PlayerAxeManager : MonoBehaviour
     [SerializeField] private InteractorComponent interactor;
 
     [SerializeField] private GameObject axeMesh;
+
+    [SerializeField] private VisualEffectAsset gib;
+
+    [SerializeField] private AudioClip swingSound;
     
+    [SerializeField] private Transform head;
+
     private void Start()
     {
         _launcher = GetComponent<LauncherComponent>();
@@ -35,6 +42,24 @@ public class PlayerAxeManager : MonoBehaviour
     {
         healthChangeBox.enabled = true;
         interactor.ActivateInteractable();
+
+        AudioManager.Instance.SpawnSound(swingSound);
+        
+        if (Physics.Raycast(head.position, head.forward, out RaycastHit hit, 2f,
+                LayerMask.GetMask("Geometry"))){
+
+            switch (hit.collider.gameObject.tag){
+                case "bone":
+                    break;
+                case "metal":
+                    break;
+                case "film":
+                    break;
+                default:
+                    VFXManager.Instance.SpawnVFX(gib, 1.0f, hit.point, Quaternion.identity);
+                    break;
+            }
+        }
     }
 
     public void DeactivateDamage()
@@ -89,7 +114,7 @@ public class PlayerAxeManager : MonoBehaviour
     {
         if (GameManager.Instance.paused)
             return;
-        
+
         if (!HasAxe)
             return;
 

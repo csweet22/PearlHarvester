@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 926966865522818066}
   m_Layer: 0
   m_Name: P_Destructable
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 1929378688804194239}
   m_Layer: 10
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1046,6 +1046,9 @@ MonoBehaviour:
   healthChangeBox: {fileID: 724671042886764444}
   interactor: {fileID: 7937123206342114289}
   axeMesh: {fileID: 911525648617422492}
+  gib: {fileID: 8926484042661614526, guid: 6a09c31caa3b07f46b69f6500e8f2fa7, type: 3}
+  swingSound: {fileID: 8300000, guid: b5cf92b49f0806f43949417b41bd8ee4, type: 3}
+  head: {fileID: 493349733632946221}
 --- !u!95 &5571551903536061747
 Animator:
   serializedVersion: 5
