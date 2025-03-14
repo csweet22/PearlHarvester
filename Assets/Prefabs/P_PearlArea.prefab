@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8f5565bcc045149c33b3616c4ba204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pearlObjects:
-  - {fileID: 0}
-  - {fileID: 0}
+  pearlObjects: []
   percentRequired: 0.75
+  OnThresholdReached:
+    m_PersistentCalls:
+      m_Calls: []
