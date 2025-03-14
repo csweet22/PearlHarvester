@@ -4,6 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -79,6 +80,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 _defaultHeadLocalPosition;
     private bool _ceilingAbove;
 
+    [SerializeField] private AudioSource _stepSource;
+    private Coroutine _stepCoroutine;
+
     private void OnValidate()
     {
         _minGroundDotProduct = Mathf.Cos(maxGroundAngle * Mathf.Deg2Rad);
@@ -120,6 +124,16 @@ public class PlayerMovement : MonoBehaviour
         };
     }
 
+    IEnumerator StepRoutine(float delayBetweenSteps = 0.5f)
+    {
+        if(_stepSource.isPlaying)
+            yield return new WaitForSeconds(_stepSource.clip.length);
+        _stepSource.Play();
+        _stepSource.pitch = Random.Range(0.9f, 1.1f);
+        yield return new WaitForSeconds(delayBetweenSteps + _stepSource.clip.length);
+        yield return StepRoutine();
+    }
+
     private void Update()
     {
         _ceilingAbove = Physics.SphereCast(PlayerCore.Instance.PlayerPosition, 1.0f, Vector3.up,
@@ -141,6 +155,18 @@ public class PlayerMovement : MonoBehaviour
 
         _playerInput = moveAction.action.ReadValue<Vector2>();
         _playerInput = _playerInput.normalized * _playerInput.magnitude;
+
+        if (_body.velocity.magnitude > 0.1f && OnGround){
+            if (_stepCoroutine == null){
+                _stepCoroutine = StartCoroutine(StepRoutine());
+            }
+        }
+        else{
+            if (_stepCoroutine != null){
+                StopCoroutine(_stepCoroutine);
+                _stepCoroutine = null;
+            }
+        }
 
         if (_playerInput.magnitude > 0.25f)
             _lastMoveInput = _playerInput.normalized;
