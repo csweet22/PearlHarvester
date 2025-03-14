@@ -125,13 +125,13 @@ Material:
     - _Luminance_Bias: 0.5
     - _Max_Rotation_Deg: 0
     - _Metallic: 0
-    - _NormalStr: 0.37
+    - _NormalStr: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
