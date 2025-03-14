@@ -63,7 +63,7 @@ public class TerminalMenu : ACMenu
             }
             else{
                 upgradeText.text +=
-                    $"{requiredCount - GameManager.Instance.PearlCount.Value} PEARLS: UPGRADE {i + 1}\n";
+                    $"{requiredCount - GameManager.Instance.PearlCount.Value} MORE PEARLS UNTIL <b>UPGRADE {i + 1}</b>\n";
             }
         }
     }
