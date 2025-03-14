@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Walls
+  m_Name: M_Walls-Parasite
   m_Shader: {fileID: -6465566751694194690, guid: 96b1f27c958658340954f3a84e1f7cfe,
     type: 3}
   m_Parent: {fileID: 0}
@@ -38,7 +38,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Albedo:
-        m_Texture: {fileID: 2800000, guid: d1d25fd1d39289a4aa55ddbd99a1791f, type: 3}
+        m_Texture: {fileID: 2800000, guid: a18b641e3c3398e42829578d246b7f93, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
