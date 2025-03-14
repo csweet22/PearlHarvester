@@ -104,8 +104,7 @@ public class PlayerAxeManager : MonoBehaviour
 
         swingAction.action.performed += OnSwingPerformed;
 
-        throwAction.action.performed += OnThrowPrepared;
-        throwAction.action.canceled += OnThrowReleased;
+        throwAction.action.performed += OnThrowPerformed;
 
         recallAction.action.started += OnRecallPerformed;
     }
@@ -161,9 +160,14 @@ public class PlayerAxeManager : MonoBehaviour
 
         swingAction.action.performed -= OnSwingPerformed;
 
-        throwAction.action.performed -= OnThrowPrepared;
-        throwAction.action.canceled -= OnThrowReleased;
+        throwAction.action.performed -= OnThrowPerformed;
 
         recallAction.action.started -= OnRecallPerformed;
+    }
+
+    private void OnThrowPerformed(InputAction.CallbackContext obj)
+    {
+        OnThrowPrepared(obj);
+        OnThrowReleased(obj);
     }
 }

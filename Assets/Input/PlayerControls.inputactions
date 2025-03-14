@@ -56,7 +56,7 @@
                     "id": "f54a12ae-2ec1-449c-87c1-69cbb433955f",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Tap",
+                    "interactions": "",
                     "initialStateCheck": false
                 },
                 {
@@ -210,8 +210,8 @@
                 {
                     "name": "",
                     "id": "ac331df1-dcad-4a6c-a2dd-7cccb4e0cba0",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "Hold(duration=0.5)",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Throw",
@@ -221,6 +221,17 @@
                 {
                     "name": "",
                     "id": "e0d2d7a6-2670-48fc-83b8-a748edb0218e",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Recall",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0aa2e86a-aa9d-4ddd-b88a-7d1c222296e3",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
