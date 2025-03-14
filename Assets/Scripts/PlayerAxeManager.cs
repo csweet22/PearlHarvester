@@ -31,6 +31,11 @@ public class PlayerAxeManager : MonoBehaviour
     
     [SerializeField] private Transform head;
 
+    
+    [SerializeField] private AudioClip fleshSound;
+    [SerializeField] private AudioClip boneSound;
+    [SerializeField] private AudioClip metalSound;
+    
     private void Start()
     {
         _launcher = GetComponent<LauncherComponent>();
@@ -48,16 +53,20 @@ public class PlayerAxeManager : MonoBehaviour
         
         if (Physics.Raycast(head.position, head.forward, out RaycastHit hit, 2f,
                 LayerMask.GetMask("Geometry"))){
-
+            Debug.Log(hit.collider.gameObject.tag);
             switch (hit.collider.gameObject.tag){
                 case "bone":
+                    AudioManager.Instance.SpawnSound(boneSound);
                     break;
                 case "metal":
+                    AudioManager.Instance.SpawnSound(metalSound);
                     break;
                 case "film":
+                    AudioManager.Instance.SpawnSound(fleshSound);
                     break;
                 default:
-                    VFXManager.Instance.SpawnVFX(gib, 1.0f, hit.point, Quaternion.identity);
+                    AudioManager.Instance.SpawnSound(fleshSound);
+                    // VFXManager.Instance.SpawnVFX(gib, 1.0f, hit.point, Quaternion.LookRotation(hit.normal, Vector3.forward));
                     break;
             }
         }

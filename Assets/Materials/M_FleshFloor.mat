@@ -64,10 +64,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _Amp: 25.49
-    - _Contrast: 2
-    - _Enable_Mirroring: 0
+    - _Contrast: 1.73
+    - _Enable_Mirroring: 1
     - _Luminance_Bias: 0.2
-    - _Max_Rotation_Deg: 0
+    - _Max_Rotation_Deg: 60
     - _Metallic: 0.1
     - _NormalStr: 1
     - _QueueControl: 0
@@ -75,6 +75,6 @@ Material:
     - _Smoothness: 0.5
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 0}
-    - _Pattern_Scale: {r: 0.25, g: 0.25, b: 0, a: 0}
-    - _UV_Scale: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _Pattern_Scale: {r: 0.3, g: 0.3, b: 0, a: 0}
+    - _UV_Scale: {r: 0.3, g: 0.3, b: 0, a: 0}
   m_BuildTextureStacks: []
