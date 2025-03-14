@@ -529,6 +529,10 @@ MonoBehaviour:
     type: 3}
   pauseAction: {fileID: 9015855670488124761, guid: d88037f8d5888c84593de8c6aa28d211,
     type: 3}
+  respawnAction: {fileID: 2476557320434411375, guid: d88037f8d5888c84593de8c6aa28d211,
+    type: 3}
+  addAxeAction: {fileID: -42869366434521690, guid: d88037f8d5888c84593de8c6aa28d211,
+    type: 3}
   pauseMenu: {fileID: 6357139838703531394, guid: a2369422d7795924fa38e5fd18461960,
     type: 3}
   head: {fileID: 493349733632946221}

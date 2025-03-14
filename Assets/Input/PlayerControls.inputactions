@@ -94,6 +94,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Respawn",
+                    "type": "Button",
+                    "id": "6c595e86-e4d8-40f3-8ea7-2ec521301ab9",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GiveAxe",
+                    "type": "Button",
+                    "id": "bfd9ed94-d7ae-44e0-a18a-a16457eff3c1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -270,6 +288,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "df90ff0a-6021-423c-aac5-8bb89c6b4278",
+                    "path": "<Keyboard>/f1",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Respawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6df9a223-1d12-4fc9-bbc6-b7fccff459c6",
+                    "path": "<Keyboard>/f2",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GiveAxe",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
