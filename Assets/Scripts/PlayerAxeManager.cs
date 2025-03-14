@@ -59,7 +59,7 @@ public class PlayerAxeManager : MonoBehaviour
                     AudioManager.Instance.SpawnSound(boneSound);
                     break;
                 case "metal":
-                    AudioManager.Instance.SpawnSound(metalSound);
+                    // AudioManager.Instance.SpawnSound(metalSound);
                     break;
                 case "film":
                     AudioManager.Instance.SpawnSound(fleshSound);
