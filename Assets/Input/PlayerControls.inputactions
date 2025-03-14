@@ -103,6 +103,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "GiveAxe",
+                    "type": "Button",
+                    "id": "bfd9ed94-d7ae-44e0-a18a-a16457eff3c1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -290,6 +299,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Respawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6df9a223-1d12-4fc9-bbc6-b7fccff459c6",
+                    "path": "<Keyboard>/f2",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GiveAxe",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

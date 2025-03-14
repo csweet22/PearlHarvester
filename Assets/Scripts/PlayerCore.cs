@@ -20,6 +20,7 @@ public class PlayerCore : Singleton<PlayerCore>
 
     [SerializeField] private InputActionReference pauseAction;
     [SerializeField] private InputActionReference respawnAction;
+    [SerializeField] private InputActionReference addAxeAction;
     [SerializeField] private GameObject pauseMenu;
 
     [SerializeField] private Transform head;
@@ -106,6 +107,12 @@ public class PlayerCore : Singleton<PlayerCore>
         };
 
         respawnAction.action.Enable();
+        
+        addAxeAction.action.Enable();
+        addAxeAction.action.performed += context =>
+        {   
+            AddAxe();
+        };
     }
 
     private void OnPausePerformed(InputAction.CallbackContext context)
@@ -127,5 +134,6 @@ public class PlayerCore : Singleton<PlayerCore>
         pauseAction.action.Disable();
         pauseAction.action.performed -= OnPausePerformed;
         respawnAction.action.Disable();
+        addAxeAction.action.Disable();
     }
 }
