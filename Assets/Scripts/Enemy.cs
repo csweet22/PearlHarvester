@@ -73,7 +73,7 @@ public class Enemy : MonoBehaviour
         Vector3 direction = (PlayerCore.Instance.PlayerPosition - transform.position).Change(y: 0).normalized;
         Quaternion targetRotation = Quaternion.LookRotation(direction);
 
-        _rotateTween = mesh.transform.DORotate(targetRotation.eulerAngles, faceDuration, RotateMode.Fast);
+        _rotateTween = mesh.transform.DORotate(Quaternion.LookRotation((PlayerCore.Instance.PlayerPosition - transform.position).Change(y: 0).normalized).eulerAngles, faceDuration, RotateMode.Fast);
 
         yield return new WaitForSeconds(faceDuration + waitBeforeBullDuration);
 
