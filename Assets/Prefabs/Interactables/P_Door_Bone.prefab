@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3115377958822650037}
+  - component: {fileID: 8717091784890350006}
   m_Layer: 0
   m_Name: P_Door_Bone
   m_TagString: Untagged
@@ -33,6 +34,19 @@ Transform:
   - {fileID: 3124579522085033027}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8717091784890350006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2253919287747384955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35230f1dea9f47e498914630956386f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorMat: {fileID: 2100000, guid: 8df4fdea029bdda4cbe7c7331ea213a7, type: 2}
 --- !u!1 &4031504215762876483
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +439,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -45.29901
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 19dbfa8a864c9264b9ac3099ff70c576,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8df4fdea029bdda4cbe7c7331ea213a7, type: 2}
     - target: {fileID: 919132149155446097, guid: 19dbfa8a864c9264b9ac3099ff70c576,
         type: 3}
       propertyPath: m_Name
@@ -453,6 +472,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: P_Bone_Door_Single (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491881070544347215, guid: 9f709fd64ae3e2b4d86eb1e99712972f,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 712
       objectReference: {fileID: 0}
     - target: {fileID: 5598936996161711080, guid: 9f709fd64ae3e2b4d86eb1e99712972f,
         type: 3}
@@ -618,6 +642,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 127.484
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 19dbfa8a864c9264b9ac3099ff70c576,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8df4fdea029bdda4cbe7c7331ea213a7, type: 2}
     - target: {fileID: 919132149155446097, guid: 19dbfa8a864c9264b9ac3099ff70c576,
         type: 3}
       propertyPath: m_Name
@@ -646,6 +675,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: P_Bone_Door_Single (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491881070544347215, guid: 9f709fd64ae3e2b4d86eb1e99712972f,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 712
       objectReference: {fileID: 0}
     - target: {fileID: 5598936996161711080, guid: 9f709fd64ae3e2b4d86eb1e99712972f,
         type: 3}
@@ -750,6 +784,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: P_Bone_Door_Single (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491881070544347215, guid: 9f709fd64ae3e2b4d86eb1e99712972f,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 712
       objectReference: {fileID: 0}
     - target: {fileID: 5598936996161711080, guid: 9f709fd64ae3e2b4d86eb1e99712972f,
         type: 3}
@@ -933,6 +972,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_Bone_Door_Single (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1491881070544347215, guid: 9f709fd64ae3e2b4d86eb1e99712972f,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 712
+      objectReference: {fileID: 0}
     - target: {fileID: 5598936996161711080, guid: 9f709fd64ae3e2b4d86eb1e99712972f,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1037,6 +1081,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_Bone_Door_Single
       objectReference: {fileID: 0}
+    - target: {fileID: 1491881070544347215, guid: 9f709fd64ae3e2b4d86eb1e99712972f,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 712
+      objectReference: {fileID: 0}
     - target: {fileID: 5598936996161711080, guid: 9f709fd64ae3e2b4d86eb1e99712972f,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1126,6 +1175,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: P_Bone_Door_Single (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491881070544347215, guid: 9f709fd64ae3e2b4d86eb1e99712972f,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 712
       objectReference: {fileID: 0}
     - target: {fileID: 5598936996161711080, guid: 9f709fd64ae3e2b4d86eb1e99712972f,
         type: 3}
@@ -1230,6 +1284,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: P_Bone_Door_Single (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1491881070544347215, guid: 9f709fd64ae3e2b4d86eb1e99712972f,
+        type: 3}
+      propertyPath: m_VersionIndex
+      value: 712
       objectReference: {fileID: 0}
     - target: {fileID: 5598936996161711080, guid: 9f709fd64ae3e2b4d86eb1e99712972f,
         type: 3}
@@ -1361,6 +1420,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 44.247
       objectReference: {fileID: 0}
+    - target: {fileID: 8443764954055672370, guid: 9f709fd64ae3e2b4d86eb1e99712972f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8df4fdea029bdda4cbe7c7331ea213a7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
