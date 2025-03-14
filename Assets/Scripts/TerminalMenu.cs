@@ -71,14 +71,17 @@ public class TerminalMenu : ACMenu
                 if (i == 0){
                     upgradeText.text +=
                         $"{requiredCount - GameManager.Instance.PearlCount.Value} MORE PEARLS UNTIL <b>AXE THROW SPEED</b>\n";
-                    
                 }
+
                 if (i == 1){
                     upgradeText.text +=
                         $"{requiredCount - GameManager.Instance.PearlCount.Value} MORE PEARLS UNTIL <b>CAN BREAK BONE DOORS</b>\n";
-                    
                 }
             }
+        }
+
+        if (GameManager.Instance.requiredPearls.Count == 0){
+            upgradeTextHeader.text = "";
         }
 
 
@@ -124,6 +127,7 @@ public class TerminalMenu : ACMenu
         }
 
         UpdateUpgradeButtonInteractable();
+        UpdateUpgradeText();
     }
 
     private void OnDisable()
