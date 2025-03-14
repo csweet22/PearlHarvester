@@ -61,7 +61,7 @@ public class HUD : Singleton<HUD>
         healthBar.max.Value = maxHealth;
         healthBar.Progress.Value = currentHealth;
 
-        Debug.Log($"{currentHealth} / {maxHealth}");
+        // Debug.Log($"{currentHealth} / {maxHealth}");
     }
 
     public void SetReticleInteractable()
