@@ -46,6 +46,7 @@ public class PlayerCore : Singleton<PlayerCore>
             Color temp = hitDamage;
             temp.a = 0.0f;
             HUD.Instance.TweenTint(temp, 0.2f);
+            MusicManager.Instance.EnableDrums();
         };
         
         _healthComponent.OnGainHealth += delta =>
