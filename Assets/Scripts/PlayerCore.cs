@@ -42,9 +42,10 @@ public class PlayerCore : Singleton<PlayerCore>
         {
             _healthComponent.ChangeHealth(delta);
             PlayerCamera.Instance.Shake();
-            Color preDamageTint = HUD.Instance.GetTint();
             HUD.Instance.SetTint(hitDamage);
-            HUD.Instance.TweenTint(preDamageTint, 0.2f);
+            Color temp = hitDamage;
+            temp.a = 0.0f;
+            HUD.Instance.TweenTint(temp, 0.2f);
         };
         
         _healthComponent.OnGainHealth += delta =>
