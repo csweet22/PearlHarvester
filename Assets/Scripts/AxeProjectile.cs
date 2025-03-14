@@ -24,6 +24,7 @@ public class AxeProjectile : ProjectileComponent
     private List<InteractableComponent> _connectedInteractables = new List<InteractableComponent>();
 
     private bool _canRecall = false;
+    [SerializeField] private AudioClip recallSound;
     
     private void Start()
     {
@@ -66,6 +67,7 @@ public class AxeProjectile : ProjectileComponent
         _connectedInteractables.Clear();
 
         _isConnected = false;
+        AudioManager.Instance.SpawnSound(recallSound);
 
         // Turn of physics collider
         physicsCollider.enabled = false;

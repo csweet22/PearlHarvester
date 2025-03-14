@@ -296,6 +296,7 @@ MonoBehaviour:
   physicsCollider: {fileID: 692008474903377115}
   healthChangeBox: {fileID: 7143113902793435871}
   rotationSpeed: 300
+  recallSound: {fileID: 8300000, guid: 8d0bf36cb76fa2242a4c9b8d77df9d82, type: 3}
 --- !u!54 &8361335194632336401
 Rigidbody:
   m_ObjectHideFlags: 0
