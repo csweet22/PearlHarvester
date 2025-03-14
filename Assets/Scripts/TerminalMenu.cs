@@ -68,8 +68,16 @@ public class TerminalMenu : ACMenu
                 ;
             }
             else{
-                upgradeText.text +=
-                    $"{requiredCount - GameManager.Instance.PearlCount.Value} MORE PEARLS UNTIL <b>UPGRADE {i + 1}</b>\n";
+                if (i == 0){
+                    upgradeText.text +=
+                        $"{requiredCount - GameManager.Instance.PearlCount.Value} MORE PEARLS UNTIL <b>AXE THROW SPEED</b>\n";
+                    
+                }
+                if (i == 1){
+                    upgradeText.text +=
+                        $"{requiredCount - GameManager.Instance.PearlCount.Value} MORE PEARLS UNTIL <b>CAN BREAK BONE DOORS</b>\n";
+                    
+                }
             }
         }
 
