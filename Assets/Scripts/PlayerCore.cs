@@ -19,12 +19,13 @@ public class PlayerCore : Singleton<PlayerCore>
     [SerializeField] private InputActionReference lookAction;
 
     [SerializeField] private InputActionReference pauseAction;
+    [SerializeField] private InputActionReference respawnAction;
     [SerializeField] private GameObject pauseMenu;
 
     [SerializeField] private Transform head;
 
-    [SerializeField] private Color hitDamage =new Color(0.5f, 0f, 0f, .5f);
-    
+    [SerializeField] private Color hitDamage = new Color(0.5f, 0f, 0f, .5f);
+
     private void Start()
     {
         _playerMovement = GetComponentInChildren<PlayerMovement>();
@@ -48,12 +49,12 @@ public class PlayerCore : Singleton<PlayerCore>
             HUD.Instance.TweenTint(temp, 0.2f);
             MusicManager.Instance.EnableDrums();
         };
-        
+
         _healthComponent.OnGainHealth += delta =>
         {
             HUD.Instance.UpdateHealth(_healthComponent.CurrentHealth, _healthComponent.MaxHealth);
         };
-        
+
         _healthComponent.OnLoseHealth += delta =>
         {
             HUD.Instance.UpdateHealth(_healthComponent.CurrentHealth, _healthComponent.MaxHealth);
@@ -99,6 +100,12 @@ public class PlayerCore : Singleton<PlayerCore>
     {
         pauseAction.action.Enable();
         pauseAction.action.performed += OnPausePerformed;
+        respawnAction.action.performed += context =>
+        {
+            _playerMovement.transform.position = GameManager.Instance.safeAreaSpawn.position;
+        };
+
+        respawnAction.action.Enable();
     }
 
     private void OnPausePerformed(InputAction.CallbackContext context)
@@ -119,5 +126,6 @@ public class PlayerCore : Singleton<PlayerCore>
     {
         pauseAction.action.Disable();
         pauseAction.action.performed -= OnPausePerformed;
+        respawnAction.action.Disable();
     }
 }
