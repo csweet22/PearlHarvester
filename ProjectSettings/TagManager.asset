@@ -30,7 +30,7 @@ TagManager:
   - Collectable
   - Detection
   - AxeRender
-  - 
+  - HeadCollider
   - 
   - 
   - 

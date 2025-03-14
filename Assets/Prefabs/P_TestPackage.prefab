@@ -485,6 +485,76 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 8970792218428026515, guid: 90ccd31dba33362478dcc62f52ebdc8e,
+        type: 3}
+      propertyPath: onExit.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970792218428026515, guid: 90ccd31dba33362478dcc62f52ebdc8e,
+        type: 3}
+      propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970792218428026515, guid: 90ccd31dba33362478dcc62f52ebdc8e,
+        type: 3}
+      propertyPath: onExit.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970792218428026515, guid: 90ccd31dba33362478dcc62f52ebdc8e,
+        type: 3}
+      propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970792218428026515, guid: 90ccd31dba33362478dcc62f52ebdc8e,
+        type: 3}
+      propertyPath: onExit.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4029604420937255701}
+    - target: {fileID: 8970792218428026515, guid: 90ccd31dba33362478dcc62f52ebdc8e,
+        type: 3}
+      propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4029604420937255701}
+    - target: {fileID: 8970792218428026515, guid: 90ccd31dba33362478dcc62f52ebdc8e,
+        type: 3}
+      propertyPath: onExit.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970792218428026515, guid: 90ccd31dba33362478dcc62f52ebdc8e,
+        type: 3}
+      propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970792218428026515, guid: 90ccd31dba33362478dcc62f52ebdc8e,
+        type: 3}
+      propertyPath: onExit.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DesubmergeAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970792218428026515, guid: 90ccd31dba33362478dcc62f52ebdc8e,
+        type: 3}
+      propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SubmergeAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970792218428026515, guid: 90ccd31dba33362478dcc62f52ebdc8e,
+        type: 3}
+      propertyPath: onExit.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970792218428026515, guid: 90ccd31dba33362478dcc62f52ebdc8e,
+        type: 3}
+      propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970792218428026515, guid: 90ccd31dba33362478dcc62f52ebdc8e,
+        type: 3}
+      propertyPath: onExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970792218428026515, guid: 90ccd31dba33362478dcc62f52ebdc8e,
+        type: 3}
+      propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1106,6 +1176,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6144070060857703953}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4029604420937255701 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7108959448387171588, guid: c336235e1f0de01458ca49c5007decf8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6144070060857703953}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eef9170637b43069c6701ba68dd1a4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6467194947913543112
 PrefabInstance:
   m_ObjectHideFlags: 0
