@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 5603769334018952016}
   - component: {fileID: 2499461145616271778}
   - component: {fileID: 1730897020245897206}
+  - component: {fileID: 211913736838102028}
   m_Layer: 0
   m_Name: P_Terminal
   m_TagString: Untagged
@@ -331,6 +332,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &211913736838102028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5557293450851796257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92301ee713e94c3d9126ae6247df2ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2840601450058002930}
+  duration: 0.5
+  shakeIntensity: {x: 0.1, y: 0, z: 0.1}
+  frequency: 8
 --- !u!1 &7680602487146263827
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,10 +394,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startInteractEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 211913736838102028}
+        m_TargetAssemblyTypeName: ShakerComponent, Assembly-CSharp
+        m_MethodName: Shake
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   endInteractEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 211913736838102028}
+        m_TargetAssemblyTypeName: ShakerComponent, Assembly-CSharp
+        m_MethodName: Shake
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8128457053600964345
 GameObject:
   m_ObjectHideFlags: 0
