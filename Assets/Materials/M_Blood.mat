@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Blood
-  m_Shader: {fileID: -6465566751694194690, guid: 96b1f27c958658340954f3a84e1f7cfe,
+  m_Shader: {fileID: -6465566751694194690, guid: 321e01f424180f2479dcaf87edd3f6fc,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -103,6 +103,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Alpha: 0.98
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
