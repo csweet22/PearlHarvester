@@ -103,7 +103,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.98
+    - _Alpha: 0.96
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -120,6 +120,7 @@ Material:
     - _DstBlendAlpha: 0
     - _Enable_Mirroring: 1
     - _EnvironmentReflections: 1
+    - _Fade: 0.5
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -144,6 +145,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Pan: {r: 0, g: 1, b: 0, a: 0}
     - _Pattern_Scale: {r: 40, g: 40, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _UV_Scale: {r: 40, g: 40, b: 0, a: 0}
