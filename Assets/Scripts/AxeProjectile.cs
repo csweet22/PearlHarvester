@@ -26,6 +26,8 @@ public class AxeProjectile : ProjectileComponent
     private bool _canRecall = false;
     [SerializeField] private AudioClip recallSound;
     
+    [SerializeField] private AudioClip genericHitSound;
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -135,6 +137,8 @@ public class AxeProjectile : ProjectileComponent
             interactable.OnInteractStart(_interactor);
         }
 
+        AudioManager.Instance.SpawnSound(genericHitSound);
+        
         localConnectPosition = transform.localPosition;
         localConnectRotation = transform.localEulerAngles;
 
