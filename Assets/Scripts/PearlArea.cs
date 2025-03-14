@@ -7,7 +7,7 @@ public class PearlArea : MonoBehaviour
 {
     [SerializeField] private List<Pearl> pearlObjects = new List<Pearl>();
 
-    [SerializeField] private float percentRequired = 0.75f;
+    [SerializeField] private int pearlsRequired = 1;
 
     public UnityEvent OnThresholdReached;
 
@@ -39,7 +39,7 @@ public class PearlArea : MonoBehaviour
         if (_triggered)
             return;
 
-        if (((float) pearlObjects.Count / (float) totalCount) <= (1.0f - percentRequired)){
+        if ((totalCount - pearlObjects.Count) >= pearlsRequired){
             _triggered = true;
             Debug.Log($"Pearl Area {gameObject.name} Reached");
             OnThresholdReached?.Invoke();

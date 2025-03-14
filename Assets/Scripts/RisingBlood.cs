@@ -10,8 +10,10 @@ public class RisingBlood : MonoBehaviour
 
     public float CurrentBloodLevel => bloodObject.localPosition.y;
     private float _targetBloodLevel = 0f;
-    private float _risingSpeed = 1f;
+    [SerializeField] private float _risingSpeed = 0.4f;
 
+    [SerializeField] private float _regularDelay = 1.0f;
+    
     [SerializeField] public float _lowestHeight = -100f;
     [SerializeField] public float _highestHeight = 0f;
 
@@ -84,13 +86,13 @@ public class RisingBlood : MonoBehaviour
 
     IEnumerator DelayLow()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(_regularDelay);
         GoToLowest();
     }
 
     IEnumerator DelayHigh()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(_regularDelay);
         GoToHighest();
     }
 

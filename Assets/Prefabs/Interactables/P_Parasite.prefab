@@ -675,6 +675,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: tapeworm
       objectReference: {fileID: 0}
+    - target: {fileID: 6317578925029434746, guid: 7001f6ba1b5d66549a4aee82c55d3599,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5d10a728d58f82e4b9aa855674ec61ad, type: 2}
+    - target: {fileID: 8100320773420232829, guid: 7001f6ba1b5d66549a4aee82c55d3599,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5d10a728d58f82e4b9aa855674ec61ad, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
