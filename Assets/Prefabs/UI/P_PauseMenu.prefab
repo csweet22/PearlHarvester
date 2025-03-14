@@ -145,8 +145,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Paused
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c76a7e2911957324baa0b24f70f2e152, type: 2}
+  m_sharedMaterial: {fileID: -7588523699120893979, guid: c76a7e2911957324baa0b24f70f2e152,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -349,12 +350,13 @@ MonoBehaviour:
     <b>RMB</b> \t\t-
     Throw & Recall Axe
 
-    <b>Shift</b> \t\t- Sprint
+    <b>Shift</b> \t- Sprint
 
     <b>Control</b> \t- Crouch'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c76a7e2911957324baa0b24f70f2e152, type: 2}
+  m_sharedMaterial: {fileID: -7588523699120893979, guid: c76a7e2911957324baa0b24f70f2e152,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -378,8 +380,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12.53
-  m_fontSizeBase: 12.53
+  m_fontSize: 11.2
+  m_fontSizeBase: 11.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

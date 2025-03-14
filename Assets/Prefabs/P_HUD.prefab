@@ -67,8 +67,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'QUOTA: 0 / 10'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c76a7e2911957324baa0b24f70f2e152, type: 2}
+  m_sharedMaterial: {fileID: -7588523699120893979, guid: c76a7e2911957324baa0b24f70f2e152,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -276,8 +277,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'TOTAL: 0 / 10'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c76a7e2911957324baa0b24f70f2e152, type: 2}
+  m_sharedMaterial: {fileID: -7588523699120893979, guid: c76a7e2911957324baa0b24f70f2e152,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -590,6 +592,7 @@ MonoBehaviour:
   quota: {fileID: 1366289635768731646}
   total: {fileID: 3225528031560636701}
   tint: {fileID: 132776434890007266}
+  reticleActiveScale: 10
 --- !u!223 &2579432331582242541
 Canvas:
   m_ObjectHideFlags: 0
