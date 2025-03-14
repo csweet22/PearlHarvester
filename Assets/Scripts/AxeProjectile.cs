@@ -44,6 +44,7 @@ public class AxeProjectile : ProjectileComponent
 
     private IEnumerator CanRecalLDelay(float duration = 0.1f)
     {
+        Debug.Log("CanRecalLDelay");
         yield return new WaitForSeconds(duration);
         _canRecall = true;
     }
@@ -57,7 +58,7 @@ public class AxeProjectile : ProjectileComponent
 
     private void OnRecallPerformed(InputAction.CallbackContext obj)
     {
-        if (!_canRecall)
+        if (!_canRecall && !_isConnected)
             return;
         
         foreach (var interactable in _connectedInteractables){
