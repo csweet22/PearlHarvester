@@ -126,11 +126,14 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator StepRoutine(float delayBetweenSteps = 0.5f)
     {
-        if(_stepSource.isPlaying)
-            yield return new WaitForSeconds(_stepSource.clip.length);
-        _stepSource.Play();
-        _stepSource.pitch = Random.Range(0.9f, 1.1f);
-        yield return new WaitForSeconds(delayBetweenSteps + _stepSource.clip.length);
+        if (!_stepSource.isPlaying){
+            _stepSource.Play();
+            _stepSource.pitch = Random.Range(0.9f, 1.1f);
+        }
+
+        float temp = delayBetweenSteps * (sprintAction.action.ReadValue<float>() > 0.5f ? 0.5f : 1f);
+        
+        yield return new WaitForSeconds(temp + _stepSource.clip.length);
         yield return StepRoutine();
     }
 
@@ -156,7 +159,7 @@ public class PlayerMovement : MonoBehaviour
         _playerInput = moveAction.action.ReadValue<Vector2>();
         _playerInput = _playerInput.normalized * _playerInput.magnitude;
 
-        if (_body.velocity.magnitude > 0.1f && OnGround){
+        if (_body.velocity.magnitude > 0.05f && OnGround){
             if (_stepCoroutine == null){
                 _stepCoroutine = StartCoroutine(StepRoutine());
             }
