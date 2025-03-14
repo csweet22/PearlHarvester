@@ -11875,6 +11875,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
         type: 3}
+      propertyPath: requiredPearls.Array.data[1]
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
+        type: 3}
       propertyPath: upgrades.Array.data[0].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -11885,8 +11890,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
         type: 3}
+      propertyPath: upgrades.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
+        type: 3}
       propertyPath: upgrades.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
+        type: 3}
+      propertyPath: upgrades.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
         type: 3}
@@ -11915,8 +11930,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
         type: 3}
+      propertyPath: upgrades.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetAxeProjectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
+        type: 3}
       propertyPath: upgrades.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetAxeProjectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
+        type: 3}
+      propertyPath: upgrades.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetAxeTier
       objectReference: {fileID: 0}
     - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
         type: 3}
@@ -11950,15 +11975,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
         type: 3}
+      propertyPath: upgrades.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
+        type: 3}
+      propertyPath: upgrades.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
+        type: 3}
+      propertyPath: upgrades.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
+        type: 3}
       propertyPath: upgrades.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
         type: 3}
-      propertyPath: upgrades.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      propertyPath: upgrades.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 11400000, guid: 432fb6e7e158de746869725cbd55fd9a,
         type: 2}
+    - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
+        type: 3}
+      propertyPath: upgrades.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 563418d8b1a2bff4680da36d619ca877,
+        type: 2}
+    - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
+        type: 3}
+      propertyPath: upgrades.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
         type: 3}
       propertyPath: upgrades.Array.data[1].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
@@ -11967,8 +12018,18 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
         type: 3}
+      propertyPath: upgrades.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: ProjectileData, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
+        type: 3}
       propertyPath: upgrades.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: ProjectileData, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
+        type: 3}
+      propertyPath: upgrades.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 897734619922770205, guid: 9fee8cc939a84a34ca66d2fc856ba16a,
         type: 3}
