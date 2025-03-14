@@ -66,7 +66,7 @@ public class PlayerAxeManager : MonoBehaviour
                     break;
                 default:
                     AudioManager.Instance.SpawnSound(fleshSound);
-                    VFXManager.Instance.SpawnVFX(gib, 1.0f, hit.point, Quaternion.identity);
+                    // VFXManager.Instance.SpawnVFX(gib, 1.0f, hit.point, Quaternion.LookRotation(hit.normal, Vector3.forward));
                     break;
             }
         }
