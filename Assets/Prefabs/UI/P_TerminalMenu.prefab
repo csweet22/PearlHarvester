@@ -385,6 +385,7 @@ MonoBehaviour:
   backButton: {fileID: 3042441738644023246}
   quotaText: {fileID: 2055959862897108505}
   upgradeText: {fileID: 8791357498766338591}
+  upgradeTextHeader: {fileID: 6207949459954965167}
 --- !u!1 &7114757955248094291
 GameObject:
   m_ObjectHideFlags: 0

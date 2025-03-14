@@ -18,6 +18,7 @@ public class TerminalMenu : ACMenu
 
     [SerializeField] private TextMeshProUGUI quotaText;
     [SerializeField] private TextMeshProUGUI upgradeText;
+    [SerializeField] private TextMeshProUGUI upgradeTextHeader;
 
     private bool CanUpgrade()
     {
@@ -50,6 +51,11 @@ public class TerminalMenu : ACMenu
     {
         quotaText.text =
             $"<b>QUOTA</b>: {GameManager.Instance.PearlCount.Value} / {GameManager.Instance.quota} PEARLS";
+
+        if (GameManager.Instance.quotaReached){
+            quotaText.text =
+                $"YOU REACHED QUOTA. THANK YOU FOR PLAYING.\n COLLECTED {GameManager.Instance.PearlCount.Value} / {GameManager.Instance.totalPearlCount} PEARLS";
+        }
     }
 
     private void UpdateUpgradeText()
@@ -65,6 +71,12 @@ public class TerminalMenu : ACMenu
                 upgradeText.text +=
                     $"{requiredCount - GameManager.Instance.PearlCount.Value} MORE PEARLS UNTIL <b>UPGRADE {i + 1}</b>\n";
             }
+        }
+
+
+        if (GameManager.Instance.quotaReached){
+            upgradeTextHeader.text = "";
+            upgradeText.text = $"";
         }
     }
 

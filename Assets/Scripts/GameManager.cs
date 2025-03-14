@@ -59,6 +59,7 @@ public class GameManager : Singleton<GameManager>
             if (PearlCount.Value >= quota){
                 OnQuotaReached?.Invoke();
                 onQuotaReached?.Invoke();
+                quotaReached = true;
             }
         }
     }

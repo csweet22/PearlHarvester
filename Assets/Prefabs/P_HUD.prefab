@@ -584,6 +584,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 3424483932283668065}
+  reticleActiveTexture: {fileID: 2800000, guid: 649a2d0c3b9dab04d841cbb600435ee2,
+    type: 3}
   reticle: {fileID: 1210725914076149673}
   quota: {fileID: 1366289635768731646}
   total: {fileID: 3225528031560636701}
