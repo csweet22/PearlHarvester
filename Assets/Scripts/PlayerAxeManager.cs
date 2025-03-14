@@ -27,6 +27,7 @@ public class PlayerAxeManager : MonoBehaviour
     [SerializeField] private VisualEffectAsset gib;
 
     [SerializeField] private AudioClip swingSound;
+    [SerializeField] private AudioClip throwSound;
     
     [SerializeField] private Transform head;
 
@@ -138,6 +139,7 @@ public class PlayerAxeManager : MonoBehaviour
         if (_throwQueued){
             _throwQueued = false;
             // Debug.Log("Axe Thrown.");
+            AudioManager.Instance.SpawnSound(throwSound);
             LaunchParameters launchParameters = new LaunchParameters(Camera.main.transform.forward, 5f);
             _launcher.Launch(launchParameters);
             ChangeAxeCount(-1);

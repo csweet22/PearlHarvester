@@ -23,6 +23,8 @@ public class AxeProjectile : ProjectileComponent
 
     private List<InteractableComponent> _connectedInteractables = new List<InteractableComponent>();
 
+    private bool _canRecall = false;
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -36,6 +38,13 @@ public class AxeProjectile : ProjectileComponent
             _interactor.DeactivateInteractable();
         };
         _interactor.EndInteractAction += (interactable) => { _interactor.ActivateInteractable(); };
+        StartCoroutine(CanRecalLDelay());
+    }
+
+    private IEnumerator CanRecalLDelay(float duration = 0.1f)
+    {
+        yield return new WaitForSeconds(duration);
+        _canRecall = true;
     }
 
     private void OnEnable()
@@ -47,6 +56,9 @@ public class AxeProjectile : ProjectileComponent
 
     private void OnRecallPerformed(InputAction.CallbackContext obj)
     {
+        if (!_canRecall)
+            return;
+        
         foreach (var interactable in _connectedInteractables){
             interactable.OnInteractEnd(_interactor);
         }
