@@ -106,6 +106,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (_crouching)
                 return;
+            if (!OnGround)
+                return;
             // turn off head collider
             headCollider.enabled = false;
 
