@@ -646,6 +646,7 @@ MonoBehaviour:
   head: {fileID: 493349733632946221}
   gravity: {x: 0, y: -29.43, z: 0}
   _stepSource: {fileID: 340851021163839389}
+  _jumpClip: {fileID: 8300000, guid: 3dcf180ab7bf12744882802b52d54a6f, type: 3}
 --- !u!54 &3532310425170743473
 Rigidbody:
   m_ObjectHideFlags: 0

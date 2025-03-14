@@ -81,6 +81,8 @@ public class PlayerMovement : MonoBehaviour
     private bool _ceilingAbove;
 
     [SerializeField] private AudioSource _stepSource;
+
+    [SerializeField] private AudioClip _jumpClip;
     private Coroutine _stepCoroutine;
 
     private void OnValidate()
@@ -363,6 +365,8 @@ public class PlayerMovement : MonoBehaviour
         if (_crouching && _ceilingAbove)
             return;
 
+        AudioManager.Instance.SpawnSound(_jumpClip);
+        
         _stepsSinceLastJump = 0;
         _jumpPhase += 1;
         float jumpSpeed = Mathf.Sqrt(2f * gravity.magnitude * jumpHeight);
