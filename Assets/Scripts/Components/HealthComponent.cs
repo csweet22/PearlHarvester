@@ -36,6 +36,10 @@ public class HealthComponent : MonoBehaviour
     {
         _currentHealth.Value += delta;
 
+        if (_currentHealth.Value > MaxHealth){
+            _currentHealth.Value = MaxHealth;
+        } 
+        
         if (delta > 0)
             OnGainHealth?.Invoke(delta);
         else if (delta < 0)

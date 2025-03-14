@@ -1633,6 +1633,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2879315439383755844, guid: 60dfdcc8cb584ba47bfd714e6617557a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 3060366646396466456, guid: 60dfdcc8cb584ba47bfd714e6617557a,
         type: 3}
       propertyPath: maxGroundAngle
@@ -1647,6 +1652,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UseGravity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270711604346704112, guid: 60dfdcc8cb584ba47bfd714e6617557a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8072886796805042229, guid: 60dfdcc8cb584ba47bfd714e6617557a,
         type: 3}

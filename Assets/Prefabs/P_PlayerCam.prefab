@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 6400850544777971927}
   - component: {fileID: 6796271606828541685}
   - component: {fileID: 8695777503073865618}
+  - component: {fileID: 6790305333079727333}
   - component: {fileID: 7439918585394071368}
   m_Layer: 0
   m_Name: P_PlayerCam
@@ -168,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a9adbb7bf58d94389a911bc231e2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprintFovIncrease: 7
 --- !u!114 &8695777503073865618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +209,22 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 22016062830540792}
+--- !u!114 &6790305333079727333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829580219464193993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92301ee713e94c3d9126ae6247df2ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 6400850544777971927}
+  duration: 0.4
+  shakeIntensity: {x: 0.3, y: 0.3, z: 0}
+  frequency: 4
 --- !u!114 &7439918585394071368
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e674bf7dc544a08fb56b089f06bb33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnTriggeredEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isActive: 1
 --- !u!135 &3248854578540804605
 SphereCollider:
@@ -147,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a9f227ca878c7349a8e944ae3be0327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  getSound: {fileID: 8300000, guid: 6937533c43c32c64ea1f10edc0dbc042, type: 3}
 --- !u!54 &8180541629342817701
 Rigidbody:
   m_ObjectHideFlags: 0

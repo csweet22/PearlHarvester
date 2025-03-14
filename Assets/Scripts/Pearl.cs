@@ -9,6 +9,8 @@ public class Pearl : MonoBehaviour
     private PearlArea pearlArea;
     
     private OnetimeTrigger _onetimeTrigger;
+
+    [SerializeField] private AudioClip getSound;
     
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,7 @@ public class Pearl : MonoBehaviour
         DOTween.To(() => gameObject.transform.position, x => gameObject.transform.position = x,
             PlayerCore.Instance.PlayerPosition, 0.2f).onComplete += () =>
         {
+            AudioManager.Instance.SpawnSound(getSound);
             GameManager.Instance.AddPearl();
             Destroy(gameObject);
         };
