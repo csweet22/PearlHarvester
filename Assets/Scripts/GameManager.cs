@@ -14,7 +14,7 @@ public class GameManager : Singleton<GameManager>
 
     public float CurrentBloodLevel => _risingBlood.CurrentBloodLevel;
 
-    private RisingBlood _risingBlood;
+    public RisingBlood _risingBlood;
 
     public bool paused = false;
 
@@ -43,7 +43,6 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] public AudioClip whale3;
 
     [SerializeField] public AudioSource whaleSource;
-
 
     public float _runTime = 0.0f;
     private bool _gameEnded = false;

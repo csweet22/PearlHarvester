@@ -58,6 +58,7 @@ public class TerminalMenu : ACMenu
         if (GameManager.Instance.quotaReached){
             quotaText.text =
                 $"YOU REACHED QUOTA.\nTHANK YOU FOR PLAYING.\nCOLLECTED {GameManager.Instance.PearlCount.Value} / {GameManager.Instance.totalPearlCount} PEARLS";
+            GameManager.Instance._risingBlood.gameObject.SetActive(false);
         }
     }
 
