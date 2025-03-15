@@ -47,7 +47,8 @@ public class GameManager : Singleton<GameManager>
     public void PlayGroan()
     {
         Debug.Log("Play Groan");
-        whaleSource.Stop();
+        if(whaleSource.isPlaying)
+            return;
 
         int rand = Random.Range(0, 3);
         switch (rand){
