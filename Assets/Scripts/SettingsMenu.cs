@@ -11,16 +11,25 @@ public class SettingsMenu : ACMenu
     [SerializeField] private Slider sensitivitySlider;
     [SerializeField] private Slider fovSlider;
     [SerializeField] private Button backButton;
-    
+    [SerializeField] private Toggle showTimerButton;
+
     private void OnEnable()
     {
         sensitivitySlider.value = Settings.Instance.sensitivity;
         sensitivitySlider.onValueChanged.AddListener(OnSensitivityChanged);
-        
+
         fovSlider.value = Settings.Instance.fov;
         fovSlider.onValueChanged.AddListener(OnFOVChanged);
-        
+
         backButton.onClick.AddListener(OnBackClicked);
+
+        showTimerButton.onValueChanged.AddListener(OnShowTimerClicked);
+    }
+
+    private void OnShowTimerClicked(bool newValue)
+    {
+        Settings.Instance.showTimer = newValue;
+        HUD.Instance.ShowTimer(Settings.Instance.showTimer);
     }
 
     private void OnBackClicked()

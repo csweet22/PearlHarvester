@@ -19,8 +19,10 @@ public class HUD : Singleton<HUD>
 
     [SerializeField] private Image tint;
 
-    public float reticleActiveScale = 10f; 
-    
+    [SerializeField] private TextMeshProUGUI timer;
+
+    public float reticleActiveScale = 10f;
+
     private Tween _tintTween;
 
     private void Start()
@@ -41,7 +43,7 @@ public class HUD : Singleton<HUD>
     {
         return tint.color;
     }
-    
+
     public void SetTint(Color tintColor)
     {
         if (_tintTween != null)
@@ -76,5 +78,24 @@ public class HUD : Singleton<HUD>
         reticle.color = new Color(1f, 1f, 1f, 1f);
         reticle.texture = null;
         reticle.rectTransform.localScale = new Vector3(1, 1, 1);
+    }
+
+    private bool showTimer;
+
+    public void ShowTimer(bool instanceShowTimer)
+    {
+        showTimer = instanceShowTimer;
+    }
+
+    private void Update()
+    {
+        if (!showTimer)
+            return;
+        
+        int minutes = Mathf.FloorToInt(GameManager.Instance._runTime / 60);
+        float seconds = GameManager.Instance._runTime % 60;
+        int milliseconds = Mathf.FloorToInt((seconds - Mathf.Floor(seconds)) * 1000);
+        
+        timer.text = $"{minutes:D2}:{Mathf.FloorToInt(seconds):D2}.{milliseconds:D2}";
     }
 }
