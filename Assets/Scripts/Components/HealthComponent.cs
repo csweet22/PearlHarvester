@@ -26,7 +26,7 @@ public class HealthComponent : MonoBehaviour
 
         _currentHealth.OnValueSet += (oldValue, newValue) =>
         {
-            if (newValue == 0){
+            if (newValue <= 0){
                 OnHealthEmpty?.Invoke();
             }
         };
