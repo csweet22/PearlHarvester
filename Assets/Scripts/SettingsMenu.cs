@@ -23,6 +23,7 @@ public class SettingsMenu : ACMenu
 
         backButton.onClick.AddListener(OnBackClicked);
 
+        showTimerButton.isOn = Settings.Instance.showTimer;
         showTimerButton.onValueChanged.AddListener(OnShowTimerClicked);
     }
 
