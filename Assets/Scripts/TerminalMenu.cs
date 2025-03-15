@@ -63,19 +63,15 @@ public class TerminalMenu : ACMenu
         upgradeText.text = "";
         for (int i = 0; i < GameManager.Instance.requiredPearls.Count; i++){
             int requiredCount = GameManager.Instance.requiredPearls[i];
-
-            if (GameManager.Instance.PearlCount.Value >= requiredCount){
-                ;
-            }
-            else{
+            if (i >= GameManager.Instance.upgradesUnlocked){
                 if (i == 0){
                     upgradeText.text +=
-                        $"{requiredCount - GameManager.Instance.PearlCount.Value} MORE PEARLS UNTIL <b>AXE THROW SPEED</b>\n";
+                        $"{Mathf.Max(requiredCount - GameManager.Instance.PearlCount.Value, 0)} MORE PEARLS UNTIL <b>AXE THROW SPEED</b>\n";
                 }
 
                 if (i == 1){
                     upgradeText.text +=
-                        $"{requiredCount - GameManager.Instance.PearlCount.Value} MORE PEARLS UNTIL <b>CAN BREAK BONE DOORS</b>\n";
+                        $"{Mathf.Max(requiredCount - GameManager.Instance.PearlCount.Value, 0)} MORE PEARLS UNTIL <b>CAN BREAK BONE DOORS</b>\n";
                 }
             }
         }
