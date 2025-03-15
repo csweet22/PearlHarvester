@@ -89,13 +89,15 @@ public class HUD : Singleton<HUD>
 
     private void Update()
     {
-        if (!showTimer)
+        if (!showTimer){
+            timer.text = "";
             return;
+        }
         
         int minutes = Mathf.FloorToInt(GameManager.Instance._runTime / 60);
         float seconds = GameManager.Instance._runTime % 60;
         int milliseconds = Mathf.FloorToInt((seconds - Mathf.Floor(seconds)) * 1000);
         
-        timer.text = $"{minutes:D2}:{Mathf.FloorToInt(seconds):D2}.{milliseconds:D2}";
+        timer.text = $"{minutes:D2}:{Mathf.FloorToInt(seconds):D2}.{milliseconds:00}";
     }
 }
