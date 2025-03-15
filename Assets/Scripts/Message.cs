@@ -14,7 +14,7 @@ public class Message : MonoBehaviour
 
     IEnumerator DelayedDestroy(float delay = 1.0f)
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSecondsRealtime(delay);
         Destroy(this.gameObject);
     }
 }

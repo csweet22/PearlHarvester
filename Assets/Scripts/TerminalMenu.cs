@@ -64,10 +64,11 @@ public class TerminalMenu : ACMenu
         for (int i = 0; i < GameManager.Instance.requiredPearls.Count; i++){
             int requiredCount = GameManager.Instance.requiredPearls[i];
 
-            if (GameManager.Instance.PearlCount.Value >= requiredCount){
+            if (GameManager.Instance.PearlCount.Value > requiredCount){
                 ;
             }
             else{
+                // Debug.Log($"{GameManager.Instance.PearlCount.Value }, {requiredCount}");
                 if (i == 0){
                     upgradeText.text +=
                         $"{requiredCount - GameManager.Instance.PearlCount.Value} MORE PEARLS UNTIL <b>AXE THROW SPEED</b>\n";
