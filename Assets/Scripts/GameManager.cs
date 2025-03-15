@@ -4,6 +4,7 @@ using Scripts.Utilities;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -36,6 +37,33 @@ public class GameManager : Singleton<GameManager>
     public event Action onQuotaReached;
 
     public bool quotaReached = false;
+
+    [SerializeField] public AudioClip whale1;
+    [SerializeField] public AudioClip whale2;
+    [SerializeField] public AudioClip whale3;
+
+    [SerializeField] public AudioSource whaleSource;
+
+    public void PlayGroan()
+    {
+        Debug.Log("Play Groan");
+        whaleSource.Stop();
+
+        int rand = Random.Range(0, 3);
+        switch (rand){
+            case 0:
+                whaleSource.clip = whale1;
+                break;
+            case 1:
+                whaleSource.clip = whale2;
+                break;
+            case 2:
+                whaleSource.clip = whale3;
+                break;
+        }
+        Debug.Log("Actually played");
+        whaleSource.Play();
+    }
 
     private void Start()
     {
