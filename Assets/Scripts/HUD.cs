@@ -25,8 +25,11 @@ public class HUD : Singleton<HUD>
 
     private Tween _tintTween;
 
+
+    private bool showTimer;
     private void Start()
     {
+        ShowTimer(Settings.Instance.showTimer);
         UpdateQuotaAndTotal();
         GameManager.Instance.PearlCount.OnValueChanged += (i, i1) => { UpdateQuotaAndTotal(); };
     }
@@ -79,8 +82,6 @@ public class HUD : Singleton<HUD>
         reticle.texture = null;
         reticle.rectTransform.localScale = new Vector3(1, 1, 1);
     }
-
-    private bool showTimer;
 
     public void ShowTimer(bool instanceShowTimer)
     {
