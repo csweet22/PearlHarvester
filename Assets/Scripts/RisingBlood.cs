@@ -57,12 +57,12 @@ public class RisingBlood : MonoBehaviour
             () =>
             {
                 _targetBloodLevel = _lowestHeight;
-                float distance = Mathf.Abs(bloodObject.localPosition.y - _targetBloodLevel);
-                float duration = distance / _risingSpeed;
-                Vector3 targetLocalPosition = bloodObject.localPosition.Change(y: _targetBloodLevel);
+                float distance2 = Mathf.Abs(bloodObject.localPosition.y - _targetBloodLevel);
+                float duration2 = distance2 / _risingSpeed;
+                Vector3 targetLocalPosition2 = bloodObject.localPosition.Change(y: _targetBloodLevel);
                 _tween = DOTween.To(() => bloodObject.localPosition, x => bloodObject.localPosition = x,
-                    targetLocalPosition,
-                    duration);
+                    targetLocalPosition2,
+                    duration2);
             };
     }
 

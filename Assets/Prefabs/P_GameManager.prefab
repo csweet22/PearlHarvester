@@ -87,9 +87,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   quotaReached: 0
-  whale1: {fileID: 8300000, guid: bc02ed31225bdf442beb37364371e65e, type: 3}
-  whale2: {fileID: 8300000, guid: d48be7f48fcf0bb4ea40fa42940d1520, type: 3}
-  whale3: {fileID: 8300000, guid: afdc0929f0a7b6b4bbb57c778ec3c138, type: 3}
+  whale1: {fileID: 8300000, guid: 0bae5edf677327943b7381ee4f50bc20, type: 3}
+  whale2: {fileID: 8300000, guid: 24d5275010c3845428a8265cecbf49a4, type: 3}
+  whale3: {fileID: 8300000, guid: 3273c20aada73ec4c8a8a951263ecabc, type: 3}
   whaleSource: {fileID: 6563403658651307035}
 --- !u!82 &6563403658651307035
 AudioSource:

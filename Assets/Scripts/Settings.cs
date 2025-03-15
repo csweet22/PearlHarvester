@@ -6,4 +6,5 @@
     {
         public float sensitivity = 0.5f;
         public float fov = 75f;
+        public bool showTimer = false;
     }

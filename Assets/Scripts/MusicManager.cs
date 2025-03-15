@@ -28,7 +28,7 @@ public class MusicManager : Singleton<MusicManager>
             () => { StartCoroutine(DelayBeforeDisable()); };
     }
 
-    private IEnumerator DelayBeforeDisable(float duration = 5f)
+    private IEnumerator DelayBeforeDisable(float duration = 45f)
     {
         yield return new WaitForSeconds(duration);
         DisableDrums();

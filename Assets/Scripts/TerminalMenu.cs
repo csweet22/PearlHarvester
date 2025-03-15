@@ -38,6 +38,9 @@ public class TerminalMenu : ACMenu
         UpdateUpgradeText();
         UpdateUpgradeButtonInteractable();
         GameManager.Instance.PearlCount.OnValueChanged += OnPearlValueChanged;
+        if (GameManager.Instance.quotaReached){
+            GameManager.Instance.EndGame();
+        }
     }
 
     private void OnPearlValueChanged(int oldValue, int newValue)

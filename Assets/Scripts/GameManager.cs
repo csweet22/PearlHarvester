@@ -44,10 +44,15 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] public AudioSource whaleSource;
 
+
+    public float _runTime = 0.0f;
+    private bool _gameEnded = false;
+
     public void PlayGroan()
     {
         Debug.Log("Play Groan");
-        whaleSource.Stop();
+        if (whaleSource.isPlaying)
+            return;
 
         int rand = Random.Range(0, 3);
         switch (rand){
@@ -61,10 +66,16 @@ public class GameManager : Singleton<GameManager>
                 whaleSource.clip = whale3;
                 break;
         }
+
         Debug.Log("Actually played");
         whaleSource.Play();
     }
 
+    public void EndGame()
+    {
+        _gameEnded = true;
+    }
+    
     private void Start()
     {
         _risingBlood = FindObjectOfType<RisingBlood>();
@@ -73,6 +84,13 @@ public class GameManager : Singleton<GameManager>
         Pearl[] allActivePearls = FindObjectsOfType<Pearl>();
         totalPearlCount = allActivePearls.Length;
         HUD.Instance.UpdateQuotaAndTotal();
+        _runTime = 0.0f;
+    }
+
+    private void Update()
+    {
+        if (!_gameEnded)
+            _runTime += Time.deltaTime;
     }
 
     public void SetSafeAreaSpawn(Transform spawnPoint)
