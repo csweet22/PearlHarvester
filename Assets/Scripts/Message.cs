@@ -9,7 +9,7 @@ public class Message : MonoBehaviour
     public void SetText(string text)
     {
         messageText.text = text;
-        StartCoroutine(DelayedDestroy(Mathf.Max(1.0f * text.Split(" ").Length, 2.0f)));
+        StartCoroutine(DelayedDestroy(Mathf.Max(0.5f * text.Split(" ").Length, 1.0f)));
     }
 
     IEnumerator DelayedDestroy(float delay = 1.0f)
