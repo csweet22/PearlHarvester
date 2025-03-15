@@ -228,6 +228,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_BladderButton
       objectReference: {fileID: 0}
+    - target: {fileID: 4898858941682008187, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
+        type: 3}
+      propertyPath: m_TagString
+      value: organ
+      objectReference: {fileID: 0}
     - target: {fileID: 7422336292050897724, guid: 36b0fa9ee3e5cbf4188c9ede233e6ebb,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

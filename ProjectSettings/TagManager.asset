@@ -10,6 +10,7 @@ TagManager:
   - bone
   - film
   - Door
+  - organ
   layers:
   - Default
   - TransparentFX

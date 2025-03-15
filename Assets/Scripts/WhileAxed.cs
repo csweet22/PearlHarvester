@@ -31,6 +31,10 @@ public class WhileAxed : MonoBehaviour
 
     private void OnInteractStarted(InteractorComponent obj)
     {
+        if (CompareTag("organ")){
+            GameManager.Instance.PlayGroan();
+        }
+
         if (obj.tag == "AxeProjectile"){
             obj.GetComponentInParent<AxeProjectile>().Connect(physicsCollider, transform);
             TurnOn();

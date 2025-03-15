@@ -23,7 +23,7 @@ public class MusicManager : Singleton<MusicManager>
         if (_volumeTween != null)
             _volumeTween.Kill();
 
-        _volumeTween = DOTween.To(() => audioFollower.volume, x => audioFollower.volume = x, 1.0f, duration);
+        _volumeTween = DOTween.To(() => audioFollower.volume, x => audioFollower.volume = x, audioLeader.volume, duration);
         _volumeTween.onComplete +=
             () => { StartCoroutine(DelayBeforeDisable()); };
     }
