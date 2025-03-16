@@ -351,6 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startGameButton: {fileID: 5880680574008946548}
   settingsButton: {fileID: 1541565618805680492}
+  quitButton: {fileID: 280306221261151817}
   settingsMenu: {fileID: 6357139838703531394, guid: 67b100e25477e44499742be6a4ea7e40,
     type: 3}
   startGameSceneName: LoadedScene
@@ -482,6 +483,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc21c3b42b09992409edce479aadc39c, type: 3}
+--- !u!114 &280306221261151817 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 633720461725790419, guid: fc21c3b42b09992409edce479aadc39c,
+    type: 3}
+  m_PrefabInstance: {fileID: 804090870421106330}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7828415083826098660 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7461526047026454398, guid: fc21c3b42b09992409edce479aadc39c,
