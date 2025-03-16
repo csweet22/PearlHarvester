@@ -9,6 +9,7 @@ public class MainMenu : ACMenu
 {
     [SerializeField] private Button startGameButton;
     [SerializeField] private Button settingsButton;
+    [SerializeField] private Button quitButton;
     
     [SerializeField] private GameObject settingsMenu;
 
@@ -32,6 +33,12 @@ public class MainMenu : ACMenu
     {
         startGameButton.onClick.AddListener(OnStartGameButtonClicked);
         settingsButton.onClick.AddListener(OnSettingsClicked);
+        quitButton.onClick.AddListener(OnQuitClicked);
+    }
+
+    private void OnQuitClicked()
+    {
+        Application.Quit();
     }
 
     private void OnStartGameButtonClicked()
