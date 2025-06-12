@@ -1365,6 +1365,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Title
       objectReference: {fileID: 0}
+    - target: {fileID: 2786586179708864533, guid: eaed3d1cc5bba2c4e8ff8e7fe53afee6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2986983320994092921, guid: eaed3d1cc5bba2c4e8ff8e7fe53afee6,
         type: 3}
       propertyPath: m_Mesh
@@ -3306,6 +3311,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: P_Wall1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964922279183952815, guid: 7dc9d43aefed09b4190acfb82b513aa8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5616455537238715184, guid: 7dc9d43aefed09b4190acfb82b513aa8,
         type: 3}
